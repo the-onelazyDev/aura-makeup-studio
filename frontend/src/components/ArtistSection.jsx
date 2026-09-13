@@ -106,26 +106,21 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div className="founder-cta-group">
               <button
                 onClick={() => onSelectArtist(vaishnaviArtist)}
-                className="btn-gold"
-                style={{ padding: '13px 24px', fontSize: '0.85rem' }}
+                className="btn-gold founder-primary-btn"
               >
                 <Sparkles size={16} />
                 <span>Book with Vaishnavi Singh</span>
               </button>
-              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+              <div className="founder-cta-subgroup">
                 <a
                   href="https://wa.me/919999250883?text=Hi%20Vaishnavi%20Singh,%20I%20would%20like%20to%20consult%20for%20a%20Bridal%20Makeover%20in%20Govindpuri,%20Modinagar."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"
                   style={{
-                    flex: 1,
-                    padding: '11px 14px',
-                    textDecoration: 'none',
                     borderColor: '#25D366',
                     color: '#25D366',
-                    background: 'rgba(37, 211, 102, 0.1)',
-                    fontSize: '0.82rem'
+                    background: 'rgba(37, 211, 102, 0.1)'
                   }}
                 >
                   <MessageCircle size={16} />
@@ -134,7 +129,6 @@ export default function ArtistSection({ artists, onSelectArtist }) {
                 <a
                   href="tel:9999250883"
                   className="btn-outline"
-                  style={{ flex: 1, padding: '11px 14px', textDecoration: 'none', fontSize: '0.82rem' }}
                 >
                   <Phone size={15} />
                   <span>Call 9999250883</span>
