@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ServiceCatalog from './components/ServiceCatalog';
-import ArtistSection from './components/ArtistSection';
+import ExperienceSection from './components/ExperienceSection';
 import BookingModal from './components/BookingModal';
 import AuthModal from './components/AuthModal';
 import UserDashboard from './components/UserDashboard';
@@ -146,10 +146,9 @@ export default function App() {
         onSelectService={handleOpenBookingForService}
       />
 
-      {/* Senior Artists */}
-      <ArtistSection
-        artists={artists}
-        onSelectArtist={handleOpenBookingForArtist}
+      {/* Luxury Studio Experience & Assurance */}
+      <ExperienceSection
+        onOpenBooking={() => setIsBookingOpen(true)}
       />
 
       {/* Footer */}

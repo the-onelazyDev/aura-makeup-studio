@@ -24,7 +24,7 @@ export default function Footer() {
             <h2 style={{ fontSize: '1.6rem', fontWeight: '700' }} className="gold-text">AURA MAKEUP STUDIO</h2>
           </div>
           <p style={{ fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '20px' }}>
-            Premier luxury makeover studio and bridal salon founded and led by master celebrity artist <strong>Vaishnavi Singh</strong> in Govindpuri, Modinagar.
+            Premier luxury makeover studio and bridal lounge in Govindpuri, Modinagar, delivering HD Airbrush artistry, royal wedding styling, and signature skin rituals.
           </p>
           <div style={{ display: 'flex', gap: '12px' }}>
             <a
