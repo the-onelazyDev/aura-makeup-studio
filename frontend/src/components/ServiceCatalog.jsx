@@ -145,8 +145,8 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
       ) : (
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '24px 20px'
+          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+          gap: '30px 24px'
         }}>
           {filteredServices.map((service) => (
             <div
@@ -158,11 +158,11 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'
+                boxShadow: '0 1px 4px rgba(0, 0, 0, 0.03)'
               }}
             >
-              {/* Service Image Banner */}
-              <div style={{ position: 'relative', height: '180px', overflow: 'hidden', background: '#F3F4F6' }}>
+              {/* Service Image (1:1 Ratio Matching Reference) */}
+              <div style={{ position: 'relative', width: '100%', height: '310px', overflow: 'hidden', background: '#F3F4F6' }}>
                 <img
                   src={service.image}
                   alt={service.title}
@@ -177,17 +177,18 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
               </div>
 
               {/* Service Info */}
-              <div style={{ padding: '20px 14px 18px 14px', display: 'flex', flexDirection: 'column', flex: 1, alignItems: 'center' }}>
+              <div style={{ padding: '24px 20px 22px 20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{
-                  fontSize: '0.90rem',
+                  fontSize: '1.22rem',
                   fontWeight: '700',
-                  color: '#000000',
-                  textAlign: 'center',
+                  color: '#1E293B',
+                  textAlign: 'left',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.4px',
-                  marginBottom: '18px',
-                  lineHeight: '1.3',
-                  minHeight: '26px'
+                  letterSpacing: '0.3px',
+                  marginBottom: '22px',
+                  lineHeight: '1.35',
+                  minHeight: '48px',
+                  fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                 }}>
                   {service.title}
                 </h3>
@@ -195,28 +196,30 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                 {/* Card Action Buttons (Exact Match to Reference Screenshot) */}
                 <div style={{
                   display: 'flex',
-                  justifyContent: 'center',
-                  gap: '8px',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                  gap: '12px',
                   width: '100%',
                   marginTop: 'auto'
                 }}>
-                  {/* Enquire Now Button (Black Outline Box) */}
+                  {/* Enquire Now Button (Black Outline Box with Bold Text) */}
                   <button
                     onClick={() => handleEnquireWhatsApp(service)}
                     style={{
                       background: '#FFFFFF',
-                      border: '1px solid #000000',
+                      border: '1.5px solid #000000',
                       color: '#000000',
-                      padding: '6px 16px',
-                      borderRadius: '2px',
-                      fontSize: '0.78rem',
+                      padding: '9px 20px',
+                      borderRadius: '6px',
+                      fontSize: '0.88rem',
                       fontWeight: '700',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       whiteSpace: 'nowrap',
-                      transition: 'background 0.15s, color 0.15s'
+                      fontFamily: 'inherit',
+                      transition: 'all 0.15s ease'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = '#000000';
@@ -230,31 +233,34 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                     Enquire Now
                   </button>
 
-                  {/* Know More Button (Grey Outline Box) */}
+                  {/* Know More Button (Subtle Outline Box) */}
                   <button
                     onClick={() => onSelectService(service)}
                     style={{
                       background: '#FFFFFF',
-                      border: '1px solid #9CA3AF',
-                      color: '#374151',
-                      padding: '6px 16px',
-                      borderRadius: '2px',
-                      fontSize: '0.78rem',
-                      fontWeight: '500',
+                      border: '1px solid #374151',
+                      color: '#111827',
+                      padding: '9px 20px',
+                      borderRadius: '6px',
+                      fontSize: '0.88rem',
+                      fontWeight: '400',
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       whiteSpace: 'nowrap',
-                      transition: 'border-color 0.15s, color 0.15s'
+                      fontFamily: 'inherit',
+                      transition: 'all 0.15s ease'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = '#000000';
                       e.currentTarget.style.color = '#000000';
+                      e.currentTarget.style.fontWeight = '600';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '#9CA3AF';
-                      e.currentTarget.style.color = '#374151';
+                      e.currentTarget.style.borderColor = '#374151';
+                      e.currentTarget.style.color = '#111827';
+                      e.currentTarget.style.fontWeight = '400';
                     }}
                   >
                     Know More
