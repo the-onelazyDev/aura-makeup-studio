@@ -1,0 +1,27 @@
+services:
+  # Backend API Web Service
+  - type: web
+    name: aura-makeup-studio-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: PORT
+        value: 3005
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: luxury_makeup_studio_secret_key_2026
+
+  # Frontend Static Site
+  - type: static
+    name: aura-makeup-studio-web
+    region: singapore
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://aura-makeup-studio-api.onrender.com/api
