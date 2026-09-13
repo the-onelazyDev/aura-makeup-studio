@@ -82,7 +82,11 @@ export default function App() {
   };
 
   const handleBookingSuccess = (booking) => {
-    showToast(`Appointment #${booking.id} reserved for ${booking.serviceTitle} on ${booking.bookingDate} at ${booking.slotTime}!`);
+    const id = booking?.id || 'VIP';
+    const title = booking?.serviceTitle || 'Makeover Package';
+    const date = booking?.bookingDate || 'Upcoming Date';
+    const time = booking?.slotTime ? `at ${booking.slotTime}` : '';
+    showToast(`Appointment #${id} reserved for ${title} on ${date} ${time}!`);
   };
 
   if (loading) {

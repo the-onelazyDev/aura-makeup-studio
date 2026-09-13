@@ -41,27 +41,29 @@ export default function BookingModal({
 
     try {
       const payload = {
+        userId: currentUser.id,
         serviceId: selectedServiceId,
         artistId: selectedArtistId,
         bookingDate,
         slotTime: selectedSlot,
         customerName: customerName || currentUser.name,
-        customerPhone,
+        customerPhone: customerPhone || currentUser.phone || "+91 98765 43210",
         notes
       };
 
       const response = await api.createBooking(payload);
       setLoading(false);
 
-      if (response.status) {
-        onBookingSuccess(response.data.booking);
+      if (response && response.status) {
+        const bookingData = response.data?.booking || response.data || payload;
+        onBookingSuccess(bookingData);
         onClose();
       } else {
-        setErrorMsg(response.message || 'Failed to book appointment.');
+        setErrorMsg(response?.message || 'Failed to book appointment.');
       }
     } catch (err) {
       setLoading(false);
-      setErrorMsg('Server error. Please check your backend connection.');
+      setErrorMsg(err.message || 'Server error. Please check your backend connection.');
     }
   };
 

@@ -112,7 +112,6 @@ router.post("/", async (req, res) => {
 // GET /api/bookings/my-bookings
 router.get("/my-bookings", authenticateToken, async (req, res) => {
   try {
-    const userEmail = req.user.email;
     const userId = req.user.id;
 
     let userBookings;
@@ -140,6 +139,51 @@ router.get("/my-bookings", authenticateToken, async (req, res) => {
       code: 500,
       status: false,
       message: "Failed to fetch user bookings.",
+      data: null
+    });
+  }
+});
+
+// PUT /api/bookings/:id/cancel
+router.put("/:id/cancel", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    let updatedBooking;
+    if (getIsMongoConnected()) {
+      updatedBooking = await Booking.findOneAndUpdate(
+        { id },
+        { status: "Cancelled" },
+        { new: true }
+      );
+    } else {
+      const booking = bookingsStore.find((b) => b.id === id);
+      if (booking) {
+        booking.status = "Cancelled";
+        updatedBooking = booking;
+      }
+    }
+
+    if (!updatedBooking) {
+      return res.status(404).json({
+        code: 404,
+        status: false,
+        message: `Booking with ID '${id}' not found.`,
+        data: null
+      });
+    }
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: "Booking cancelled successfully.",
+      data: updatedBooking
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
+      status: false,
+      message: "Failed to cancel booking.",
       data: null
     });
   }

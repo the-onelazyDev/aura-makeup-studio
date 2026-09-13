@@ -85,8 +85,8 @@ router.get("/bookings", authenticateToken, requireAdmin, async (req, res) => {
   }
 });
 
-// PATCH /api/admin/bookings/:id/status
-router.patch("/bookings/:id/status", authenticateToken, requireAdmin, async (req, res) => {
+// PATCH & PUT /api/admin/bookings/:id/status
+const handleStatusUpdate = async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
@@ -139,6 +139,9 @@ router.patch("/bookings/:id/status", authenticateToken, requireAdmin, async (req
       data: null
     });
   }
-});
+};
+
+router.patch("/bookings/:id/status", authenticateToken, requireAdmin, handleStatusUpdate);
+router.put("/bookings/:id/status", authenticateToken, requireAdmin, handleStatusUpdate);
 
 module.exports = router;
