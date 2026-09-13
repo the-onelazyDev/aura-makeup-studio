@@ -9,13 +9,13 @@ import UserDashboard from './components/UserDashboard';
 import AdminDashboard from './components/AdminDashboard';
 import Footer from './components/Footer';
 import { api } from './services/api';
+import { INITIAL_SERVICES, INITIAL_ARTISTS } from './data/initialData';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [services, setServices] = useState([]);
-  const [artists, setArtists] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState(INITIAL_SERVICES);
+  const [artists, setArtists] = useState(INITIAL_ARTISTS);
 
   // Modals state
   const [isAuthOpen, setIsAuthOpen] = useState(false);
@@ -29,23 +29,10 @@ export default function App() {
   // Toast notification
   const [toastMessage, setToastMessage] = useState(null);
 
-  // Initialize data
+  // Initialize data in the background (Non-blocking)
   useEffect(() => {
     const initApp = async () => {
       try {
-        // Fetch services & artists
-        const [servicesRes, artistsRes] = await Promise.all([
-          api.fetchServices(),
-          api.fetchArtists()
-        ]);
-
-        if (servicesRes.status && servicesRes.data?.result) {
-          setServices(servicesRes.data.result);
-        }
-        if (artistsRes.status && artistsRes.data?.result) {
-          setArtists(artistsRes.data.result);
-        }
-
         // Check auth token
         const token = localStorage.getItem('aura_auth_token');
         if (token) {
@@ -54,10 +41,22 @@ export default function App() {
             setCurrentUser(profileRes.data.user);
           }
         }
+
+        // Fetch fresh services & artists in background
+        const [servicesRes, artistsRes] = await Promise.all([
+          api.fetchServices(),
+          api.fetchArtists()
+        ]);
+
+        if (servicesRes.status && servicesRes.data?.result?.length > 0) {
+          setServices(servicesRes.data.result);
+        }
+        if (artistsRes.status && artistsRes.data?.result?.length > 0) {
+          setArtists(artistsRes.data.result);
+        }
       } catch (error) {
-        console.error('App init error:', error);
-      } finally {
-        setLoading(false);
+        // Gracefully failover to pre-loaded high performance initial data
+        console.warn('Background sync note:', error.message);
       }
     };
 
@@ -88,31 +87,6 @@ export default function App() {
     const time = booking?.slotTime ? `at ${booking.slotTime}` : '';
     showToast(`Appointment #${id} reserved for ${title} on ${date} ${time}!`);
   };
-
-  if (loading) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        background: 'var(--bg-dark)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '16px'
-      }}>
-        <div style={{
-          width: '50px',
-          height: '50px',
-          borderRadius: '50%',
-          border: '3px solid rgba(212,175,55,0.2)',
-          borderTopColor: '#d4af37',
-          animation: 'spin 1s linear infinite'
-        }} />
-        <span style={{ fontFamily: 'var(--font-heading)', color: '#d4af37', letterSpacing: '2px' }}>AURA LUXURY STUDIO</span>
-        <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
-      </div>
-    );
-  }
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
