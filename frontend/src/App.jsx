@@ -49,10 +49,21 @@ export default function App() {
         ]);
 
         if (servicesRes.status && servicesRes.data?.result?.length > 0) {
-          setServices(servicesRes.data.result);
+          const sanitized = servicesRes.data.result.map(s => {
+            let img = s.image;
+            if (!img || img.includes('owner-')) {
+              img = '/images/basic-bridal.jpg';
+            }
+            return { ...s, image: img };
+          });
+          setServices(sanitized);
         }
         if (artistsRes.status && artistsRes.data?.result?.length > 0) {
-          setArtists(artistsRes.data.result);
+          const sanitizedArtists = artistsRes.data.result.map(a => ({
+            ...a,
+            avatar: a.avatar && !a.avatar.includes('owner-') ? a.avatar : '/images/airbrush-bridal.jpg'
+          }));
+          setArtists(sanitizedArtists);
         }
       } catch (error) {
         // Gracefully failover to pre-loaded high performance initial data
