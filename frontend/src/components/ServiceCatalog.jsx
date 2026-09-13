@@ -145,8 +145,8 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
       ) : (
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-          gap: '30px 24px'
+          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gap: '22px 18px'
         }}>
           {filteredServices.map((service) => (
             <div
@@ -158,11 +158,18 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: '0 1px 4px rgba(0, 0, 0, 0.03)'
+                boxShadow: '0 1px 4px rgba(0, 0, 0, 0.03)',
+                transition: 'transform 0.15s ease, box-shadow 0.15s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.06)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.03)';
               }}
             >
-              {/* Service Image (1:1 Ratio Matching Reference) */}
-              <div style={{ position: 'relative', width: '100%', height: '310px', overflow: 'hidden', background: '#F3F4F6' }}>
+              {/* Service Image (Reduced for 4-in-a-row grid) */}
+              <div style={{ position: 'relative', width: '100%', height: '210px', overflow: 'hidden', background: '#F3F4F6' }}>
                 <img
                   src={service.image}
                   alt={service.title}
@@ -177,28 +184,28 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
               </div>
 
               {/* Service Info */}
-              <div style={{ padding: '24px 20px 22px 20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <div style={{ padding: '16px 14px 16px 14px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <h3 style={{
-                  fontSize: '1.22rem',
+                  fontSize: '0.95rem',
                   fontWeight: '700',
                   color: '#1E293B',
                   textAlign: 'left',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.3px',
-                  marginBottom: '22px',
+                  letterSpacing: '0.2px',
+                  marginBottom: '16px',
                   lineHeight: '1.35',
-                  minHeight: '48px',
+                  minHeight: '40px',
                   fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                 }}>
                   {service.title}
                 </h3>
 
-                {/* Card Action Buttons (Exact Match to Reference Screenshot) */}
+                {/* Card Action Buttons (Exact Match to Reference) */}
                 <div style={{
                   display: 'flex',
                   justifyContent: 'flex-start',
                   alignItems: 'center',
-                  gap: '12px',
+                  gap: '8px',
                   width: '100%',
                   marginTop: 'auto'
                 }}>
@@ -209,9 +216,9 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                       background: '#FFFFFF',
                       border: '1.5px solid #000000',
                       color: '#000000',
-                      padding: '9px 20px',
-                      borderRadius: '6px',
-                      fontSize: '0.88rem',
+                      padding: '7px 14px',
+                      borderRadius: '5px',
+                      fontSize: '0.80rem',
                       fontWeight: '700',
                       cursor: 'pointer',
                       display: 'inline-flex',
@@ -240,9 +247,9 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
                       background: '#FFFFFF',
                       border: '1px solid #374151',
                       color: '#111827',
-                      padding: '9px 20px',
-                      borderRadius: '6px',
-                      fontSize: '0.88rem',
+                      padding: '7px 14px',
+                      borderRadius: '5px',
+                      fontSize: '0.80rem',
                       fontWeight: '400',
                       cursor: 'pointer',
                       display: 'inline-flex',
