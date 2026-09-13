@@ -63,11 +63,12 @@ const seedDatabaseIfEmpty = async () => {
       console.log("✨ Seeded default Admin & Demo users into MongoDB.");
     }
 
-    // Upsert latest Services catalog
-    for (const srv of INITIAL_SERVICES) {
-      await Service.findOneAndUpdate({ id: srv.id }, srv, { upsert: true, new: true, setDefaultsOnInsert: true });
+    // Seed Services
+    const serviceCount = await Service.countDocuments();
+    if (serviceCount === 0) {
+      await Service.insertMany(INITIAL_SERVICES);
+      console.log("✨ Seeded default Services catalog into MongoDB.");
     }
-    console.log("✨ Synced latest Services catalog into MongoDB.");
 
     // Seed Artists / Ensure Vaishnavi Singh is Lead Artist
     const artistCount = await Artist.countDocuments();

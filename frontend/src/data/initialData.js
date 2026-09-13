@@ -9,8 +9,8 @@ export const INITIAL_SERVICES = [
     rating: 4.9,
     reviewsCount: 310,
     badge: "Basic Bridal",
-    image: "/images/owner-portrait.jpg",
-    description: "Traditional classic bridal makeover featuring a radiant glowing foundation base, soft contouring, festive Indian bridal eye styling, lash enhancement, and authentic lehenga/saree draping.",
+    image: "/images/basic-bridal.jpg",
+    description: "Traditional classic bridal makeover featuring a radiant golden foundation base, soft contouring, classic winged Indian bridal eye styling, red bindi, and lehenga/saree draping.",
     highlights: ["Traditional Long-Lasting Base", "Festive Bridal Eye Artistry", "Lash Enhancement & Bindi Setting", "Saree / Lehenga Draping Included"]
   },
   {
@@ -23,8 +23,8 @@ export const INITIAL_SERVICES = [
     rating: 5.0,
     reviewsCount: 450,
     badge: "HD Bridal",
-    image: "/images/owner-hero.jpg",
-    description: "4K Camera-ready micro-pigmented HD base that seamlessly diffuses pores and fine lines. Ideal for high-definition wedding photography and all-day wedding rituals.",
+    image: "/images/hd-bridal.jpg",
+    description: "4K Camera-ready micro-pigmented HD base that seamlessly diffuses pores. Sculpted cheekbones, champagne cut-crease eye shadow, fluttery 3D lashes, and velvet nude-rose lips.",
     highlights: ["4K Camera-Ready HD Base", "Pore-Blown Seamless Finish", "Sculpted Facial Contouring", "Waterproof & Sweat-Resistant"]
   },
   {
@@ -37,8 +37,8 @@ export const INITIAL_SERVICES = [
     rating: 5.0,
     reviewsCount: 520,
     badge: "Airbrush Bridal",
-    image: "/images/owner-hero.jpg",
-    description: "Ultra-luxury silicone-based airbrush misting personally crafted by Vaishnavi Singh. Delivers a feather-light, 24-hour transfer-proof, tear-proof, porcelain celebrity finish.",
+    image: "/images/airbrush-bridal.jpg",
+    description: "Ultra-luxury silicone-based airbrush misting personally crafted by Vaishnavi Singh. Delivers a featherlight, 24-hour transfer-proof, tear-proof, porcelain celebrity finish.",
     highlights: ["Done Personally by Vaishnavi Singh", "24H Tear-Proof & Transfer-Proof", "Silicone Micro-Mist Porcelain Base", "Includes 3D Lashes & Hair Couture"]
   },
   {
@@ -51,8 +51,8 @@ export const INITIAL_SERVICES = [
     rating: 5.0,
     reviewsCount: 280,
     badge: "Dewy Glass Skin",
-    image: "/images/owner-portrait.jpg",
-    description: "Modern Parisian wet-glow aesthetic with ultra-hydrated luminous skin, glossy rose lips, dewy cheekbone glaze, and soft romantic textured hair styling.",
+    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop",
+    description: "Modern Parisian wet-glow aesthetic with ultra-hydrated luminous skin, glazed cheekbone highlight, glossy rose lips, and soft romantic textured hair styling.",
     highlights: ["Luminous Ultra-Hydrated Glow", "Fresh Glazed Cheekbone Highlight", "Modern Glossy Lip Artistry", "Soft Romantic Hair Bun / Waves"]
   },
   {
@@ -65,8 +65,8 @@ export const INITIAL_SERVICES = [
     rating: 4.9,
     reviewsCount: 240,
     badge: "Matte Royal",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop",
-    description: "Regal full-coverage velvet matte base with bold royal lips, matte cut-crease smokey eyes, and authentic temple/heritage jewelry settings.",
+    image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=800&auto=format&fit=crop",
+    description: "Regal full-coverage velvet matte base with bold royal crimson lips, matte cut-crease smokey eyes, and authentic temple/heritage jewelry settings.",
     highlights: ["Transfer-Proof Velvet Matte Base", "Regal Bold Lip Artistry", "Matte Cut-Crease Smokey Eye", "Matha Patti & Dupatta Setting"]
   },
   {
@@ -79,7 +79,7 @@ export const INITIAL_SERVICES = [
     rating: 4.9,
     reviewsCount: 390,
     badge: "Cocktail Glam",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?q=80&w=800&auto=format&fit=crop",
     description: "Glamorous evening reception and sangeet makeover with shimmering glitter eye artistry, glowing bronzer, and Hollywood volume curls.",
     highlights: ["Shimmer Glitter Cut-Crease", "Sculpted Evening Glow", "Hollywood Volume Waves / Updo", "24-Hour Stay Base"]
   },
@@ -93,7 +93,7 @@ export const INITIAL_SERVICES = [
     rating: 4.8,
     reviewsCount: 165,
     badge: "Hair Couture",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
     description: "Transformative hair styling ranging from Hollywood Vintage Waves, Messy Textured Buns to Braided Couture paired with a nourishing Keratin hair spa.",
     highlights: ["Custom Updo or Waves", "Keratin Hydration Spa", "Heat Protection Shield", "Accessory Placement"]
   },
@@ -121,7 +121,7 @@ export const INITIAL_SERVICES = [
     rating: 4.8,
     reviewsCount: 130,
     badge: "Nail Couture",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=800&auto=format&fit=crop",
     description: "Premium gel nail extensions featuring custom ombre glitter, chrome finishes, or hand-painted botanical bridal nail art.",
     highlights: ["Shatterproof Gel Extensions", "Custom Hand-Painted Art", "Cuticle Nourishing Oil", "Long-Lasting Gloss"]
   }

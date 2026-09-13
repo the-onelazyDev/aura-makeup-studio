@@ -4,7 +4,6 @@ const serviceSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   title: { type: String, required: true },
   category: { type: String, required: true },
-  subCategory: { type: String, default: "" },
   price: { type: Number, required: true },
   duration: { type: String, required: true },
   rating: { type: Number, default: 4.8 },
