@@ -19,10 +19,10 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             </span>
           </div>
           <h2 style={{ fontSize: '2.8rem', fontWeight: '700', marginBottom: '16px' }}>
-            Meet the <span className="gold-text">Founder & Lead Makeup Artist</span>
+            Meet <span className="gold-text">Vaishnavi Singh</span>
           </h2>
           <p style={{ color: 'var(--text-muted)', maxWidth: '680px', margin: '0 auto', fontSize: '1.05rem' }}>
-            The driving force, visionary founder, and master artisan behind every breathtaking bridal and couture makeover at Aura Studio.
+            Founder, visionary owner, and master celebrity makeup artist behind every breathtaking bridal makeover at Aura Studio, Govindpuri, Modinagar.
           </p>
         </div>
 
@@ -40,14 +40,14 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '380px' }}>
               <img
                 src="/images/owner-portrait.jpg"
-                alt="Aura Studio Founder Portrait"
+                alt="Vaishnavi Singh - Aura Studio Founder"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
               />
             </div>
             <div style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '380px' }}>
               <img
                 src="/images/owner-hero.jpg"
-                alt="Aura Studio Founder Couture Look"
+                alt="Vaishnavi Singh - Celebrity Couture Makeover"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
               />
             </div>
@@ -55,12 +55,12 @@ export default function ArtistSection({ artists, onSelectArtist }) {
 
           {/* Bio & Details */}
           <div>
-            <div className="badge" style={{ marginBottom: '12px', display: 'inline-block' }}>Master Artisan</div>
-            <h3 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '6px' }} className="gold-text">
-              Founder & Lead Celebrity Artist
+            <div className="badge" style={{ marginBottom: '12px', display: 'inline-block' }}>Founder & Owner</div>
+            <h3 style={{ fontSize: '2.2rem', fontWeight: '700', marginBottom: '6px' }} className="gold-text">
+              Vaishnavi Singh
             </h3>
-            <p style={{ fontSize: '1rem', color: '#d4af37', fontWeight: '600', marginBottom: '18px' }}>
-              Owner & Principal Makeover Specialist • Aura Studio, Govindpuri, Modinagar
+            <p style={{ fontSize: '1.05rem', color: '#d4af37', fontWeight: '600', marginBottom: '18px' }}>
+              Founder & Lead Celebrity Makeup Artist • Govindpuri, Modinagar
             </p>
 
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '24px' }}>
@@ -91,12 +91,12 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             {/* CTA Buttons */}
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <button
-                onClick={() => onSelectArtist(artists[0] || { id: 'art-1', name: 'Founder & Lead Artist' })}
+                onClick={() => onSelectArtist(artists[0] || { id: 'art-1', name: 'Vaishnavi Singh' })}
                 className="btn-gold"
                 style={{ padding: '14px 28px', fontSize: '0.9rem' }}
               >
                 <Sparkles size={18} />
-                <span>Book Direct Appointment</span>
+                <span>Book with Vaishnavi Singh</span>
               </button>
               <a
                 href="https://wa.me/919999250883?text=Hi,%20I%20would%20like%20to%20consult%20with%20the%20Founder%20for%20a%20Bridal%20Makeover%20in%20Govindpuri,%20Modinagar."

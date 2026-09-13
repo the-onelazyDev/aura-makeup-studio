@@ -52,7 +52,7 @@ export default function HeroSection({ onOpenBooking }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '32px', maxWidth: '580px' }}>
-            Experience signature HD Airbrush Bridal Makeovers, Sangeet Glamour, and Couture Hair Artistry crafted personally by our Studio Founder & Lead Artist in <strong>Govindpuri, Modinagar</strong>.
+            Experience signature HD Airbrush Bridal Makeovers, Sangeet Glamour, and Couture Hair Artistry crafted personally by <strong>Vaishnavi Singh</strong> (Founder & Celebrity Makeover Artist) in <strong>Govindpuri, Modinagar</strong>.
           </p>
 
           {/* Action Buttons */}

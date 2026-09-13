@@ -82,12 +82,12 @@ const INITIAL_SERVICES = [
 const INITIAL_ARTISTS = [
   {
     id: "art-1",
-    name: "Founder & Lead Celebrity Makeup Artist",
-    title: "Founder & Master Bridal Artist",
+    name: "Vaishnavi Singh",
+    title: "Founder & Lead Celebrity Makeup Artist",
     experience: "10+ Years Excellence",
     rating: 5.0,
     reviews: 850,
-    specialty: "Royal Bridal, HD Airbrush & Sangeet Glamour",
+    specialty: "Royal HD Bridal, Airbrush & Sangeet Glamour",
     avatar: "/images/owner-portrait.jpg",
     availableSlots: ["10:00 AM", "01:30 PM", "04:30 PM", "07:00 PM"]
   }
