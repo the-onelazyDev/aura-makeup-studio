@@ -42,28 +42,22 @@ export default function ArtistSection({ artists, onSelectArtist }) {
           {/* Dual Photo Gallery */}
           <div className="founder-dual-photos" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
-              <picture>
-                <source srcSet="/images/owner-portrait.webp" type="image/webp" />
-                <img
-                  src="/images/owner-portrait.jpg"
-                  alt="Vaishnavi Singh - Aura Studio Founder"
-                  loading="lazy"
-                  decoding="async"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-                />
-              </picture>
+              <img
+                src="/images/airbrush-bridal.jpg"
+                alt="Celebrity Master Artistry - Aura Studio"
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+              />
             </div>
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
-              <picture>
-                <source srcSet="/images/owner-hero.webp" type="image/webp" />
-                <img
-                  src="/images/owner-hero.jpg"
-                  alt="Vaishnavi Singh - Celebrity Couture Makeover"
-                  loading="lazy"
-                  decoding="async"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-                />
-              </picture>
+              <img
+                src="/images/hd-bridal.jpg"
+                alt="Royal HD Bridal Couture - Aura Studio"
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+              />
             </div>
           </div>
 

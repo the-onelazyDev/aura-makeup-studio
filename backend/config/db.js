@@ -81,7 +81,7 @@ const seedDatabaseIfEmpty = async () => {
         {
           name: "Vaishnavi Singh",
           title: "Founder & Lead Celebrity Makeup Artist",
-          avatar: "/images/owner-portrait.jpg",
+          avatar: "/images/airbrush-bridal.jpg",
           specialty: "Royal HD Bridal, Airbrush & Sangeet Glamour"
         }
       );

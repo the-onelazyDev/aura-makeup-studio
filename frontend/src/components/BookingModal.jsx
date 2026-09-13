@@ -192,7 +192,7 @@ export default function BookingModal({
               }}
             >
               <img
-                src={currentArtist?.avatar || '/images/owner-portrait.jpg'}
+                src={currentArtist?.avatar || '/images/airbrush-bridal.jpg'}
                 alt={currentArtist?.name || 'Vaishnavi Singh'}
                 style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #D4AF37', flexShrink: 0 }}
               />
