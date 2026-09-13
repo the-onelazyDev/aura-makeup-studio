@@ -4,10 +4,10 @@ import { Crown, MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube, Messag
 export default function Footer() {
   return (
     <footer id="about" style={{
-      background: '#07070a',
-      borderTop: '1px solid var(--border-gold)',
+      background: '#111827',
+      borderTop: '1px solid #1F2937',
       padding: '60px 40px 30px',
-      color: 'var(--text-muted)'
+      color: '#9CA3AF'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -20,11 +20,11 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-            <Crown size={28} color="#d4af37" />
+            <Crown size={28} color="#D4AF37" />
             <h2 style={{ fontSize: '1.6rem', fontWeight: '700' }} className="gold-text">AURA MAKEUP STUDIO</h2>
           </div>
           <p style={{ fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '20px' }}>
-            Premier luxury makeover studio and bridal salon founded and led by our master celebrity artist in Govindpuri, Modinagar.
+            Premier luxury makeover studio and bridal salon founded and led by master celebrity artist <strong>Vaishnavi Singh</strong> in Govindpuri, Modinagar.
           </p>
           <div style={{ display: 'flex', gap: '12px' }}>
             <a
@@ -42,7 +42,7 @@ export default function Footer() {
                 textDecoration: 'none',
                 fontSize: '0.8rem',
                 fontWeight: '700',
-                border: '1px solid rgba(37, 211, 102, 0.4)'
+                border: '1px solid rgba(37, 211, 102, 0.3)'
               }}
             >
               <MessageCircle size={15} />
@@ -57,11 +57,11 @@ export default function Footer() {
                 padding: '8px 14px',
                 borderRadius: '20px',
                 background: 'rgba(212, 175, 55, 0.15)',
-                color: '#d4af37',
+                color: '#FDE68A',
                 textDecoration: 'none',
                 fontSize: '0.8rem',
                 fontWeight: '700',
-                border: '1px solid var(--border-gold)'
+                border: '1px solid rgba(212, 175, 55, 0.3)'
               }}
             >
               <Phone size={15} />
@@ -72,13 +72,13 @@ export default function Footer() {
 
         {/* Studio Location (Only ONE Location) */}
         <div>
-          <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Studio Location</h4>
+          <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Studio Location</h4>
           <ul style={{ listStyle: 'none', fontSize: '0.9rem', display: 'grid', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-              <MapPin size={18} color="#d4af37" style={{ marginTop: '3px', flexShrink: 0 }} />
+              <MapPin size={18} color="#D4AF37" style={{ marginTop: '3px', flexShrink: 0 }} />
               <div>
-                <strong style={{ color: '#fff' }}>Govindpuri, Modinagar</strong>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Ghaziabad, Uttar Pradesh, India</p>
+                <strong style={{ color: '#FFFFFF' }}>Govindpuri, Modinagar</strong>
+                <p style={{ fontSize: '0.85rem', color: '#9CA3AF' }}>Ghaziabad, Uttar Pradesh, India</p>
               </div>
             </li>
           </ul>
@@ -86,22 +86,22 @@ export default function Footer() {
 
         {/* Studio Contact & Hours */}
         <div>
-          <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Contact & Hours</h4>
+          <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Contact & Hours</h4>
           <ul style={{ listStyle: 'none', fontSize: '0.9rem', display: 'grid', gap: '12px' }}>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Phone size={16} color="#d4af37" />
+              <Phone size={16} color="#D4AF37" />
               <div>
-                <a href="tel:9999250883" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>+91 9999250883</a>
-                <span style={{ color: 'var(--text-muted)' }}> / </span>
-                <a href="tel:7417174025" style={{ color: '#fff', textDecoration: 'none', fontWeight: '600' }}>+91 7417174025</a>
+                <a href="tel:9999250883" style={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: '600' }}>+91 9999250883</a>
+                <span style={{ color: '#9CA3AF' }}> / </span>
+                <a href="tel:7417174025" style={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: '600' }}>+91 7417174025</a>
               </div>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Clock size={16} color="#d4af37" />
+              <Clock size={16} color="#D4AF37" />
               <span>Open Daily: 09:30 AM – 08:30 PM</span>
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Mail size={16} color="#d4af37" />
+              <Mail size={16} color="#D4AF37" />
               <span>aura.modinagar@gmail.com</span>
             </li>
           </ul>
@@ -109,7 +109,7 @@ export default function Footer() {
 
         {/* Signature Promise */}
         <div>
-          <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Our Guarantee</h4>
+          <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Our Guarantee</h4>
           <p style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
             100% Original Global Luxury Cosmetic Brands (Huda Beauty, Charlotte Tilbury, Dior, MAC, NARS, Anastasia Beverly Hills). Certified Clean & Sanitized Setup.
           </p>
@@ -118,10 +118,10 @@ export default function Footer() {
 
       <div style={{
         textAlign: 'center',
-        borderTop: '1px solid var(--border-subtle)',
+        borderTop: '1px solid #1F2937',
         paddingTop: '20px',
         fontSize: '0.8rem',
-        color: '#6e6e82'
+        color: '#6B7280'
       }}>
         © {new Date().getFullYear()} AURA Luxury Makeup Studio, Govindpuri, Modinagar. All Rights Reserved.
       </div>

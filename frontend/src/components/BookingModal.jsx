@@ -85,7 +85,8 @@ export default function BookingModal({
         overflowY: 'auto',
         padding: '28px 20px',
         position: 'relative',
-        boxShadow: '0 25px 60px rgba(0,0,0,0.9), 0 0 40px rgba(212,175,55,0.2)'
+        background: '#FFFFFF',
+        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.15)'
       }}>
         {/* Close Button */}
         <button onClick={onClose} style={{
@@ -111,9 +112,9 @@ export default function BookingModal({
 
         {errorMsg && (
           <div style={{
-            background: 'rgba(255, 77, 77, 0.15)',
-            border: '1px solid rgba(255, 77, 77, 0.4)',
-            color: '#ff9999',
+            background: '#FEF2F2',
+            border: '1px solid #FECACA',
+            color: '#DC2626',
             padding: '10px 14px',
             borderRadius: '10px',
             marginBottom: '16px',
@@ -130,8 +131,8 @@ export default function BookingModal({
                 onClick={onOpenAuth}
                 style={{
                   marginLeft: 'auto',
-                  background: '#d4af37',
-                  color: '#000',
+                  background: '#D4AF37',
+                  color: '#111827',
                   border: 'none',
                   padding: '3px 8px',
                   borderRadius: '6px',
@@ -149,7 +150,7 @@ export default function BookingModal({
         <form onSubmit={handleSubmit}>
           {/* Step 1: Service */}
           <div style={{ marginBottom: '18px' }}>
-            <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', color: '#9A7412', fontWeight: '700', marginBottom: '6px' }}>
               1. SELECT SERVICE / PACKAGE
             </label>
             <select
@@ -159,9 +160,9 @@ export default function BookingModal({
                 width: '100%',
                 padding: '12px',
                 borderRadius: '10px',
-                background: '#181824',
-                border: '1px solid var(--border-gold)',
-                color: '#fff',
+                background: '#FFFFFF',
+                border: '1px solid #D1D5DB',
+                color: '#111827',
                 fontSize: '0.9rem',
                 outline: 'none'
               }}
@@ -176,15 +177,15 @@ export default function BookingModal({
 
           {/* Step 2: Master Artist (Vaishnavi Singh featured card) */}
           <div style={{ marginBottom: '18px' }}>
-            <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', color: '#9A7412', fontWeight: '700', marginBottom: '6px' }}>
               2. MAKEOVER ARTIST
             </label>
             <div
               style={{
                 padding: '12px 14px',
                 borderRadius: '12px',
-                border: '2px solid #d4af37',
-                background: 'rgba(212, 175, 55, 0.12)',
+                border: '1.5px solid #FDE68A',
+                background: '#FFFBEB',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px'
@@ -193,11 +194,11 @@ export default function BookingModal({
               <img
                 src={currentArtist?.avatar || '/images/owner-portrait.jpg'}
                 alt={currentArtist?.name || 'Vaishnavi Singh'}
-                style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #d4af37', flexShrink: 0 }}
+                style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #D4AF37', flexShrink: 0 }}
               />
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#fff' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#111827' }}>
                     {currentArtist?.name || 'Vaishnavi Singh'}
                   </span>
                   <span className="badge" style={{ padding: '2px 6px', fontSize: '0.65rem' }}>Founder</span>
@@ -212,7 +213,7 @@ export default function BookingModal({
           {/* Step 3: Date & Time Slot */}
           <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '18px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: '#9A7412', fontWeight: '700', marginBottom: '6px' }}>
                 3. APPOINTMENT DATE
               </label>
               <input
@@ -224,9 +225,9 @@ export default function BookingModal({
                   width: '100%',
                   padding: '11px',
                   borderRadius: '10px',
-                  background: '#181824',
-                  border: '1px solid var(--border-gold)',
-                  color: '#fff',
+                  background: '#FFFFFF',
+                  border: '1px solid #D1D5DB',
+                  color: '#111827',
                   fontSize: '0.85rem',
                   outline: 'none'
                 }}
@@ -234,7 +235,7 @@ export default function BookingModal({
             </div>
 
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: '#9A7412', fontWeight: '700', marginBottom: '6px' }}>
                 4. TIME SLOT
               </label>
               <select
@@ -244,9 +245,9 @@ export default function BookingModal({
                   width: '100%',
                   padding: '11px',
                   borderRadius: '10px',
-                  background: '#181824',
-                  border: '1px solid var(--border-gold)',
-                  color: '#fff',
+                  background: '#FFFFFF',
+                  border: '1px solid #D1D5DB',
+                  color: '#111827',
                   fontSize: '0.85rem',
                   outline: 'none'
                 }}
@@ -274,9 +275,9 @@ export default function BookingModal({
                   width: '100%',
                   padding: '11px',
                   borderRadius: '10px',
-                  background: '#181824',
-                  border: '1px solid var(--border-subtle)',
-                  color: '#fff',
+                  background: '#FFFFFF',
+                  border: '1px solid #D1D5DB',
+                  color: '#111827',
                   fontSize: '0.85rem',
                   outline: 'none'
                 }}
@@ -296,14 +297,36 @@ export default function BookingModal({
                   width: '100%',
                   padding: '11px',
                   borderRadius: '10px',
-                  background: '#181824',
-                  border: '1px solid var(--border-subtle)',
-                  color: '#fff',
+                  background: '#FFFFFF',
+                  border: '1px solid #D1D5DB',
+                  color: '#111827',
                   fontSize: '0.85rem',
                   outline: 'none'
                 }}
               />
             </div>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
+              Styling Notes / Requirements (Optional)
+            </label>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              placeholder="E.g. Saree draping, bridal dupatta setting, skin sensitivity..."
+              rows={2}
+              style={{
+                width: '100%',
+                padding: '10px',
+                borderRadius: '10px',
+                background: '#FFFFFF',
+                border: '1px solid #D1D5DB',
+                color: '#111827',
+                fontSize: '0.85rem',
+                outline: 'none'
+              }}
+            />
           </div>
 
           <div style={{ marginBottom: '20px' }}>

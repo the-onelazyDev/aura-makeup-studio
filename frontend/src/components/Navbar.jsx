@@ -12,14 +12,15 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      background: 'rgba(11, 11, 16, 0.94)',
+      background: 'rgba(255, 255, 255, 0.96)',
       backdropFilter: 'blur(16px)',
-      borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
+      borderBottom: '1px solid var(--border-subtle)',
       padding: '12px 24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: '12px'
+      gap: '12px',
+      boxShadow: '0 1px 10px rgba(0, 0, 0, 0.03)'
     }}>
       {/* Brand Logo */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', flexShrink: 0 }}>
@@ -31,13 +32,13 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 0 16px rgba(212, 175, 55, 0.4)'
+          boxShadow: '0 2px 10px rgba(197, 155, 39, 0.3)'
         }}>
-          <Crown size={20} color="#0b0b10" />
+          <Crown size={20} color="#111827" />
         </div>
         <div>
           <h1 style={{ fontSize: '1.35rem', fontWeight: '700', lineHeight: 1 }} className="gold-text">AURA</h1>
-          <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '1.2px', color: '#d4af37', fontWeight: '600', display: 'block' }}>
+          <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '1.2px', color: '#9A7412', fontWeight: '700', display: 'block' }}>
             Govindpuri, Modinagar
           </span>
         </div>
@@ -45,9 +46,9 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
 
       {/* Desktop Nav Links */}
       <div className="nav-menu-desktop" style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-        <a href="#services" style={{ color: '#e2e2ee', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Services</a>
-        <a href="#artists" style={{ color: '#e2e2ee', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Vaishnavi Singh</a>
-        <a href="#about" style={{ color: '#e2e2ee', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Location & Contact</a>
+        <a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Services</a>
+        <a href="#artists" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Vaishnavi Singh</a>
+        <a href="#about" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Location & Contact</a>
       </div>
 
       {/* Actions */}
@@ -58,9 +59,9 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
             onClick={onOpenAdmin}
             className="nav-action-btn"
             style={{
-              background: 'rgba(212, 175, 55, 0.2)',
-              border: '1px solid #d4af37',
-              color: '#f3e5ab',
+              background: '#FFFBEB',
+              border: '1px solid #FDE68A',
+              color: '#926C05',
               padding: '7px 12px',
               borderRadius: '30px',
               fontSize: '0.75rem',
@@ -68,11 +69,10 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
-              gap: '5px',
-              boxShadow: '0 0 12px rgba(212, 175, 55, 0.3)'
+              gap: '5px'
             }}
           >
-            <ShieldCheck size={14} color="#d4af37" />
+            <ShieldCheck size={14} color="#926C05" />
             <span>Admin</span>
           </button>
         )}
@@ -87,18 +87,19 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
               display: 'flex',
               alignItems: 'center',
               gap: '5px',
-              background: 'rgba(212, 175, 55, 0.1)',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              background: '#F3F4F6',
+              border: '1px solid #E5E7EB',
               padding: '5px 10px',
               borderRadius: '30px',
-              fontSize: '0.75rem'
+              fontSize: '0.75rem',
+              color: '#111827'
             }}>
-              <User size={13} color="#d4af37" />
+              <User size={13} color="#9A7412" />
               <span style={{ fontWeight: '600' }}>{currentUser.name.split(' ')[0]}</span>
               <button
                 onClick={handleLogout}
                 title="Logout"
-                style={{ background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer', marginLeft: '2px', display: 'flex', alignItems: 'center' }}
+                style={{ background: 'none', border: 'none', color: '#EF4444', cursor: 'pointer', marginLeft: '2px', display: 'flex', alignItems: 'center' }}
               >
                 <LogOut size={13} />
               </button>

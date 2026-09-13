@@ -7,7 +7,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
   return (
     <section id="artists" style={{
       padding: '70px 30px',
-      background: 'linear-gradient(180deg, var(--bg-dark) 0%, #101018 100%)',
+      background: '#FFFFFF',
       borderTop: '1px solid var(--border-subtle)',
       borderBottom: '1px solid var(--border-subtle)',
       position: 'relative'
@@ -17,7 +17,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
         <div className="section-title" style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '10px', flexWrap: 'wrap' }}>
             <span className="badge">Studio Founder & Master Artist</span>
-            <span className="badge" style={{ background: 'rgba(74, 222, 128, 0.15)', borderColor: 'rgba(74, 222, 128, 0.4)', color: '#4ade80' }}>
+            <span className="badge" style={{ background: '#ECFDF5', borderColor: '#A7F3D0', color: '#047857' }}>
               <MapPin size={12} />
               Govindpuri, Modinagar
             </span>
@@ -37,11 +37,11 @@ export default function ArtistSection({ artists, onSelectArtist }) {
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '36px',
           alignItems: 'center',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 35px rgba(212,175,55,0.2)'
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.03)'
         }}>
           {/* Dual Photo Gallery */}
           <div className="founder-dual-photos" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-            <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '360px' }}>
+            <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <picture>
                 <source srcSet="/images/owner-portrait.webp" type="image/webp" />
                 <img
@@ -53,7 +53,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
                 />
               </picture>
             </div>
-            <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '360px' }}>
+            <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <picture>
                 <source srcSet="/images/owner-hero.webp" type="image/webp" />
                 <img
@@ -73,7 +73,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <h3 style={{ fontSize: '2.0rem', fontWeight: '700', marginBottom: '4px' }} className="gold-text">
               Vaishnavi Singh
             </h3>
-            <p style={{ fontSize: '0.95rem', color: '#d4af37', fontWeight: '600', marginBottom: '14px' }}>
+            <p style={{ fontSize: '0.95rem', color: '#9A7412', fontWeight: '700', marginBottom: '14px' }}>
               Founder & Lead Celebrity Makeup Artist • Govindpuri, Modinagar
             </p>
 
@@ -88,16 +88,16 @@ export default function ArtistSection({ artists, onSelectArtist }) {
               gap: '10px',
               marginBottom: '24px'
             }}>
-              <div className="founder-stat-box" style={{ background: '#161622', padding: '10px 8px', borderRadius: '10px', textAlign: 'center', border: '1px solid var(--border-subtle)' }}>
-                <div className="stat-val" style={{ fontWeight: '700', color: '#d4af37', fontSize: '1.05rem' }}>10+ Yrs</div>
+              <div className="founder-stat-box" style={{ background: '#F9FAFB', padding: '10px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #E5E7EB' }}>
+                <div className="stat-val" style={{ fontWeight: '700', color: '#9A7412', fontSize: '1.05rem' }}>10+ Yrs</div>
                 <div className="stat-lbl" style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Experience</div>
               </div>
-              <div className="founder-stat-box" style={{ background: '#161622', padding: '10px 8px', borderRadius: '10px', textAlign: 'center', border: '1px solid var(--border-subtle)' }}>
-                <div className="stat-val" style={{ fontWeight: '700', color: '#d4af37', fontSize: '1.05rem' }}>5.0 ★</div>
+              <div className="founder-stat-box" style={{ background: '#F9FAFB', padding: '10px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #E5E7EB' }}>
+                <div className="stat-val" style={{ fontWeight: '700', color: '#9A7412', fontSize: '1.05rem' }}>5.0 ★</div>
                 <div className="stat-lbl" style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>850+ Reviews</div>
               </div>
-              <div className="founder-stat-box" style={{ background: '#161622', padding: '10px 8px', borderRadius: '10px', textAlign: 'center', border: '1px solid var(--border-subtle)' }}>
-                <div className="stat-val" style={{ fontWeight: '700', color: '#4ade80', fontSize: '1.05rem' }}>100%</div>
+              <div className="founder-stat-box" style={{ background: '#F9FAFB', padding: '10px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #E5E7EB' }}>
+                <div className="stat-val" style={{ fontWeight: '700', color: '#059669', fontSize: '1.05rem' }}>100%</div>
                 <div className="stat-lbl" style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Luxury Brands</div>
               </div>
             </div>

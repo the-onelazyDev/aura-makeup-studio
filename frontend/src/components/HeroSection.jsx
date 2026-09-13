@@ -9,7 +9,7 @@ export default function HeroSection({ onOpenBooking }) {
       display: 'flex',
       alignItems: 'center',
       padding: '50px 30px',
-      background: 'radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.12) 0%, rgba(11, 11, 16, 1) 70%)',
+      background: 'radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.08) 0%, rgba(250, 250, 250, 1) 70%)',
       overflow: 'hidden'
     }}>
       {/* Background Decorative Element */}
@@ -20,7 +20,7 @@ export default function HeroSection({ onOpenBooking }) {
         width: '500px',
         height: '500px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%)',
+        background: 'radial-gradient(circle, rgba(212, 175, 55, 0.10) 0%, rgba(255,255,255,0) 70%)',
         filter: 'blur(60px)',
         pointerEvents: 'none'
       }} />
@@ -38,11 +38,11 @@ export default function HeroSection({ onOpenBooking }) {
         <div>
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' }}>
             <div className="badge">
-              <Award size={13} color="#d4af37" />
+              <Award size={13} color="#9A7412" />
               <span>Celebrity Makeover Studio</span>
             </div>
-            <div className="badge" style={{ background: 'rgba(74, 222, 128, 0.15)', borderColor: 'rgba(74, 222, 128, 0.4)', color: '#4ade80' }}>
-              <MapPin size={12} color="#4ade80" />
+            <div className="badge" style={{ background: '#ECFDF5', borderColor: '#A7F3D0', color: '#047857' }}>
+              <MapPin size={12} color="#047857" />
               <span>Govindpuri, Modinagar</span>
             </div>
           </div>
