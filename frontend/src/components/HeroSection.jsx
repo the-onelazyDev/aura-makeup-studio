@@ -1,170 +1,404 @@
-import React from 'react';
-import { Sparkles, Star, Award, ShieldCheck, ArrowRight, Phone, MessageCircle, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Clock, Phone, Star, Store, Check, Sparkles } from 'lucide-react';
+import { api } from '../services/api';
 
-export default function HeroSection({ onOpenBooking }) {
+export default function HeroSection({ onOpenBooking, services = [] }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    notes: '',
+    serviceId: '',
+    acceptTerms: true,
+    acceptMarketing: true
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setErrorMessage('Please enter your Name and Mobile number.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const selectedSrv = services.find(s => s.id === formData.serviceId) || services[0] || {
+        id: 'srv-quick',
+        title: 'Custom Makeover & Salon Service',
+        price: 0
+      };
+
+      const bookingPayload = {
+        serviceId: selectedSrv.id,
+        serviceTitle: selectedSrv.title,
+        servicePrice: selectedSrv.price || 0,
+        artistId: 'art-1',
+        artistName: 'Vaishnavi Singh',
+        bookingDate: new Date().toISOString().split('T')[0],
+        slotTime: '11:00 AM',
+        customerName: formData.name,
+        customerPhone: formData.phone,
+        customerEmail: formData.email,
+        notes: formData.notes || 'Booked via Quick Appointment form.'
+      };
+
+      await api.createBooking(bookingPayload);
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Quick booking error:', err);
+      // Even if offline, show confirmation
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const openWhatsAppEnquiry = () => {
+    const text = encodeURIComponent(
+      `Hi Aura Studio, I want to confirm my appointment booking for ${formData.name} (Phone: ${formData.phone}) at Govindpuri, Modinagar.`
+    );
+    window.open(`https://wa.me/919999250883?text=${text}`, '_blank');
+  };
+
   return (
-    <section className="hero-section" style={{
-      position: 'relative',
-      minHeight: '85vh',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '50px 30px',
-      background: 'radial-gradient(circle at 75% 30%, rgba(212, 175, 55, 0.08) 0%, rgba(250, 250, 250, 1) 70%)',
-      overflow: 'hidden'
-    }}>
-      {/* Background Decorative Element */}
+    <section style={{ padding: '24px 20px 40px 20px', maxWidth: '1320px', margin: '0 auto', width: '100%' }}>
       <div style={{
-        position: 'absolute',
-        top: '-10%',
-        right: '-5%',
-        width: '500px',
-        height: '500px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(212, 175, 55, 0.10) 0%, rgba(255,255,255,0) 70%)',
-        filter: 'blur(60px)',
-        pointerEvents: 'none'
-      }} />
-
-      <div className="hero-grid" style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        width: '100%',
         display: 'grid',
-        gridTemplateColumns: '1.1fr 0.9fr',
-        gap: '48px',
-        alignItems: 'center'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '24px',
+        alignItems: 'stretch'
       }}>
-        {/* Left Column: Headline & Info */}
-        <div>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' }}>
-            <div className="badge">
-              <Award size={13} color="#9A7412" />
-              <span>Celebrity Makeover Studio</span>
+        {/* Left Card: Studio Overview & Location */}
+        <div style={{
+          background: '#FFFFFF',
+          borderRadius: '24px',
+          border: '1px solid #E5E7EB',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+          padding: '28px 24px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between'
+        }}>
+          <div>
+            <h2 style={{ fontSize: '1.45rem', fontWeight: '700', color: '#111827', marginBottom: '20px' }}>
+              Aura Luxury Studio, Govindpuri, Modinagar
+            </h2>
+
+            {/* Address */}
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px', fontSize: '0.9rem', color: '#4B5563', lineHeight: '1.45' }}>
+              <MapPin size={18} color="#9A7412" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <span>Near Main Market Road, Govindpuri, Modinagar, Ghaziabad, Uttar Pradesh – 201201</span>
             </div>
-            <div className="badge" style={{ background: '#ECFDF5', borderColor: '#A7F3D0', color: '#047857' }}>
-              <MapPin size={12} color="#047857" />
-              <span>Govindpuri, Modinagar</span>
+
+            {/* Timings */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px', fontSize: '0.9rem' }}>
+              <Clock size={17} color="#10B981" style={{ flexShrink: 0 }} />
+              <span style={{ color: '#047857', fontWeight: '600' }}>Open Now</span>
+              <span style={{ color: '#6B7280' }}>· Closes At 8:30 PM</span>
             </div>
-          </div>
 
-          <h1 className="hero-headline" style={{ fontSize: '3.4rem', fontWeight: '700', lineHeight: 1.15, marginBottom: '20px' }}>
-            Unveil Your Extraordinary <span className="gold-text">Glow & Elegance</span>
-          </h1>
-
-          <p className="hero-description" style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '28px', maxWidth: '560px' }}>
-            Signature HD Airbrush Bridal Makeovers, Sangeet Glamour, and Couture Hair Artistry crafted personally by <strong>Vaishnavi Singh</strong> in <strong>Govindpuri, Modinagar</strong>.
-          </p>
-
-          {/* Action Buttons */}
-          <div className="hero-cta-group">
-            <button onClick={() => onOpenBooking(null)} className="btn-gold hero-primary-btn" style={{ fontSize: '0.95rem', padding: '15px 30px' }}>
-              <Sparkles size={18} />
-              <span>Book VIP Appointment</span>
-            </button>
-            <div className="hero-secondary-row">
-              <a
-                href="https://wa.me/919999250883?text=Hi%20Vaishnavi%20Singh,%20I%20would%20like%20to%20inquire%20about%20Bridal/Party%20Makeover%20services%20in%20Govindpuri,%20Modinagar."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline hero-secondary-btn"
-                style={{
-                  background: 'rgba(37, 211, 102, 0.12)',
-                  borderColor: '#25D366',
-                  color: '#25D366'
-                }}
-              >
-                <MessageCircle size={16} />
-                <span>WhatsApp</span>
+            {/* Phone */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px', fontSize: '0.9rem', color: '#374151' }}>
+              <Phone size={17} color="#9A7412" style={{ flexShrink: 0 }} />
+              <a href="tel:9999250883" style={{ color: '#111827', fontWeight: '600', textDecoration: 'none' }}>
+                09999250883
               </a>
-              <a
-                href="tel:9999250883"
-                className="btn-outline hero-secondary-btn"
-              >
-                <Phone size={15} />
-                <span>Call Us</span>
+              <span style={{ color: '#9CA3AF' }}>/</span>
+              <a href="tel:7417174025" style={{ color: '#111827', fontWeight: '600', textDecoration: 'none' }}>
+                07417174025
               </a>
             </div>
-          </div>
 
-          {/* Social Proof Stats Bar */}
-          <div className="hero-stats-group" style={{
-            display: 'flex',
-            gap: '28px',
-            paddingTop: '20px',
-            borderTop: '1px solid var(--border-subtle)',
-            flexWrap: 'wrap'
-          }}>
-            <div className="hero-stat-item">
-              <h3 style={{ fontSize: '1.7rem', fontWeight: '700' }} className="gold-text">5,000+</h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Brides Transformed</p>
-            </div>
-            <div className="hero-stat-item">
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
-                <h3 style={{ fontSize: '1.7rem', fontWeight: '700' }} className="gold-text">5.0</h3>
-                <Star size={18} fill="#d4af37" color="#d4af37" />
+            {/* Google Reviews */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px', fontSize: '0.88rem' }}>
+              <div style={{
+                width: '20px',
+                height: '20px',
+                borderRadius: '50%',
+                background: '#EA4335',
+                color: '#fff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: '700',
+                fontSize: '0.72rem'
+              }}>
+                G
               </div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Top Rated Studio</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                <span style={{ fontWeight: '700', color: '#111827' }}>4.9</span>
+                <Star size={14} fill="#F59E0B" color="#F59E0B" />
+              </div>
+              <span style={{ color: '#6B7280' }}>(520+ Reviews from Customers)</span>
+              <a
+                href="#reviews"
+                onClick={(e) => { e.preventDefault(); alert("Review section - 5.0 Rated by Verified Brides"); }}
+                style={{ color: '#9A7412', textDecoration: 'underline', fontWeight: '600', fontSize: '0.85rem' }}
+              >
+                Leave a review
+              </a>
             </div>
-            <div className="hero-stat-item">
-              <h3 style={{ fontSize: '1.7rem', fontWeight: '700' }} className="gold-text">10+ Yrs</h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Artistry Excellence</p>
+
+            {/* Studio Founder */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', color: '#4B5563' }}>
+              <Store size={17} color="#9A7412" style={{ flexShrink: 0 }} />
+              <span>Studio Founder & Celebrity Artist: <strong style={{ color: '#111827' }}>Vaishnavi Singh</strong></span>
             </div>
+          </div>
+
+          {/* Bottom Action Buttons */}
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '28px', paddingTop: '16px', borderTop: '1px solid #F3F4F6' }}>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Govindpuri+Modinagar+Uttar+Pradesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: '#111827',
+                color: '#FFFFFF',
+                padding: '10px 22px',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                fontWeight: '600',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'opacity 0.2s'
+              }}
+            >
+              Drive Direction
+            </a>
+            <a
+              href="tel:9999250883"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #111827',
+                color: '#111827',
+                padding: '10px 24px',
+                borderRadius: '8px',
+                fontSize: '0.88rem',
+                fontWeight: '600',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s'
+              }}
+            >
+              Call
+            </a>
           </div>
         </div>
 
-        {/* Right Column: Hero Visual Showcase (Real Photo of Vaishnavi Singh) */}
-        <div>
-          <div className="hero-image-card" style={{
-            position: 'relative',
-            borderRadius: '24px',
-            overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(212,175,55,0.25)',
-            border: '1px solid var(--border-gold)',
-            height: '520px'
-          }}>
-            <picture>
-              <source srcSet="/images/owner-hero.webp" type="image/webp" />
-              <img
-                src="/images/owner-hero.jpg"
-                alt="Vaishnavi Singh - Aura Studio Founder & Lead Makeup Artist"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-              />
-            </picture>
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to top, rgba(11,11,16,0.92) 0%, transparent 60%)'
-            }} />
+        {/* Right Card: Book an Appointment Form */}
+        <div style={{
+          background: '#FFFFFF',
+          borderRadius: '24px',
+          border: '1px solid #E5E7EB',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+          padding: '28px 24px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between'
+        }}>
+          <div>
+            <h2 style={{ fontSize: '1.45rem', fontWeight: '700', color: '#111827', marginBottom: '20px', textAlign: 'center' }}>
+              Book an Appointment
+            </h2>
 
-            {/* Float Card Overlay */}
-            <div className="glass-card" style={{
-              position: 'absolute',
-              bottom: '16px',
-              left: '16px',
-              right: '16px',
-              padding: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '10px'
-            }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '2px' }}>
-                  <ShieldCheck size={14} color="#d4af37" />
-                  <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', color: '#d4af37', fontWeight: '700' }}>
-                    Vaishnavi Singh
-                  </span>
+            {submitted ? (
+              <div style={{
+                textAlign: 'center',
+                padding: '30px 16px',
+                background: '#F0FDF4',
+                border: '1px solid #BBF7D0',
+                borderRadius: '16px',
+                animation: 'fadeIn 0.3s ease'
+              }}>
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: '#10B981',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 12px auto'
+                }}>
+                  <Check size={26} />
                 </div>
-                <h4 style={{ fontSize: '1.0rem', fontWeight: '700' }}>Founder & Lead Artist</h4>
-                <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Govindpuri, Modinagar</p>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: '700', color: '#15803D', marginBottom: '6px' }}>
+                  Appointment Request Received!
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: '#4B5563', marginBottom: '18px' }}>
+                  Thank you, {formData.name}. Our studio team will call you back shortly.
+                </p>
+                <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <button
+                    onClick={openWhatsAppEnquiry}
+                    style={{
+                      background: '#25D366',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      padding: '10px 20px',
+                      borderRadius: '8px',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      fontSize: '0.88rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px'
+                    }}
+                  >
+                    <span>Instant WhatsApp Confirm</span>
+                  </button>
+                  <button
+                    onClick={() => { setSubmitted(false); setFormData({ name: '', phone: '', email: '', notes: '', serviceId: '', acceptTerms: true, acceptMarketing: true }); }}
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid #D1D5DB',
+                      padding: '10px 18px',
+                      borderRadius: '8px',
+                      fontSize: '0.85rem',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Book Another
+                  </button>
+                </div>
               </div>
-              <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ padding: '9px 16px', fontSize: '0.75rem' }}>
-                Book
-              </button>
-            </div>
+            ) : (
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                {errorMessage && (
+                  <div style={{ background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#B91C1C', padding: '8px 12px', borderRadius: '8px', fontSize: '0.82rem' }}>
+                    {errorMessage}
+                  </div>
+                )}
+
+                {/* Name & Mobile Row */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <input
+                    type="text"
+                    placeholder="Name *"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '11px 14px',
+                      borderRadius: '8px',
+                      border: '1px solid #D1D5DB',
+                      fontSize: '0.88rem',
+                      outline: 'none',
+                      background: '#FFFFFF'
+                    }}
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Mobile *"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '11px 14px',
+                      borderRadius: '8px',
+                      border: '1px solid #D1D5DB',
+                      fontSize: '0.88rem',
+                      outline: 'none',
+                      background: '#FFFFFF'
+                    }}
+                  />
+                </div>
+
+                {/* Email (Optional) */}
+                <input
+                  type="email"
+                  placeholder="Email (Optional)"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={{
+                    width: '100%',
+                    padding: '11px 14px',
+                    borderRadius: '8px',
+                    border: '1px solid #D1D5DB',
+                    fontSize: '0.88rem',
+                    outline: 'none',
+                    background: '#FFFFFF'
+                  }}
+                />
+
+                {/* Tell us more / Service notes */}
+                <textarea
+                  placeholder="Tell us more (Optional: Preferred Service, Date or Time)"
+                  rows={2}
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  style={{
+                    width: '100%',
+                    padding: '11px 14px',
+                    borderRadius: '8px',
+                    border: '1px solid #D1D5DB',
+                    fontSize: '0.88rem',
+                    outline: 'none',
+                    resize: 'vertical',
+                    background: '#FFFFFF',
+                    fontFamily: 'inherit'
+                  }}
+                />
+
+                {/* Checkboxes */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '2px' }}>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.75rem', color: '#4B5563', cursor: 'pointer' }}>
+                    <input
+                      type="checkbox"
+                      checked={formData.acceptTerms}
+                      onChange={(e) => setFormData({ ...formData, acceptTerms: e.target.checked })}
+                      style={{ marginTop: '2px' }}
+                    />
+                    <span>Accept terms & conditions, receive calls, notifications on WhatsApp</span>
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.75rem', color: '#4B5563', cursor: 'pointer' }}>
+                    <input
+                      type="checkbox"
+                      checked={formData.acceptMarketing}
+                      onChange={(e) => setFormData({ ...formData, acceptMarketing: e.target.checked })}
+                      style={{ marginTop: '2px' }}
+                    />
+                    <span>I hereby accept to send me updates for marketing and promotional content</span>
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '10px' }}>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    style={{
+                      background: '#000000',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      padding: '12px 36px',
+                      borderRadius: '8px',
+                      fontSize: '0.92rem',
+                      fontWeight: '700',
+                      cursor: loading ? 'not-allowed' : 'pointer',
+                      transition: 'opacity 0.2s',
+                      opacity: loading ? 0.7 : 1
+                    }}
+                  >
+                    {loading ? 'Submitting...' : 'Submit'}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>

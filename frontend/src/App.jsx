@@ -127,7 +127,7 @@ export default function App() {
       />
 
       {/* Hero Banner */}
-      <HeroSection onOpenBooking={() => setIsBookingOpen(true)} />
+      <HeroSection onOpenBooking={() => setIsBookingOpen(true)} services={services} />
 
       {/* Service Catalog */}
       <ServiceCatalog
