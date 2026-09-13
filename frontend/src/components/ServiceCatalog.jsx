@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Clock, CheckCircle2, Sparkles } from 'lucide-react';
 
-const CATEGORIES = ["All", "Bridal", "Party Glam", "Airbrush", "Hair Styling", "Skin Spa", "Nail Care"];
+const CATEGORIES = ["All", "Basic Bridal", "HD Bridal", "Airbrush Bridal", "Dewy / Glass Skin", "Matte Royal", "Party & Reception", "Hair & Pre-Bridal"];
 
 export default function ServiceCatalog({ services, onSelectService }) {
   const [selectedCat, setSelectedCat] = useState("All");
