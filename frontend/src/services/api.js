@@ -77,14 +77,16 @@ export const api = {
   // Admin API
   async fetchAdminBookings(status = 'All', search = '') {
     const query = `?status=${encodeURIComponent(status)}&search=${encodeURIComponent(search)}`;
-    const res = await fetch(`${API_BASE_URL}/admin/bookings${query}`);
+    const res = await fetch(`${API_BASE_URL}/admin/bookings${query}`, {
+      headers: getAuthHeaders()
+    });
     return res.json();
   },
 
   async updateAdminBookingStatus(bookingId, status) {
     const res = await fetch(`${API_BASE_URL}/admin/bookings/${bookingId}/status`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: getAuthHeaders(),
       body: JSON.stringify({ status })
     });
     return res.json();
