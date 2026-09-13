@@ -37,8 +37,8 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
         </div>
         <div>
           <h1 style={{ fontSize: '1.4rem', fontWeight: '700', lineHeight: 1 }} className="gold-text">AURA</h1>
-          <span style={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '2px', color: '#a1a1b5' }}>
-            Luxury Studio & Salon
+          <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#d4af37', fontWeight: '600' }}>
+            Govindpuri, Modinagar
           </span>
         </div>
       </div>

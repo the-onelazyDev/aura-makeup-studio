@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Star, Award, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, Star, Award, ShieldCheck, ArrowRight, Phone, MessageCircle, MapPin } from 'lucide-react';
 
 export default function HeroSection({ onOpenBooking }) {
   return (
@@ -36,27 +36,54 @@ export default function HeroSection({ onOpenBooking }) {
       }}>
         {/* Left Column: Headline & Info */}
         <div>
-          <div className="badge" style={{ marginBottom: '20px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-            <Award size={14} color="#d4af37" />
-            <span>Award-Winning Couture Makeover Studio</span>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
+            <div className="badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <Award size={14} color="#d4af37" />
+              <span>Premier Celebrity Makeover Studio</span>
+            </div>
+            <div className="badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(74, 222, 128, 0.15)', borderColor: 'rgba(74, 222, 128, 0.4)', color: '#4ade80' }}>
+              <MapPin size={13} color="#4ade80" />
+              <span>Govindpuri, Modinagar</span>
+            </div>
           </div>
 
           <h1 className="hero-headline" style={{ fontSize: '3.6rem', fontWeight: '700', lineHeight: 1.15, marginBottom: '24px' }}>
             Unveil Your Extraordinary <span className="gold-text">Glow & Elegance</span>
           </h1>
 
-          <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '36px', maxWidth: '580px' }}>
-            Experience world-class HD Airbrush Bridal Makeovers, Sangeet Dewy Glam, and Couture Hair Artistry tailored for Indian Celebrations.
+          <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginBottom: '32px', maxWidth: '580px' }}>
+            Experience signature HD Airbrush Bridal Makeovers, Sangeet Glamour, and Couture Hair Artistry crafted personally by our Studio Founder & Lead Artist in <strong>Govindpuri, Modinagar</strong>.
           </p>
 
-          <div className="hero-cta-group" style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '40px', flexWrap: 'wrap' }}>
-            <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ fontSize: '0.95rem', padding: '16px 32px' }}>
-              <Sparkles size={20} />
+          {/* Action Buttons */}
+          <div className="hero-cta-group" style={{ display: 'flex', gap: '14px', alignItems: 'center', marginBottom: '36px', flexWrap: 'wrap' }}>
+            <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ fontSize: '0.95rem', padding: '16px 30px' }}>
+              <Sparkles size={19} />
               <span>Book VIP Appointment</span>
             </button>
-            <a href="#services" className="btn-outline" style={{ padding: '15px 28px', textDecoration: 'none' }}>
-              <span>View Services</span>
-              <ArrowRight size={18} />
+            <a
+              href="https://wa.me/919999250883?text=Hi%20Aura%20Studio,%20I%20would%20like%20to%20inquire%20about%20Bridal/Party%20Makeover%20services%20in%20Govindpuri,%20Modinagar."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+              style={{
+                padding: '15px 24px',
+                textDecoration: 'none',
+                background: 'rgba(37, 211, 102, 0.12)',
+                borderColor: '#25D366',
+                color: '#25D366'
+              }}
+            >
+              <MessageCircle size={18} />
+              <span>WhatsApp Us</span>
+            </a>
+            <a
+              href="tel:9999250883"
+              className="btn-outline"
+              style={{ padding: '15px 22px', textDecoration: 'none' }}
+            >
+              <Phone size={17} />
+              <span>Call 9999250883</span>
             </a>
           </div>
 
@@ -69,61 +96,65 @@ export default function HeroSection({ onOpenBooking }) {
             flexWrap: 'wrap'
           }}>
             <div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">15,000+</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Stunning Brides Transformed</p>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">5,000+</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Brides Transformed</p>
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">4.9</h3>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">5.0</h3>
                 <Star size={20} fill="#d4af37" color="#d4af37" />
               </div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>1,200+ Verified Reviews</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Top Rated in Modinagar</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">18+ Yrs</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Excellence & Heritage</p>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">10+ Yrs</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Artistry Excellence</p>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Hero Visual Showcase */}
+        {/* Right Column: Hero Visual Showcase (Real Owner Photo) */}
         <div style={{ position: 'relative' }}>
           <div style={{
             position: 'relative',
             borderRadius: '24px',
             overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(212,175,55,0.2)',
+            boxShadow: '0 20px 50px rgba(0,0,0,0.8), 0 0 45px rgba(212,175,55,0.25)',
             border: '1px solid var(--border-gold)'
           }}>
             <img
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop"
-              alt="Bridal Makeup Artistry"
-              style={{ width: '100%', height: '520px', objectFit: 'cover', display: 'block' }}
+              src="/images/owner-hero.jpg"
+              alt="Aura Studio Founder & Lead Makeup Artist"
+              style={{ width: '100%', height: '560px', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
             />
             <div style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to top, rgba(11,11,16,0.95) 0%, transparent 60%)'
+              background: 'linear-gradient(to top, rgba(11,11,16,0.92) 0%, transparent 65%)'
             }} />
 
             {/* Float Card Overlay */}
             <div className="glass-card" style={{
               position: 'absolute',
-              bottom: '24px',
-              left: '24px',
-              right: '24px',
-              padding: '20px',
+              bottom: '20px',
+              left: '20px',
+              right: '20px',
+              padding: '18px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              gap: '12px',
+              flexWrap: 'wrap'
             }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
                   <ShieldCheck size={16} color="#d4af37" />
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#d4af37', fontWeight: '700' }}>Signature Package</span>
+                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#d4af37', fontWeight: '700' }}>
+                    Founder & Lead Artist
+                  </span>
                 </div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: '700' }}>Royal HD Airbrush Bridal Makeover</h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Includes Mink Lashes, Draping & Hair Couture</p>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: '700' }}>Aura Luxury Studio</h4>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Govindpuri, Modinagar</p>
               </div>
               <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ padding: '10px 18px', fontSize: '0.75rem' }}>
                 Book Now
