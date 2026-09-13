@@ -29,6 +29,7 @@ router.get("/overview", authenticateToken, requireAdmin, async (req, res) => {
 
     const activeBookings = bookings.filter((b) => b.status === "Confirmed").length;
     const completedBookings = bookings.filter((b) => b.status === "Completed").length;
+    const cancelledCount = bookings.filter((b) => b.status === "Cancelled").length;
     const totalClients = users.filter((u) => u.role === "appUser").length;
 
     return res.json({
@@ -39,7 +40,10 @@ router.get("/overview", authenticateToken, requireAdmin, async (req, res) => {
         totalRevenue,
         totalBookings: bookings.length,
         activeBookings,
+        confirmedCount: activeBookings,
         completedBookings,
+        completedCount: completedBookings,
+        cancelledCount,
         totalClients,
         totalServices: services.length
       }
@@ -54,15 +58,53 @@ router.get("/overview", authenticateToken, requireAdmin, async (req, res) => {
   }
 });
 
-// GET /api/admin/bookings (All bookings)
+// GET /api/admin/bookings (All bookings with optional filters and real-time stats)
 router.get("/bookings", authenticateToken, requireAdmin, async (req, res) => {
   try {
-    let bookings;
+    const { status, search } = req.query;
+
+    let allBookings;
     if (getIsMongoConnected()) {
-      bookings = await Booking.find().sort({ createdAt: -1 });
+      allBookings = await Booking.find().sort({ createdAt: -1 });
     } else {
-      bookings = [...bookingsStore].sort(
+      allBookings = [...bookingsStore].sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+    }
+
+    // Real-time statistics across all bookings
+    const totalRevenue = allBookings
+      .filter((b) => b.status !== "Cancelled")
+      .reduce((sum, b) => sum + (Number(b.servicePrice) || 0), 0);
+    const confirmedCount = allBookings.filter((b) => b.status === "Confirmed").length;
+    const completedCount = allBookings.filter((b) => b.status === "Completed").length;
+    const cancelledCount = allBookings.filter((b) => b.status === "Cancelled").length;
+
+    const stats = {
+      totalBookings: allBookings.length,
+      totalRevenue,
+      confirmedCount,
+      completedCount,
+      cancelledCount
+    };
+
+    // Filter bookings by status & search
+    let filteredBookings = allBookings;
+    if (status && status !== "All") {
+      filteredBookings = filteredBookings.filter(
+        (b) => b.status.toLowerCase() === status.toLowerCase()
+      );
+    }
+
+    if (search && search.trim() !== "") {
+      const q = search.toLowerCase().trim();
+      filteredBookings = filteredBookings.filter(
+        (b) =>
+          (b.customerName && b.customerName.toLowerCase().includes(q)) ||
+          (b.customerPhone && b.customerPhone.includes(q)) ||
+          (b.serviceTitle && b.serviceTitle.toLowerCase().includes(q)) ||
+          (b.artistName && b.artistName.toLowerCase().includes(q)) ||
+          (b.id && b.id.toLowerCase().includes(q))
       );
     }
 
@@ -71,8 +113,10 @@ router.get("/bookings", authenticateToken, requireAdmin, async (req, res) => {
       status: true,
       message: "All studio bookings retrieved.",
       data: {
-        result: bookings,
-        total: bookings.length
+        bookings: filteredBookings,
+        result: filteredBookings,
+        total: filteredBookings.length,
+        stats
       }
     });
   } catch (error) {

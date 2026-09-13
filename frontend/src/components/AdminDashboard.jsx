@@ -22,10 +22,23 @@ export default function AdminDashboard({ isOpen, onClose }) {
     setLoading(true);
     try {
       const res = await api.fetchAdminBookings(statusFilter, searchQuery);
-      if (res.status && res.data) {
-        setBookings(res.data.bookings || []);
+      if (res && res.status && res.data) {
+        const list = res.data.bookings || res.data.result || [];
+        setBookings(list);
         if (res.data.stats) {
           setStats(res.data.stats);
+        } else {
+          // Fallback stats computation
+          const totalRevenue = list
+            .filter(b => b.status !== 'Cancelled')
+            .reduce((sum, b) => sum + (Number(b.servicePrice) || 0), 0);
+          setStats({
+            totalBookings: list.length,
+            totalRevenue,
+            confirmedCount: list.filter(b => b.status === 'Confirmed').length,
+            completedCount: list.filter(b => b.status === 'Completed').length,
+            cancelledCount: list.filter(b => b.status === 'Cancelled').length
+          });
         }
       }
     } catch (err) {
@@ -43,11 +56,11 @@ export default function AdminDashboard({ isOpen, onClose }) {
     setUpdatingId(id);
     try {
       const res = await api.updateAdminBookingStatus(id, newStatus);
-      if (res.status) {
+      if (res && res.status) {
         setBookings(prev => prev.map(b => b.id === id ? { ...b, status: newStatus } : b));
         loadData();
       } else {
-        alert(res.message || 'Failed to update status.');
+        alert(res?.message || 'Failed to update status.');
       }
     } catch (err) {
       alert('Error connecting to backend server.');
@@ -114,7 +127,7 @@ export default function AdminDashboard({ isOpen, onClose }) {
               Total Salon Revenue
             </span>
             <h3 style={{ fontSize: '1.7rem', fontWeight: '700', marginTop: '4px' }} className="gold-text">
-              ₹{stats.totalRevenue.toLocaleString('en-IN')}
+              ₹{(stats.totalRevenue || 0).toLocaleString('en-IN')}
             </h3>
           </div>
 
@@ -128,7 +141,7 @@ export default function AdminDashboard({ isOpen, onClose }) {
               Total Reservations
             </span>
             <h3 style={{ fontSize: '1.7rem', fontWeight: '700', marginTop: '4px', color: '#fff' }}>
-              {stats.totalBookings}
+              {stats.totalBookings || 0}
             </h3>
           </div>
 
@@ -142,7 +155,7 @@ export default function AdminDashboard({ isOpen, onClose }) {
               Confirmed Appointments
             </span>
             <h3 style={{ fontSize: '1.7rem', fontWeight: '700', marginTop: '4px', color: '#4ade80' }}>
-              {stats.confirmedCount}
+              {stats.confirmedCount || 0}
             </h3>
           </div>
 
@@ -156,7 +169,7 @@ export default function AdminDashboard({ isOpen, onClose }) {
               Cancelled Requests
             </span>
             <h3 style={{ fontSize: '1.7rem', fontWeight: '700', marginTop: '4px', color: '#f87171' }}>
-              {stats.cancelledCount}
+              {stats.cancelledCount || 0}
             </h3>
           </div>
         </div>
