@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, Calendar, Clock, User, Phone, Check, AlertCircle } from 'lucide-react';
+import { X, Sparkles, Calendar, Clock, User, Phone, Check, AlertCircle, ShieldCheck } from 'lucide-react';
 import { api } from '../services/api';
 
 export default function BookingModal({
@@ -15,8 +15,11 @@ export default function BookingModal({
 }) {
   if (!isOpen) return null;
 
-  const [selectedServiceId, setSelectedServiceId] = useState(preselectedService?.id || services[0]?.id || '');
-  const [selectedArtistId, setSelectedArtistId] = useState(preselectedArtist?.id || artists[0]?.id || '');
+  const defaultArtistId = preselectedArtist?.id || (artists && artists[0]?.id) || 'art-1';
+  const defaultServiceId = preselectedService?.id || (services && services[0]?.id) || '';
+
+  const [selectedServiceId, setSelectedServiceId] = useState(defaultServiceId);
+  const [selectedArtistId, setSelectedArtistId] = useState(defaultArtistId);
   const [bookingDate, setBookingDate] = useState(new Date().toISOString().split('T')[0]);
   const [selectedSlot, setSelectedSlot] = useState('10:00 AM');
   const [customerName, setCustomerName] = useState(currentUser?.name || '');
@@ -25,8 +28,14 @@ export default function BookingModal({
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const currentService = services.find(s => s.id === selectedServiceId);
-  const currentArtist = artists.find(a => a.id === selectedArtistId);
+  const currentService = services.find(s => s.id === selectedServiceId) || services[0];
+  const currentArtist = artists.find(a => a.id === selectedArtistId) || artists[0] || {
+    id: 'art-1',
+    name: 'Vaishnavi Singh',
+    title: 'Founder & Lead Celebrity Makeup Artist',
+    avatar: '/images/owner-portrait.jpg',
+    rating: 5.0
+  };
   const availableSlots = currentArtist?.availableSlots || ["10:00 AM", "01:30 PM", "04:30 PM", "07:00 PM"];
 
   const handleSubmit = async (e) => {
@@ -42,8 +51,8 @@ export default function BookingModal({
     try {
       const payload = {
         userId: currentUser.id,
-        serviceId: selectedServiceId,
-        artistId: selectedArtistId,
+        serviceId: selectedServiceId || currentService?.id,
+        artistId: selectedArtistId || currentArtist?.id,
         bookingDate,
         slotTime: selectedSlot,
         customerName: customerName || currentUser.name,
@@ -71,32 +80,33 @@ export default function BookingModal({
     <div className="modal-overlay">
       <div className="glass-card" style={{
         width: '100%',
-        maxWidth: '680px',
+        maxWidth: '640px',
         maxHeight: '90vh',
         overflowY: 'auto',
-        padding: '32px',
+        padding: '28px 20px',
         position: 'relative',
         boxShadow: '0 25px 60px rgba(0,0,0,0.9), 0 0 40px rgba(212,175,55,0.2)'
       }}>
         {/* Close Button */}
         <button onClick={onClose} style={{
           position: 'absolute',
-          top: '20px',
-          right: '20px',
+          top: '16px',
+          right: '16px',
           background: 'none',
           border: 'none',
           color: 'var(--text-muted)',
           cursor: 'pointer'
         }}>
-          <X size={24} />
+          <X size={22} />
         </button>
 
         {/* Title */}
-        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div className="badge" style={{ marginBottom: '8px', display: 'inline-block' }}>VIP Reservation</div>
-          <h2 style={{ fontSize: '2rem', fontWeight: '700' }}>
+        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <div className="badge" style={{ marginBottom: '6px' }}>VIP Reservation</div>
+          <h2 style={{ fontSize: '1.7rem', fontWeight: '700' }}>
             Book Your <span className="gold-text">Makeover Appointment</span>
           </h2>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Govindpuri, Modinagar</p>
         </div>
 
         {errorMsg && (
@@ -104,15 +114,15 @@ export default function BookingModal({
             background: 'rgba(255, 77, 77, 0.15)',
             border: '1px solid rgba(255, 77, 77, 0.4)',
             color: '#ff9999',
-            padding: '12px 16px',
+            padding: '10px 14px',
             borderRadius: '10px',
-            marginBottom: '20px',
+            marginBottom: '16px',
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
-            fontSize: '0.9rem'
+            gap: '8px',
+            fontSize: '0.85rem'
           }}>
-            <AlertCircle size={18} />
+            <AlertCircle size={16} />
             <span>{errorMsg}</span>
             {!currentUser && (
               <button
@@ -123,14 +133,14 @@ export default function BookingModal({
                   background: '#d4af37',
                   color: '#000',
                   border: 'none',
-                  padding: '4px 10px',
+                  padding: '3px 8px',
                   borderRadius: '6px',
                   fontWeight: '700',
                   cursor: 'pointer',
-                  fontSize: '0.75rem'
+                  fontSize: '0.72rem'
                 }}
               >
-                Sign In Now
+                Sign In
               </button>
             )}
           </div>
@@ -138,8 +148,8 @@ export default function BookingModal({
 
         <form onSubmit={handleSubmit}>
           {/* Step 1: Service */}
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', color: '#d4af37', fontWeight: '600', marginBottom: '8px' }}>
+          <div style={{ marginBottom: '18px' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
               1. SELECT SERVICE / PACKAGE
             </label>
             <select
@@ -147,12 +157,12 @@ export default function BookingModal({
               onChange={(e) => setSelectedServiceId(e.target.value)}
               style={{
                 width: '100%',
-                padding: '14px',
+                padding: '12px',
                 borderRadius: '10px',
                 background: '#181824',
                 border: '1px solid var(--border-gold)',
                 color: '#fff',
-                fontSize: '0.95rem',
+                fontSize: '0.9rem',
                 outline: 'none'
               }}
             >
@@ -164,45 +174,45 @@ export default function BookingModal({
             </select>
           </div>
 
-          {/* Step 2: Master Artist */}
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', color: '#d4af37', fontWeight: '600', marginBottom: '8px' }}>
-              2. CHOOSE MASTER ARTIST
+          {/* Step 2: Master Artist (Vaishnavi Singh featured card) */}
+          <div style={{ marginBottom: '18px' }}>
+            <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
+              2. MAKEOVER ARTIST
             </label>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '12px' }}>
-              {artists.map((artist) => {
-                const isSelected = selectedArtistId === artist.id;
-                return (
-                  <div
-                    key={artist.id}
-                    onClick={() => setSelectedArtistId(artist.id)}
-                    style={{
-                      padding: '12px',
-                      borderRadius: '12px',
-                      border: isSelected ? '2px solid #d4af37' : '1px solid var(--border-subtle)',
-                      background: isSelected ? 'rgba(212, 175, 55, 0.15)' : '#181824',
-                      textAlign: 'center',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    <img
-                      src={artist.avatar}
-                      alt={artist.name}
-                      style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 6px' }}
-                    />
-                    <div style={{ fontSize: '0.85rem', fontWeight: '700' }}>{artist.name.split(' ')[0]}</div>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{artist.rating} ★</div>
-                  </div>
-                );
-              })}
+            <div
+              style={{
+                padding: '12px 14px',
+                borderRadius: '12px',
+                border: '2px solid #d4af37',
+                background: 'rgba(212, 175, 55, 0.12)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px'
+              }}
+            >
+              <img
+                src={currentArtist?.avatar || '/images/owner-portrait.jpg'}
+                alt={currentArtist?.name || 'Vaishnavi Singh'}
+                style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #d4af37', flexShrink: 0 }}
+              />
+              <div style={{ flex: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#fff' }}>
+                    {currentArtist?.name || 'Vaishnavi Singh'}
+                  </span>
+                  <span className="badge" style={{ padding: '2px 6px', fontSize: '0.65rem' }}>Founder</span>
+                </div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                  {currentArtist?.specialty || 'Royal Bridal & HD Airbrush Specialist'} • 5.0 ★
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Step 3: Date & Time Slot */}
-          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
+          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '18px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.85rem', color: '#d4af37', fontWeight: '600', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
                 3. APPOINTMENT DATE
               </label>
               <input
@@ -212,19 +222,19 @@ export default function BookingModal({
                 onChange={(e) => setBookingDate(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '12px',
+                  padding: '11px',
                   borderRadius: '10px',
                   background: '#181824',
                   border: '1px solid var(--border-gold)',
                   color: '#fff',
-                  fontSize: '0.9rem',
+                  fontSize: '0.85rem',
                   outline: 'none'
                 }}
               />
             </div>
 
             <div>
-              <label style={{ display: 'block', fontSize: '0.85rem', color: '#d4af37', fontWeight: '600', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: '#d4af37', fontWeight: '700', marginBottom: '6px' }}>
                 4. TIME SLOT
               </label>
               <select
@@ -232,12 +242,12 @@ export default function BookingModal({
                 onChange={(e) => setSelectedSlot(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '12px',
+                  padding: '11px',
                   borderRadius: '10px',
                   background: '#181824',
                   border: '1px solid var(--border-gold)',
                   color: '#fff',
-                  fontSize: '0.9rem',
+                  fontSize: '0.85rem',
                   outline: 'none'
                 }}
               >
@@ -249,9 +259,9 @@ export default function BookingModal({
           </div>
 
           {/* Step 4: Contact & Notes */}
-          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
+          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '18px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
                 Customer Name
               </label>
               <input
@@ -262,18 +272,18 @@ export default function BookingModal({
                 required
                 style={{
                   width: '100%',
-                  padding: '12px',
+                  padding: '11px',
                   borderRadius: '10px',
                   background: '#181824',
                   border: '1px solid var(--border-subtle)',
                   color: '#fff',
-                  fontSize: '0.9rem',
+                  fontSize: '0.85rem',
                   outline: 'none'
                 }}
               />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
                 Phone Number
               </label>
               <input
@@ -284,35 +294,35 @@ export default function BookingModal({
                 required
                 style={{
                   width: '100%',
-                  padding: '12px',
+                  padding: '11px',
                   borderRadius: '10px',
                   background: '#181824',
                   border: '1px solid var(--border-subtle)',
                   color: '#fff',
-                  fontSize: '0.9rem',
+                  fontSize: '0.85rem',
                   outline: 'none'
                 }}
               />
             </div>
           </div>
 
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
-              Special Styling Requirements / Notes (Optional)
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
+              Styling Notes / Requirements (Optional)
             </label>
             <textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="E.g. Saree draping required, long hair extensions, skin allergy details..."
+              placeholder="E.g. Saree draping, bridal dupatta setting, skin sensitivity..."
               rows={2}
               style={{
                 width: '100%',
-                padding: '12px',
+                padding: '10px',
                 borderRadius: '10px',
                 background: '#181824',
                 border: '1px solid var(--border-subtle)',
                 color: '#fff',
-                fontSize: '0.9rem',
+                fontSize: '0.85rem',
                 outline: 'none',
                 resize: 'none'
               }}
@@ -324,21 +334,22 @@ export default function BookingModal({
             <div style={{
               background: 'rgba(212, 175, 55, 0.08)',
               border: '1px solid var(--border-gold)',
-              padding: '16px',
+              padding: '14px',
               borderRadius: '12px',
-              marginBottom: '24px',
+              marginBottom: '20px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              gap: '10px'
             }}>
               <div>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block' }}>Total Booking Fee</span>
-                <span style={{ fontSize: '1.4rem', fontWeight: '700' }} className="gold-text">
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block' }}>Total Booking Fee</span>
+                <span style={{ fontSize: '1.3rem', fontWeight: '700' }} className="gold-text">
                   ₹{currentService.price.toLocaleString('en-IN')}
                 </span>
               </div>
-              <div style={{ textAlign: 'right', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                <span>Artist: {currentArtist?.name}</span><br />
+              <div style={{ textAlign: 'right', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                <span>Artist: <strong>{currentArtist?.name || 'Vaishnavi Singh'}</strong></span><br />
                 <span>Slot: {bookingDate} @ {selectedSlot}</span>
               </div>
             </div>
@@ -348,10 +359,10 @@ export default function BookingModal({
             type="submit"
             disabled={loading}
             className="btn-gold"
-            style={{ width: '100%', justifyContent: 'center', padding: '16px', fontSize: '0.95rem' }}
+            style={{ width: '100%', padding: '14px', fontSize: '0.9rem' }}
           >
-            <Sparkles size={18} />
-            <span>{loading ? 'Confirming Reservation...' : 'Confirm VIP Booking'}</span>
+            <Sparkles size={16} />
+            <span>{loading ? 'Confirming...' : 'Confirm VIP Booking'}</span>
           </button>
         </form>
       </div>

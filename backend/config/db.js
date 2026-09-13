@@ -70,11 +70,21 @@ const seedDatabaseIfEmpty = async () => {
       console.log("✨ Seeded default Services catalog into MongoDB.");
     }
 
-    // Seed Artists
+    // Seed Artists / Ensure Vaishnavi Singh is Lead Artist
     const artistCount = await Artist.countDocuments();
     if (artistCount === 0) {
       await Artist.insertMany(INITIAL_ARTISTS);
       console.log("✨ Seeded default Master Artists into MongoDB.");
+    } else {
+      await Artist.findOneAndUpdate(
+        { id: "art-1" },
+        {
+          name: "Vaishnavi Singh",
+          title: "Founder & Lead Celebrity Makeup Artist",
+          avatar: "/images/owner-portrait.jpg",
+          specialty: "Royal HD Bridal, Airbrush & Sangeet Glamour"
+        }
+      );
     }
 
     // Seed Demo Booking
@@ -87,7 +97,7 @@ const seedDatabaseIfEmpty = async () => {
         serviceTitle: "Royal Bridal Signature Makeover",
         servicePrice: 25000,
         artistId: "art-1",
-        artistName: "Meenakshi Dutt",
+        artistName: "Vaishnavi Singh",
         bookingDate: "2026-08-20",
         slotTime: "10:00 AM",
         status: "Confirmed",

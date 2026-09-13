@@ -10,7 +10,7 @@
   --text-muted: #a1a1b5;
   --border-gold: rgba(212, 175, 55, 0.25);
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --glass-bg: rgba(19, 19, 28, 0.85);
+  --glass-bg: rgba(19, 19, 28, 0.88);
   --glass-blur: blur(16px);
   --shadow-gold: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
   --radius-sm: 8px;
@@ -63,7 +63,6 @@ h1, h2, h3, h4 {
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
   border-color: rgba(212, 175, 55, 0.5);
   box-shadow: var(--shadow-gold);
 }
@@ -88,10 +87,11 @@ h1, h2, h3, h4 {
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn-gold:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
   box-shadow: 0 6px 28px rgba(212, 175, 55, 0.45);
 }
 
@@ -100,7 +100,7 @@ h1, h2, h3, h4 {
   color: var(--gold-primary);
   border: 1px solid var(--gold-primary);
   font-weight: 600;
-  padding: 11px 22px;
+  padding: 11px 20px;
   border-radius: 50px;
   cursor: pointer;
   display: inline-flex;
@@ -110,6 +110,7 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
   transition: all 0.3s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn-outline:hover {
@@ -122,14 +123,14 @@ h1, h2, h3, h4 {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(5, 5, 8, 0.88);
-  backdrop-filter: blur(10px);
+  background: rgba(5, 5, 8, 0.9);
+  backdrop-filter: blur(12px);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  animation: fadeIn 0.25s ease-out;
+  animation: fadeIn 0.2s ease-out;
 }
 
 @keyframes fadeIn {
@@ -144,16 +145,28 @@ h1, h2, h3, h4 {
   border: 1px solid var(--border-gold);
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: 30px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile Category Pill Scroll */
+.category-pills-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-dark);
@@ -167,24 +180,24 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   Comprehensive Mobile & Tablet Responsiveness
+   Comprehensive Mobile & Tablet Responsiveness (Pixel Perfect)
    ========================================================================== */
 
-/* Tablets & Small Laptops (<= 992px) */
+/* Tablets (<= 992px) */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    gap: 36px !important;
     text-align: center;
   }
   .hero-headline {
-    font-size: 2.8rem !important;
+    font-size: 2.6rem !important;
   }
   .hero-cta-group {
-    justify-content: center;
+    justify-content: center !important;
   }
   .hero-stats-group {
-    justify-content: center;
+    justify-content: center !important;
   }
   .nav-menu-desktop {
     display: none !important;
@@ -194,59 +207,161 @@ h1, h2, h3, h4 {
 /* Mobile Devices (<= 640px) */
 @media (max-width: 640px) {
   nav {
-    padding: 12px 14px !important;
+    padding: 10px 14px !important;
   }
+  .nav-actions {
+    gap: 6px !important;
+  }
+  .nav-action-btn {
+    padding: 7px 12px !important;
+    font-size: 0.75rem !important;
+  }
+  
   .hero-section {
-    padding: 40px 16px 50px !important;
+    padding: 30px 14px 40px !important;
     min-height: auto !important;
   }
   .hero-headline {
-    font-size: 2.1rem !important;
+    font-size: 2.0rem !important;
     line-height: 1.2 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 14px !important;
   }
+  .hero-description {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+  }
+  
+  /* Hero Call To Actions on Mobile */
   .hero-cta-group {
+    display: flex !important;
     flex-direction: column !important;
+    gap: 10px !important;
     width: 100% !important;
-    gap: 12px !important;
+    margin-bottom: 28px !important;
   }
-  .hero-cta-group .btn-gold,
-  .hero-cta-group .btn-outline {
+  .hero-primary-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  .hero-secondary-row {
+    display: flex !important;
+    gap: 8px !important;
     width: 100% !important;
   }
+  .hero-secondary-btn {
+    flex: 1 !important;
+    padding: 12px 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Hero Stats Counter on Mobile */
   .hero-stats-group {
-    flex-wrap: wrap !important;
-    gap: 20px !important;
-    justify-content: space-around !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    padding-top: 18px !important;
+    text-align: center !important;
   }
+  .hero-stat-item h3 {
+    font-size: 1.4rem !important;
+  }
+  .hero-stat-item p {
+    font-size: 0.72rem !important;
+  }
+  
+  .hero-image-card {
+    height: 380px !important;
+    border-radius: 20px !important;
+  }
+
+  /* Section Padding */
   section {
-    padding: 50px 16px !important;
+    padding: 45px 14px !important;
   }
+  .section-title h2 {
+    font-size: 2.0rem !important;
+  }
+  .section-title p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Category Filter Pills on Mobile: Native Horizontal Scroll */
+  .category-pills-container {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 4px 4px 12px 4px !important;
+    margin-bottom: 28px !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .category-pills-container::-webkit-scrollbar {
+    display: none;
+  }
+  .category-pill-btn {
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Founder Spotlight Section Fixes */
+  .founder-spotlight-card {
+    padding: 20px 16px !important;
+    gap: 24px !important;
+  }
+  .founder-dual-photos {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .founder-photo-box {
+    height: 240px !important;
+    border-radius: 14px !important;
+  }
+  .founder-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 20px !important;
+  }
+  .founder-stat-box {
+    padding: 8px 4px !important;
+  }
+  .founder-stat-box .stat-val {
+    font-size: 0.95rem !important;
+  }
+  .founder-stat-box .stat-lbl {
+    font-size: 0.68rem !important;
+  }
+  
+  .founder-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .founder-cta-group .btn-gold,
+  .founder-cta-group .btn-outline {
+    width: 100% !important;
+    padding: 13px !important;
+  }
+
+  /* Footer */
   footer {
-    padding: 40px 20px 24px !important;
+    padding: 40px 16px 24px !important;
   }
+
+  /* Modals */
   .modal-overlay {
-    padding: 8px !important;
-    align-items: flex-end;
+    padding: 10px !important;
+    align-items: flex-end !important;
   }
-  .glass-card {
+  .modal-overlay .glass-card {
     border-radius: 20px 20px 0 0 !important;
     padding: 24px 16px !important;
-    max-height: 92vh !important;
+    max-height: 90vh !important;
   }
   .form-grid-2col {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
-  }
-}
-
-/* Small Phones (<= 380px) */
-@media (max-width: 380px) {
-  .hero-headline {
-    font-size: 1.85rem !important;
-  }
-  .btn-gold, .btn-outline {
-    padding: 10px 16px !important;
-    font-size: 0.78rem !important;
   }
 }
