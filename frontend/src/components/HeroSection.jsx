@@ -1,8 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Clock, Phone, Star, Store, Check, Sparkles } from 'lucide-react';
 import { api } from '../services/api';
 
+const getStudioTimingStatus = () => {
+  try {
+    const now = new Date();
+    // Indian Standard Time (Asia/Kolkata)
+    const istString = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+    const istDate = new Date(istString);
+    const hours = istDate.getHours();
+    const minutes = istDate.getMinutes();
+    const currentMinutes = hours * 60 + minutes;
+
+    const openMinutes = 9 * 60 + 30;   // 9:30 AM (570 mins)
+    const closeMinutes = 20 * 60 + 30; // 8:30 PM (1230 mins)
+
+    if (currentMinutes >= openMinutes && currentMinutes < closeMinutes) {
+      return {
+        isOpen: true,
+        statusText: 'Open Now',
+        timeText: '· Closes At 8:30 PM',
+        color: '#047857',
+        dotColor: '#10B981',
+        bgColor: '#ECFDF5',
+        borderColor: '#A7F3D0'
+      };
+    } else if (currentMinutes < openMinutes) {
+      return {
+        isOpen: false,
+        statusText: 'Closed Now',
+        timeText: '· Opens Today at 9:30 AM',
+        color: '#DC2626',
+        dotColor: '#EF4444',
+        bgColor: '#FEF2F2',
+        borderColor: '#FECACA'
+      };
+    } else {
+      return {
+        isOpen: false,
+        statusText: 'Closed Now',
+        timeText: '· Opens Tomorrow at 9:30 AM',
+        color: '#DC2626',
+        dotColor: '#EF4444',
+        bgColor: '#FEF2F2',
+        borderColor: '#FECACA'
+      };
+    }
+  } catch (e) {
+    return {
+      isOpen: false,
+      statusText: 'Open Daily',
+      timeText: '· 9:30 AM – 8:30 PM',
+      color: '#047857',
+      dotColor: '#10B981',
+      bgColor: '#ECFDF5',
+      borderColor: '#A7F3D0'
+    };
+  }
+};
+
 export default function HeroSection({ onOpenBooking, services = [] }) {
+  const [timingStatus, setTimingStatus] = useState(getStudioTimingStatus);
+
+  useEffect(() => {
+    setTimingStatus(getStudioTimingStatus());
+    const interval = setInterval(() => {
+      setTimingStatus(getStudioTimingStatus());
+    }, 30000); // refresh every 30s
+    return () => clearInterval(interval);
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -114,10 +181,20 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
             </div>
 
             {/* Timings */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px', fontSize: '0.9rem' }}>
-              <Clock size={17} color="#10B981" style={{ flexShrink: 0 }} />
-              <span style={{ color: '#047857', fontWeight: '600' }}>Open Now</span>
-              <span style={{ color: '#6B7280' }}>· Closes At 8:30 PM</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px', fontSize: '0.9rem', flexWrap: 'wrap' }}>
+              <Clock size={17} color={timingStatus.dotColor} style={{ flexShrink: 0 }} />
+              <span style={{
+                color: timingStatus.color,
+                fontWeight: '700',
+                background: timingStatus.bgColor,
+                border: `1px solid ${timingStatus.borderColor}`,
+                padding: '2px 8px',
+                borderRadius: '6px',
+                fontSize: '0.8rem'
+              }}>
+                {timingStatus.statusText}
+              </span>
+              <span style={{ color: '#6B7280', fontSize: '0.86rem' }}>{timingStatus.timeText}</span>
             </div>
 
             {/* Phone */}
