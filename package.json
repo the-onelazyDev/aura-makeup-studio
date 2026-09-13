@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Aura Luxury Makeup Studio - Monorepo Root",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node server.js",
     "build": "cd backend && npm install",
     "install:backend": "cd backend && npm install",
     "install:frontend": "cd frontend && npm install"
