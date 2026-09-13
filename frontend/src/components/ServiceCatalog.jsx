@@ -111,7 +111,7 @@ export default function ServiceCatalog({ services, onSelectService }) {
                 ))}
               </div>
 
-              {/* Pricing & Duration */}
+              {/* Duration & Booking Action */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -125,14 +125,14 @@ export default function ServiceCatalog({ services, onSelectService }) {
                     <Clock size={13} />
                     <span>{service.duration}</span>
                   </div>
-                  <div style={{ fontSize: '1.4rem', fontWeight: '700' }} className="gold-text">
-                    ₹{service.price.toLocaleString('en-IN')}
+                  <div style={{ fontSize: '0.82rem', fontWeight: '700', color: '#9A7412' }}>
+                    Custom Artistry
                   </div>
                 </div>
 
                 <button onClick={() => onSelectService(service)} className="btn-gold" style={{ padding: '9px 18px', fontSize: '0.78rem' }}>
                   <Sparkles size={14} />
-                  <span>Book Now</span>
+                  <span>Book Makeover</span>
                 </button>
               </div>
             </div>

@@ -169,7 +169,7 @@ export default function BookingModal({
             >
               {services.map((srv) => (
                 <option key={srv.id} value={srv.id}>
-                  {srv.title} — ₹{srv.price.toLocaleString('en-IN')} ({srv.duration})
+                  {srv.title} ({srv.duration})
                 </option>
               ))}
             </select>
@@ -352,11 +352,11 @@ export default function BookingModal({
             />
           </div>
 
-          {/* Pricing Summary */}
+          {/* Package Summary */}
           {currentService && (
             <div style={{
-              background: 'rgba(212, 175, 55, 0.08)',
-              border: '1px solid var(--border-gold)',
+              background: '#FFFBEB',
+              border: '1px solid #FDE68A',
               padding: '14px',
               borderRadius: '12px',
               marginBottom: '20px',
@@ -366,14 +366,14 @@ export default function BookingModal({
               gap: '10px'
             }}>
               <div>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block' }}>Total Booking Fee</span>
-                <span style={{ fontSize: '1.3rem', fontWeight: '700' }} className="gold-text">
-                  ₹{currentService.price.toLocaleString('en-IN')}
+                <span style={{ fontSize: '0.72rem', color: '#9A7412', fontWeight: '700', textTransform: 'uppercase', display: 'block', letterSpacing: '0.5px' }}>Selected Makeover</span>
+                <span style={{ fontSize: '1.05rem', fontWeight: '700', color: '#111827' }}>
+                  {currentService.title}
                 </span>
               </div>
-              <div style={{ textAlign: 'right', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                <span>Artist: <strong>{currentArtist?.name || 'Vaishnavi Singh'}</strong></span><br />
-                <span>Slot: {bookingDate} @ {selectedSlot}</span>
+              <div style={{ textAlign: 'right', fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                <span>Artist: <strong style={{ color: '#111827' }}>{currentArtist?.name || 'Vaishnavi Singh'}</strong></span><br />
+                <span>Slot: <strong>{bookingDate} @ {selectedSlot}</strong></span>
               </div>
             </div>
           )}

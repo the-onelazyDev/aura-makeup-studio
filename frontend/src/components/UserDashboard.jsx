@@ -158,8 +158,8 @@ export default function UserDashboard({ isOpen, onClose, currentUser }) {
                 </div>
 
                 <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px' }}>
-                  <div style={{ fontSize: '1.3rem', fontWeight: '700' }} className="gold-text">
-                    ₹{b.servicePrice?.toLocaleString('en-IN')}
+                  <div style={{ fontSize: '0.85rem', fontWeight: '700', color: '#9A7412' }}>
+                    VIP Booking
                   </div>
 
                   {b.status === 'Confirmed' && (
