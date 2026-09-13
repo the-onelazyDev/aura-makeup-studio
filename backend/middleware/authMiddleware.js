@@ -44,5 +44,6 @@ function requireAdminRole(req, res, next) {
 module.exports = {
   authenticateToken,
   requireAdminRole,
+  requireAdmin: requireAdminRole,
   JWT_SECRET
 };

@@ -1,87 +1,144 @@
 const express = require("express");
-const { bookingsStore, servicesStore, artistsStore, usersStore } = require("../data/store");
-const { authenticateToken, requireAdminRole } = require("../middleware/authMiddleware");
+const Booking = require("../models/Booking");
+const Service = require("../models/Service");
+const User = require("../models/User");
+const { bookingsStore, servicesStore, usersStore } = require("../data/store");
+const { getIsMongoConnected } = require("../config/db");
+const { authenticateToken, requireAdmin } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// Apply auth & admin role middleware to all admin routes
-router.use(authenticateToken, requireAdminRole);
+// GET /api/admin/overview (KPI metrics)
+router.get("/overview", authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    let bookings, services, users;
 
-// GET /api/admin/bookings (Fetch all salon bookings)
-router.get("/bookings", (req, res) => {
-  const { status, search } = req.query;
-  let results = [...bookingsStore];
-
-  if (status && status !== "All") {
-    results = results.filter((b) => b.status.toLowerCase() === status.toLowerCase());
-  }
-
-  if (search) {
-    const q = search.toLowerCase();
-    results = results.filter(
-      (b) =>
-        b.customerName.toLowerCase().includes(q) ||
-        b.serviceTitle.toLowerCase().includes(q) ||
-        b.artistName.toLowerCase().includes(q) ||
-        b.id.toLowerCase().includes(q)
-    );
-  }
-
-  // Calculate stats
-  const totalRevenue = bookingsStore
-    .filter((b) => b.status !== "Cancelled")
-    .reduce((sum, b) => sum + (b.servicePrice || 0), 0);
-
-  const confirmedCount = bookingsStore.filter((b) => b.status === "Confirmed").length;
-  const completedCount = bookingsStore.filter((b) => b.status === "Completed").length;
-  const cancelledCount = bookingsStore.filter((b) => b.status === "Cancelled").length;
-
-  return res.json({
-    code: 200,
-    status: true,
-    message: "Admin bookings retrieved successfully.",
-    data: {
-      bookings: results,
-      stats: {
-        totalBookings: bookingsStore.length,
-        totalRevenue,
-        confirmedCount,
-        completedCount,
-        cancelledCount
-      }
+    if (getIsMongoConnected()) {
+      bookings = await Booking.find();
+      services = await Service.find();
+      users = await User.find();
+    } else {
+      bookings = bookingsStore;
+      services = servicesStore;
+      users = usersStore;
     }
-  });
+
+    const totalRevenue = bookings
+      .filter((b) => b.status !== "Cancelled")
+      .reduce((sum, b) => sum + (Number(b.servicePrice) || 0), 0);
+
+    const activeBookings = bookings.filter((b) => b.status === "Confirmed").length;
+    const completedBookings = bookings.filter((b) => b.status === "Completed").length;
+    const totalClients = users.filter((u) => u.role === "appUser").length;
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: "Admin metrics overview retrieved.",
+      data: {
+        totalRevenue,
+        totalBookings: bookings.length,
+        activeBookings,
+        completedBookings,
+        totalClients,
+        totalServices: services.length
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
+      status: false,
+      message: "Failed to fetch admin overview stats.",
+      data: null
+    });
+  }
 });
 
-// PUT /api/admin/bookings/:id/status (Update booking status)
-router.put("/bookings/:id/status", (req, res) => {
-  const { status } = req.body;
-  if (!status) {
-    return res.status(400).json({
-      code: 400,
+// GET /api/admin/bookings (All bookings)
+router.get("/bookings", authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    let bookings;
+    if (getIsMongoConnected()) {
+      bookings = await Booking.find().sort({ createdAt: -1 });
+    } else {
+      bookings = [...bookingsStore].sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+    }
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: "All studio bookings retrieved.",
+      data: {
+        result: bookings,
+        total: bookings.length
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
       status: false,
-      message: "Status is required.",
+      message: "Failed to fetch bookings.",
       data: null
     });
   }
+});
 
-  const booking = bookingsStore.find((b) => b.id === req.params.id);
-  if (!booking) {
-    return res.status(404).json({
-      code: 404,
+// PATCH /api/admin/bookings/:id/status
+router.patch("/bookings/:id/status", authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    const validStatuses = ["Confirmed", "Pending", "Completed", "Cancelled"];
+    if (!status || !validStatuses.includes(status)) {
+      return res.status(400).json({
+        code: 400,
+        status: false,
+        message: `Invalid status. Must be one of: ${validStatuses.join(", ")}`,
+        data: null
+      });
+    }
+
+    let updatedBooking;
+    if (getIsMongoConnected()) {
+      updatedBooking = await Booking.findOneAndUpdate(
+        { id },
+        { status },
+        { new: true }
+      );
+    } else {
+      const booking = bookingsStore.find((b) => b.id === id);
+      if (booking) {
+        booking.status = status;
+        updatedBooking = booking;
+      }
+    }
+
+    if (!updatedBooking) {
+      return res.status(404).json({
+        code: 404,
+        status: false,
+        message: `Booking with ID '${id}' not found.`,
+        data: null
+      });
+    }
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: `Booking status updated to '${status}'.`,
+      data: updatedBooking
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
       status: false,
-      message: "Booking record not found.",
+      message: "Failed to update booking status.",
       data: null
     });
   }
-
-  booking.status = status;
-  return res.json({
-    code: 200,
-    status: true,
-    message: `Booking #${booking.id} status updated to ${status}.`,
-    data: { booking }
-  });
 });
 
 module.exports = router;

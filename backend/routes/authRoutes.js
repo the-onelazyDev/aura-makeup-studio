@@ -1,7 +1,9 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 const { usersStore } = require("../data/store");
+const { getIsMongoConnected } = require("../config/db");
 const { authenticateToken, JWT_SECRET } = require("../middleware/authMiddleware");
 
 const router = express.Router();
@@ -20,7 +22,56 @@ router.post("/register", async (req, res) => {
       });
     }
 
-    const existingUser = usersStore.find((u) => u.email.toLowerCase() === email.toLowerCase());
+    const normalizedEmail = email.toLowerCase().trim();
+
+    if (getIsMongoConnected()) {
+      const existingUser = await User.findOne({ email: normalizedEmail });
+      if (existingUser) {
+        return res.status(409).json({
+          code: 409,
+          status: false,
+          message: "An account with this email address already exists.",
+          data: null
+        });
+      }
+
+      const salt = await bcrypt.genSalt(10);
+      const passwordHash = await bcrypt.hash(password, salt);
+
+      const newUser = await User.create({
+        id: "user-" + Date.now(),
+        name: name.trim(),
+        email: normalizedEmail,
+        passwordHash,
+        phone: phone || "",
+        role: "appUser"
+      });
+
+      const token = jwt.sign(
+        { id: newUser.id, email: newUser.email, name: newUser.name, role: newUser.role },
+        JWT_SECRET,
+        { expiresIn: "7d" }
+      );
+
+      return res.status(201).json({
+        code: 201,
+        status: true,
+        message: "Account registered successfully!",
+        data: {
+          token,
+          user: {
+            id: newUser.id,
+            name: newUser.name,
+            email: newUser.email,
+            phone: newUser.phone,
+            role: newUser.role
+          }
+        }
+      });
+    }
+
+    // In-memory fallback
+    const existingUser = usersStore.find((u) => u.email.toLowerCase() === normalizedEmail);
     if (existingUser) {
       return res.status(409).json({
         code: 409,
@@ -35,8 +86,8 @@ router.post("/register", async (req, res) => {
 
     const newUser = {
       id: "user-" + Date.now(),
-      name,
-      email: email.toLowerCase(),
+      name: name.trim(),
+      email: normalizedEmail,
       passwordHash,
       phone: phone || "",
       role: "appUser",
@@ -70,7 +121,7 @@ router.post("/register", async (req, res) => {
     return res.status(500).json({
       code: 500,
       status: false,
-      message: "Server error during registration.",
+      message: error.message || "Server error during registration.",
       data: null
     });
   }
@@ -90,7 +141,15 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    const user = usersStore.find((u) => u.email.toLowerCase() === email.toLowerCase());
+    const normalizedEmail = email.toLowerCase().trim();
+
+    let user;
+    if (getIsMongoConnected()) {
+      user = await User.findOne({ email: normalizedEmail });
+    } else {
+      user = usersStore.find((u) => u.email.toLowerCase() === normalizedEmail);
+    }
+
     if (!user) {
       return res.status(401).json({
         code: 401,
@@ -135,38 +194,53 @@ router.post("/login", async (req, res) => {
     return res.status(500).json({
       code: 500,
       status: false,
-      message: "Server error during login.",
+      message: error.message || "Server error during login.",
       data: null
     });
   }
 });
 
 // GET /api/auth/me
-router.get("/me", authenticateToken, (req, res) => {
-  const user = usersStore.find((u) => u.id === req.user.id);
-  if (!user) {
-    return res.status(404).json({
-      code: 404,
+router.get("/me", authenticateToken, async (req, res) => {
+  try {
+    let user;
+    if (getIsMongoConnected()) {
+      user = await User.findOne({ id: req.user.id });
+    } else {
+      user = usersStore.find((u) => u.id === req.user.id);
+    }
+
+    if (!user) {
+      return res.status(404).json({
+        code: 404,
+        status: false,
+        message: "User profile not found.",
+        data: null
+      });
+    }
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: "User profile retrieved.",
+      data: {
+        user: {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+          role: user.role
+        }
+      }
+    });
+  } catch (err) {
+    return res.status(500).json({
+      code: 500,
       status: false,
-      message: "User profile not found.",
+      message: "Error fetching user profile.",
       data: null
     });
   }
-
-  return res.json({
-    code: 200,
-    status: true,
-    message: "User profile retrieved.",
-    data: {
-      user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        role: user.role
-      }
-    }
-  });
 });
 
 module.exports = router;

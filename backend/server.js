@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const { connectDB, getIsMongoConnected } = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
 const artistRoutes = require("./routes/artistRoutes");
@@ -32,7 +33,8 @@ app.get("/api/health", (req, res) => {
     message: "Aura Makeup Studio API Server is operational.",
     data: {
       timestamp: new Date().toISOString(),
-      environment: process.env.NODE_ENV || "development"
+      environment: process.env.NODE_ENV || "development",
+      database: getIsMongoConnected() ? "MongoDB Atlas (Connected)" : "In-Memory Store (Active)"
     }
   });
 });
@@ -43,6 +45,7 @@ app.get("/", (req, res) => {
     code: 200,
     status: true,
     message: "Welcome to Aura Luxury Makeup Studio API",
+    database: getIsMongoConnected() ? "MongoDB Atlas" : "In-Memory Store",
     endpoints: {
       auth: "/api/auth",
       services: "/api/services",
@@ -63,9 +66,10 @@ app.use((req, res) => {
   });
 });
 
-// Start Server
-app.listen(PORT, () => {
+// Start Server & Connect Database
+app.listen(PORT, async () => {
   console.log(`✨ Aura Makeup Studio Backend running at http://localhost:${PORT}`);
+  await connectDB();
 });
 
 module.exports = app;

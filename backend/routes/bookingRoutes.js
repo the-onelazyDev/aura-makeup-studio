@@ -1,111 +1,148 @@
 const express = require("express");
+const Booking = require("../models/Booking");
+const Service = require("../models/Service");
+const Artist = require("../models/Artist");
 const { bookingsStore, servicesStore, artistsStore } = require("../data/store");
+const { getIsMongoConnected } = require("../config/db");
 const { authenticateToken } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// POST /api/bookings (Create booking)
-router.post("/", authenticateToken, (req, res) => {
+// POST /api/bookings
+router.post("/", async (req, res) => {
   try {
-    const { serviceId, artistId, bookingDate, slotTime, customerName, customerPhone, notes } = req.body;
+    const {
+      userId,
+      serviceId,
+      artistId,
+      bookingDate,
+      slotTime,
+      customerName,
+      customerPhone,
+      notes
+    } = req.body;
 
-    if (!serviceId || !artistId || !bookingDate || !slotTime) {
+    if (
+      !serviceId ||
+      !artistId ||
+      !bookingDate ||
+      !slotTime ||
+      !customerName ||
+      !customerPhone
+    ) {
       return res.status(400).json({
         code: 400,
         status: false,
-        message: "Service, artist, date, and time slot are required.",
+        message: "Please provide all required booking fields.",
         data: null
       });
     }
 
-    const service = servicesStore.find((s) => s.id === serviceId);
+    let service, artist;
+
+    if (getIsMongoConnected()) {
+      service = await Service.findOne({ id: serviceId });
+      artist = await Artist.findOne({ id: artistId });
+    } else {
+      service = servicesStore.find((s) => s.id === serviceId);
+      artist = artistsStore.find((a) => a.id === artistId);
+    }
+
     if (!service) {
       return res.status(404).json({
         code: 404,
         status: false,
-        message: "Selected service was not found.",
+        message: `Selected service '${serviceId}' not found.`,
         data: null
       });
     }
 
-    const artist = artistsStore.find((a) => a.id === artistId);
     if (!artist) {
       return res.status(404).json({
         code: 404,
         status: false,
-        message: "Selected artist was not found.",
+        message: `Selected artist '${artistId}' not found.`,
         data: null
       });
     }
 
-    const newBooking = {
+    const newBookingData = {
       id: "bk-" + Math.floor(1000 + Math.random() * 9000),
-      userId: req.user.id,
-      serviceId: service.id,
+      userId: userId || "guest-user",
+      serviceId,
       serviceTitle: service.title,
       servicePrice: service.price,
-      artistId: artist.id,
+      artistId,
       artistName: artist.name,
       bookingDate,
       slotTime,
       status: "Confirmed",
-      customerName: customerName || req.user.name,
-      customerPhone: customerPhone || "",
-      notes: notes || "",
-      createdAt: new Date().toISOString()
+      customerName,
+      customerPhone,
+      notes: notes || ""
     };
 
-    bookingsStore.unshift(newBooking);
+    let createdBooking;
+    if (getIsMongoConnected()) {
+      createdBooking = await Booking.create(newBookingData);
+    } else {
+      createdBooking = {
+        ...newBookingData,
+        createdAt: new Date().toISOString()
+      };
+      bookingsStore.push(createdBooking);
+    }
 
     return res.status(201).json({
       code: 201,
       status: true,
-      message: "Appointment booked successfully!",
-      data: { booking: newBooking }
+      message: "VIP Makeover appointment confirmed successfully!",
+      data: createdBooking
     });
   } catch (error) {
     return res.status(500).json({
       code: 500,
       status: false,
-      message: "Failed to process appointment booking.",
+      message: error.message || "Failed to create booking reservation.",
       data: null
     });
   }
 });
 
 // GET /api/bookings/my-bookings
-router.get("/my-bookings", authenticateToken, (req, res) => {
-  const userBookings = bookingsStore.filter((b) => b.userId === req.user.id);
-  return res.json({
-    code: 200,
-    status: true,
-    message: "User bookings retrieved.",
-    data: {
-      result: userBookings,
-      total: userBookings.length
-    }
-  });
-});
+router.get("/my-bookings", authenticateToken, async (req, res) => {
+  try {
+    const userEmail = req.user.email;
+    const userId = req.user.id;
 
-// PUT /api/bookings/:id/cancel
-router.put("/:id/cancel", authenticateToken, (req, res) => {
-  const booking = bookingsStore.find((b) => b.id === req.params.id && b.userId === req.user.id);
-  if (!booking) {
-    return res.status(404).json({
-      code: 404,
+    let userBookings;
+    if (getIsMongoConnected()) {
+      userBookings = await Booking.find({
+        $or: [{ userId }, { customerName: req.user.name }]
+      }).sort({ createdAt: -1 });
+    } else {
+      userBookings = bookingsStore.filter(
+        (b) => b.userId === userId || b.customerName.toLowerCase() === req.user.name.toLowerCase()
+      );
+    }
+
+    return res.json({
+      code: 200,
+      status: true,
+      message: "User booking history retrieved.",
+      data: {
+        result: userBookings,
+        total: userBookings.length
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
       status: false,
-      message: "Booking not found or unauthorized.",
+      message: "Failed to fetch user bookings.",
       data: null
     });
   }
-
-  booking.status = "Cancelled";
-  return res.json({
-    code: 200,
-    status: true,
-    message: "Booking cancelled successfully.",
-    data: { booking }
-  });
 });
 
 module.exports = router;
