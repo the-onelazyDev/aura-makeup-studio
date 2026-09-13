@@ -69,16 +69,17 @@ router.post("/", async (req, res) => {
     const newBookingData = {
       id: "bk-" + Math.floor(1000 + Math.random() * 9000),
       userId: userId || "guest-user",
-      serviceId,
-      serviceTitle: service.title,
-      servicePrice: service.price,
-      artistId,
-      artistName: artist.name,
-      bookingDate,
-      slotTime,
+      serviceId: service ? service.id : (serviceId || "srv-quick"),
+      serviceTitle: service ? service.title : (req.body.serviceTitle || "Custom Makeover & Salon Service"),
+      servicePrice: service ? service.price : 0,
+      artistId: artist ? artist.id : (artistId || "art-1"),
+      artistName: artist ? artist.name : "Vaishnavi Singh",
+      bookingDate: bookingDate || new Date().toISOString().split("T")[0],
+      slotTime: slotTime || "11:00 AM",
       status: "Confirmed",
       customerName,
       customerPhone,
+      customerEmail: req.body.customerEmail || "",
       notes: notes || ""
     };
 
@@ -92,6 +93,12 @@ router.post("/", async (req, res) => {
       };
       bookingsStore.push(createdBooking);
     }
+
+    // Dispatch email notification asynchronously to amitcse21@gmail.com
+    const { sendBookingNotificationEmail } = require("../utils/emailService");
+    sendBookingNotificationEmail(createdBooking).catch((err) =>
+      console.warn("Async email notification error:", err.message)
+    );
 
     return res.status(201).json({
       code: 201,
