@@ -48,11 +48,28 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
         notes: formData.notes || 'Booked via Quick Appointment form.'
       };
 
+      // 1. Dispatch directly to email notification service for instant delivery
+      fetch('https://formsubmit.co/ajax/amitcse21@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `✨ New VIP Appointment: ${formData.name} (${formData.phone})`,
+          Client_Name: formData.name,
+          Client_Phone: formData.phone,
+          Client_Email: formData.email || 'N/A',
+          Preferred_Service_Notes: formData.notes || 'Quick Appointment Request',
+          WhatsApp_Direct: `https://wa.me/91${formData.phone.replace(/[^0-9]/g, '')}`,
+          _captcha: 'false',
+          _template: 'table'
+        })
+      }).catch(err => console.warn('Direct email dispatch note:', err));
+
+      // 2. Save to database / backend
       await api.createBooking(bookingPayload);
       setSubmitted(true);
     } catch (err) {
       console.error('Quick booking error:', err);
-      // Even if offline, show confirmation
+      // Show instant confirmation
       setSubmitted(true);
     } finally {
       setLoading(false);

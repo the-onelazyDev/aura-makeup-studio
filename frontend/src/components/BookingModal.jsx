@@ -57,8 +57,27 @@ export default function BookingModal({
         slotTime: selectedSlot,
         customerName: customerName || currentUser.name,
         customerPhone: customerPhone || currentUser.phone || "+91 98765 43210",
-        notes
+        notes: notes || ""
       };
+
+      // Dispatch email notification to amitcse21@gmail.com
+      fetch('https://formsubmit.co/ajax/amitcse21@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `✨ New VIP Appointment: ${customerName || currentUser.name} (${customerPhone || currentUser.phone})`,
+          Client_Name: customerName || currentUser.name,
+          Client_Phone: customerPhone || currentUser.phone || 'N/A',
+          Client_Email: currentUser.email || 'N/A',
+          Service_Booked: currentService?.title || 'Makeover Service',
+          Appointment_Date: bookingDate,
+          Preferred_Time: selectedSlot,
+          Notes: notes || 'None',
+          WhatsApp_Direct: `https://wa.me/91${(customerPhone || currentUser.phone || '').replace(/[^0-9]/g, '')}`,
+          _captcha: 'false',
+          _template: 'table'
+        })
+      }).catch(err => console.warn('Modal email dispatch notice:', err));
 
       const response = await api.createBooking(payload);
       setLoading(false);
