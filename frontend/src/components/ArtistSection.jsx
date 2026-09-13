@@ -45,6 +45,8 @@ export default function ArtistSection({ artists, onSelectArtist }) {
               <img
                 src="/images/owner-portrait.jpg"
                 alt="Vaishnavi Singh - Aura Studio Founder"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
               />
             </div>
@@ -52,6 +54,8 @@ export default function ArtistSection({ artists, onSelectArtist }) {
               <img
                 src="/images/owner-hero.jpg"
                 alt="Vaishnavi Singh - Celebrity Couture Makeover"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
               />
             </div>

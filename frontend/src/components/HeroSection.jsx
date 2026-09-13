@@ -125,6 +125,9 @@ export default function HeroSection({ onOpenBooking }) {
             <img
               src="/images/owner-hero.jpg"
               alt="Vaishnavi Singh - Aura Studio Founder & Lead Makeup Artist"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
             />
             <div style={{
