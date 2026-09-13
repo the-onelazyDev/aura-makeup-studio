@@ -42,22 +42,28 @@ export default function ArtistSection({ artists, onSelectArtist }) {
           {/* Dual Photo Gallery */}
           <div className="founder-dual-photos" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '360px' }}>
-              <img
-                src="/images/owner-portrait.jpg"
-                alt="Vaishnavi Singh - Aura Studio Founder"
-                loading="lazy"
-                decoding="async"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-              />
+              <picture>
+                <source srcSet="/images/owner-portrait.webp" type="image/webp" />
+                <img
+                  src="/images/owner-portrait.jpg"
+                  alt="Vaishnavi Singh - Aura Studio Founder"
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                />
+              </picture>
             </div>
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-gold)', height: '360px' }}>
-              <img
-                src="/images/owner-hero.jpg"
-                alt="Vaishnavi Singh - Celebrity Couture Makeover"
-                loading="lazy"
-                decoding="async"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
-              />
+              <picture>
+                <source srcSet="/images/owner-hero.webp" type="image/webp" />
+                <img
+                  src="/images/owner-hero.jpg"
+                  alt="Vaishnavi Singh - Celebrity Couture Makeover"
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                />
+              </picture>
             </div>
           </div>
 
