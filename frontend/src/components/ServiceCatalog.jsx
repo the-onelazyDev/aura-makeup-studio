@@ -55,8 +55,8 @@ export default function ServiceCatalog({ services, onSelectService }) {
       {/* Services Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-        gap: '32px'
+        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+        gap: '24px'
       }}>
         {filteredServices.map(service => (
           <div key={service.id} className="glass-card" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>

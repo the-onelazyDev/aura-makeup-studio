@@ -49,23 +49,24 @@ export default function HeroSection({ onOpenBooking }) {
             Experience world-class HD Airbrush Bridal Makeovers, Sangeet Dewy Glam, and Couture Hair Artistry tailored for Indian Celebrations.
           </p>
 
-          <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '50px' }}>
-            <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ fontSize: '0.95rem', padding: '16px 36px' }}>
+          <div className="hero-cta-group" style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '40px', flexWrap: 'wrap' }}>
+            <button onClick={() => onOpenBooking(null)} className="btn-gold" style={{ fontSize: '0.95rem', padding: '16px 32px' }}>
               <Sparkles size={20} />
               <span>Book VIP Appointment</span>
             </button>
-            <a href="#services" className="btn-outline" style={{ padding: '15px 30px', textDecoration: 'none' }}>
+            <a href="#services" className="btn-outline" style={{ padding: '15px 28px', textDecoration: 'none' }}>
               <span>View Services</span>
               <ArrowRight size={18} />
             </a>
           </div>
 
           {/* Social Proof Bar */}
-          <div style={{
+          <div className="hero-stats-group" style={{
             display: 'flex',
-            gap: '36px',
-            paddingTop: '24px',
-            borderTop: '1px solid var(--border-subtle)'
+            gap: '28px',
+            paddingTop: '20px',
+            borderTop: '1px solid var(--border-subtle)',
+            flexWrap: 'wrap'
           }}>
             <div>
               <h3 style={{ fontSize: '1.8rem', fontWeight: '700' }} className="gold-text">15,000+</h3>

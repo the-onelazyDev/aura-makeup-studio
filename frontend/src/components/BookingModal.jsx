@@ -200,7 +200,7 @@ export default function BookingModal({
           </div>
 
           {/* Step 3: Date & Time Slot */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
+          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#d4af37', fontWeight: '600', marginBottom: '8px' }}>
                 3. APPOINTMENT DATE
@@ -249,7 +249,7 @@ export default function BookingModal({
           </div>
 
           {/* Step 4: Contact & Notes */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
+          <div className="form-grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
                 Customer Name
