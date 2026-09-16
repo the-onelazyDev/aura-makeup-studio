@@ -74,7 +74,7 @@ const INITIAL_SERVICES = [
   },
   {
     id: "srv-sk-4",
-    title: "NAIL BAR",
+    title: "NAIL BAR – EXTENSIONS & ARTISTRY",
     category: "SKIN",
     subCategory: "NAIL ART",
     price: 3500,
