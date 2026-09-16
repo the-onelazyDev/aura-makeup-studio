@@ -122,7 +122,20 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
         </div>
       </div>
 
-      {/* Services Grid */}
+      {/* Mobile Swipe Hint */}
+      <div className="service-swipe-hint" style={{
+        display: 'none',
+        alignItems: 'center',
+        gap: '6px',
+        fontSize: '0.74rem',
+        color: '#6B7280',
+        fontWeight: '600',
+        marginBottom: '10px'
+      }}>
+        <span>👈 Swipe horizontally to view services 👉</span>
+      </div>
+
+      {/* Services Grid (Grid on Desktop, Swipe Carousel on Mobile) */}
       {filteredServices.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '60px 20px', color: '#6B7280' }}>
           <p style={{ fontSize: '1.0rem', marginBottom: '14px' }}>No services found under this tab.</p>
@@ -143,14 +156,11 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
           </button>
         </div>
       ) : (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-          gap: '22px 18px'
-        }}>
+        <div className="service-catalog-grid">
           {filteredServices.map((service) => (
             <div
               key={service.id}
+              className="service-card-item"
               style={{
                 background: '#FFFFFF',
                 borderRadius: '0px',
