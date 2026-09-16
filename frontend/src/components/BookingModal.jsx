@@ -122,9 +122,9 @@ export default function BookingModal({
 
         {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <div className="badge" style={{ marginBottom: '6px' }}>VIP Reservation</div>
+          <div className="badge" style={{ marginBottom: '6px' }}>Appointment Booking</div>
           <h2 style={{ fontSize: '1.7rem', fontWeight: '700' }}>
-            Book Your <span className="gold-text">Makeover Appointment</span>
+            Book Your <span className="gold-text">Appointment</span>
           </h2>
           <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Govindpuri, Modinagar</p>
         </div>
@@ -194,7 +194,7 @@ export default function BookingModal({
             </select>
           </div>
 
-          {/* Step 2: Master Artist (Vaishnavi Singh featured card) */}
+          {/* Step 2: Master Artist */}
           <div style={{ marginBottom: '18px' }}>
             <label style={{ display: 'block', fontSize: '0.8rem', color: '#9A7412', fontWeight: '700', marginBottom: '6px' }}>
               2. MAKEOVER ARTIST
@@ -220,7 +220,7 @@ export default function BookingModal({
                   <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#111827' }}>
                     {currentArtist?.name || 'Vaishnavi Singh'}
                   </span>
-                  <span className="badge" style={{ padding: '2px 6px', fontSize: '0.65rem' }}>Founder</span>
+                  <span className="badge" style={{ padding: '2px 6px', fontSize: '0.65rem' }}>Master Artist</span>
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {currentArtist?.specialty || 'Royal Bridal & HD Airbrush Specialist'} • 5.0 ★
@@ -348,29 +348,6 @@ export default function BookingModal({
             />
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
-              Styling Notes / Requirements (Optional)
-            </label>
-            <textarea
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder="E.g. Saree draping, bridal dupatta setting, skin sensitivity..."
-              rows={2}
-              style={{
-                width: '100%',
-                padding: '10px',
-                borderRadius: '10px',
-                background: '#181824',
-                border: '1px solid var(--border-subtle)',
-                color: '#fff',
-                fontSize: '0.85rem',
-                outline: 'none',
-                resize: 'none'
-              }}
-            />
-          </div>
-
           {/* Package Summary */}
           {currentService && (
             <div style={{
@@ -385,7 +362,7 @@ export default function BookingModal({
               gap: '10px'
             }}>
               <div>
-                <span style={{ fontSize: '0.72rem', color: '#9A7412', fontWeight: '700', textTransform: 'uppercase', display: 'block', letterSpacing: '0.5px' }}>Selected Makeover</span>
+                <span style={{ fontSize: '0.72rem', color: '#9A7412', fontWeight: '700', textTransform: 'uppercase', display: 'block', letterSpacing: '0.5px' }}>Selected Service</span>
                 <span style={{ fontSize: '1.05rem', fontWeight: '700', color: '#111827' }}>
                   {currentService.title}
                 </span>
@@ -404,7 +381,7 @@ export default function BookingModal({
             style={{ width: '100%', padding: '14px', fontSize: '0.9rem' }}
           >
             <Sparkles size={16} />
-            <span>{loading ? 'Confirming...' : 'Confirm VIP Booking'}</span>
+            <span>{loading ? 'Confirming...' : 'Confirm Booking'}</span>
           </button>
         </form>
       </div>
