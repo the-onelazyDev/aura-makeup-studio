@@ -6,7 +6,8 @@ const TAGS = [
   "Bride and Groom Makeup Near Me",
   "Best Salon Near Me",
   "Nail Salon Near Me",
-  "Skincare & Spa Near Me",
+  "Facial & Skincare Near Me",
+  "Manicure & Pedicure Near Me",
   "Salon Near Me"
 ];
 
@@ -28,8 +29,11 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
       if (activeTag.includes("Nail")) {
         return sCat.includes("SKIN") || sSub.includes("NAIL") || sTitle.includes("NAIL");
       }
-      if (activeTag.includes("Skincare") || activeTag.includes("Spa")) {
-        return sCat.includes("SKIN") || sSub.includes("SPA") || sTitle.includes("FACIAL");
+      if (activeTag.includes("Manicure") || activeTag.includes("Pedicure")) {
+        return sCat.includes("SKIN") || sTitle.includes("MANICURE") || sTitle.includes("PEDICURE");
+      }
+      if (activeTag.includes("Facial") || activeTag.includes("Skincare")) {
+        return sCat.includes("SKIN") || sTitle.includes("FACIAL") || sTitle.includes("FACE") || sTitle.includes("SKIN");
       }
     }
 

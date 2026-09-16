@@ -59,22 +59,8 @@ export const INITIAL_SERVICES = [
     highlights: ["Hydra-Infusion Brightening", "Cold Roller Lymphatic Sculpting", "Ultrasonic Blackhead Extraction", "Collagen Sheet Mask"]
   },
   {
-    id: "srv-sk-2",
-    title: "BODY SPA",
-    category: "SKIN",
-    subCategory: "SPA",
-    price: 5500,
-    duration: "75 mins",
-    rating: 4.9,
-    reviewsCount: 260,
-    badge: "Relaxation",
-    image: "/images/body-spa.jpg",
-    description: "Deep tissue aromatherapy body massage and calming scrub therapy that relieves stress and restores natural skin moisture.",
-    highlights: ["Aromatherapy Essential Oils", "Dead Sea Salt Body Scrub", "Full Body Muscle Relaxation", "Steam & Warm Towel Ritual"]
-  },
-  {
     id: "srv-sk-3",
-    title: "HANDS & FEET SPA – MANICURE & PEDICURE",
+    title: "HANDS & FEET – MANICURE & PEDICURE",
     category: "SKIN",
     subCategory: "MANI PEDI",
     price: 3200,
