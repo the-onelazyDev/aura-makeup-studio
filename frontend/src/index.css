@@ -243,8 +243,35 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
+   Service Catalog Grid & Cards (Desktop default: 4 in 1 row)
+   ========================================================================== */
+.service-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 20px;
+  width: 100%;
+}
+
+.service-card-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-swipe-hint {
+  display: none;
+}
+
+/* ==========================================================================
    Responsive Rules
    ========================================================================== */
+
+@media (max-width: 1080px) and (min-width: 769px) {
+  .service-catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 16px;
+  }
+}
 
 @media (max-width: 992px) {
   .hero-grid {
