@@ -121,22 +121,25 @@ Let’s analyze your direct competition in Modinagar:
 5. **ROOPAM** *(Flawless form and celestial beauty)*
    - *Signboard*: **ROOPAM** Makeup Studio
 ### Architecture E: The "Doll" Aesthetic (Porcelain Skin, Fairytale Glam & Big Lashes)
-*In Indian weddings, the ultimate compliment every bride dreams of hearing is: **"Dulhan bilkul gudiya (doll) jaisi lag rahi hai!"** The "Doll" concept instantly communicates 4K poreless porcelain skin, winged eyeliner, dramatic fluttery eyelashes, sculpted cheekbones, and rosy glass-skin finishes. It is ultra-viral on Instagram Reels and commands massive premium appeal.*
+*In North Indian weddings, the ultimate compliment every bride and her family cherish is: **"Dulhan bilkul gudiya (doll) jaisi lag rahi hai!"** The "Doll" concept instantly evokes flawless porcelain glass skin, dramatic fluttery eyelashes, sculpted cheekbones, perfectly lined lips, and royal fairytale glamour. When executed with luxury typography and champagne-gold accents, it creates an unforgettable viral brand on Instagram Reels and commands massive premium pricing against local competition.*
 
-1. **THE DOLLHOUSE** ⭐ *(Inspired by Dubai's celebrity luxury salon)*
+---
+
+#### 🌟 Sub-Collection 1: The Core Global Classics
+1. **THE DOLLHOUSE** ⭐ *(Inspired by Dubai's world-famous celebrity salon)*
    - *Signboard*: **THE DOLLHOUSE** | Luxury Makeover Studio & Salon
    - *Tagline*: *Where Every Bride Becomes a Living Doll*
-   - *Positioning*: High-society, luxury pink & champagne-gold interiors, VIP bridal suites.
+   - *Positioning*: High-society, luxury blush & champagne-gold interiors, private VIP bridal suites.
 2. **DOLLFACE MAKEOVERS** *(Classic, high-fashion Hollywood & London aesthetic)*
    - *Signboard*: **DOLLFACE** | Bridal Artistry & Hair Couture
    - *Tagline*: *Flawless Porcelain 4K Finish*
-3. **MAISON DOLL** *(Parisian haute couture touch)*
+3. **MAISON DOLL** *(Parisian haute couture touch — "House of Doll")*
    - *Signboard*: **MAISON DOLL** | Luxury Beauty Atelier
    - *Tagline*: *Couture Bridal Transformations*
 4. **THE DOLL ROOM** *(Exclusive VIP bridal suite format)*
    - *Signboard*: **THE DOLL ROOM** | Luxury Bridal Lounge
    - *Tagline*: *Private Bridal Dressing & Makeovers*
-5. **DOLL COUTURE** *(High-fashion designer runway bridal styling)*
+5. **DOLL COUTURE** *(High-fashion runway bridal styling)*
    - *Signboard*: **DOLL COUTURE** | By Vaishnavi Singh
    - *Tagline*: *Bespoke HD Airbrush Artistry*
 6. **PORCELAIN DOLL STUDIO** *(Speaks directly to Korean glass-skin & poreless base)*
@@ -154,36 +157,220 @@ Let’s analyze your direct competition in Modinagar:
 10. **THE DOLL SOCIETY** *(Exclusive VIP beauty club perception)*
     - *Signboard*: **THE DOLL SOCIETY** | Beauty Lounge & Bar
     - *Tagline*: *Modern Glamour & Hair Couture*
-11. **GILDED DOLL** *(Golden luxury touch — directly outshines "Midas")*
-    - *Signboard*: **GILDED DOLL** | Luxury Bridal Suite
-    - *Tagline*: *The 24K Royal Bridal Touch*
-12. **STUDIO DOLLFACE** *(Clean, youthful, high-converting)*
-    - *Signboard*: **STUDIO DOLLFACE**
-    - *Tagline*: *HD Airbrush & Bridal Transformations*
-13. **DOLL ATELIER** *(Parisian master craftsmanship)*
-    - *Signboard*: **DOLL ATELIER** | By Vaishnavi Singh
-    - *Tagline*: *Master Bridal Artistry*
-14. **LIVING DOLL MAKEOVERS** *(Emotional promise of a real-life fairytale)*
-    - *Signboard*: **LIVING DOLL** | Bridal Studio
-    - *Tagline*: *Step Out Like a Fairytale*
-15. **DOLLVEDA MAKEOVERS** *(Fusion of modern doll glamour with Vedic Indian bridal beauty)*
-    - *Signboard*: **DOLLVEDA** | Luxury Studio
+
+---
+
+#### 👑 Sub-Collection 2: Royal, Empress & Indian Heritage Dolls
+*Blending Indian royal bridal opulence (Lehengas, Kundan, Polki) with the beloved "Gudiya" emotion:*
+11. **RANI DOLL MAKEOVERS** *(The Empress Doll — majestic, regal, timeless)*
+    - *Signboard*: **RANI DOLL** | Royal Bridal Studio
+    - *Tagline*: *Crafted for the Royal Indian Bride*
+12. **MAHARANI DOLL STUDIO** *(Grand palace aesthetics for grand wedding entries)*
+    - *Signboard*: **MAHARANI DOLL** | Luxury Makeovers & Academy
+    - *Tagline*: *Epitome of Royal Indian Beauty*
+13. **THE ROYAL DOLLHOUSE** *(Upgrading the Dollhouse to palatial luxury)*
+    - *Signboard*: **THE ROYAL DOLLHOUSE** | VIP Bridal Lounge
+    - *Tagline*: *Where Heritage Meets Haute Glamour*
+14. **GUDIYA MAKEOVERS** *(Raw cultural emotional connection for Modinagar & Western UP)*
+    - *Signboard*: **GUDIYA** | Luxury Bridal Studio
+    - *Tagline*: *Har Dulhan Ki Khwahish*
+15. **SHEHZADI DOLL STUDIO** *(Mughal/Nawabi grace, soft kajal eyes, luminous skin)*
+    - *Signboard*: **SHEHZADI DOLL** | Bridal Lounge
+    - *Tagline*: *Poetic Elegance for the Modern Dulhan*
+16. **NOOR DOLL MAKEUP STUDIO** *(Arabic/Persian: Celestial light + doll perfection)*
+    - *Signboard*: **NOOR DOLL** | Luxury Makeover Studio
+    - *Tagline*: *Luminous Brides. Heavenly Radiance.*
+17. **BEGUM DOLL MAKEOVERS** *(Aristocratic bridal charm and ornate lehenga styling)*
+    - *Signboard*: **BEGUM DOLL** | Haute Bridal Studio
+    - *Tagline*: *Timeless Royal Artistry*
+18. **DOLLVEDA MAKEOVERS** *(Fusion of modern doll glam with Ayurvedic/Vedic bridal glow)*
+    - *Signboard*: **DOLLVEDA** | Luxury Studio & Spa
     - *Tagline*: *Auspicious Heritage. Modern Glamour.*
-16. **THE DOLL VANITY** *(Intimate, personal VIP bridal suite)*
-    - *Signboard*: **THE DOLL VANITY**
-    - *Tagline*: *Your Private Bridal Glow Sanctuary*
-17. **VELVET DOLL STUDIO** *(Smooth velvet HD base + soft-glam eyes)*
+
+---
+
+#### 💎 Sub-Collection 3: Porcelain, Glass-Skin & Dewy 4K Dolls
+*Spotlighting base artistry: 100% international products, poreless textures, glass skin:*
+19. **GLASS DOLL MAKEOVERS** *(Directly addresses the high-demand Korean glass-skin trend)*
+    - *Signboard*: **GLASS DOLL** | 4K Airbrush Studio
+    - *Tagline*: *The Ultimate Dewy Glow*
+20. **CRYSTAL DOLL STUDIO** *(Prismatic shine, highlighters, diamond radiance)*
+    - *Signboard*: **CRYSTAL DOLL** | Luxury Makeovers
+    - *Tagline*: *Radiate Like Pure Crystal*
+21. **SILK DOLL STUDIO** *(Soft-touch, velvety smooth, seamless blending)*
+    - *Signboard*: **SILK DOLL** | Bridal Lounge
+    - *Tagline*: *Seamless Silk Finish & Hair Artistry*
+22. **IVORY DOLL MAKEOVERS** *(Pure, classical, immaculate elegance)*
+    - *Signboard*: **IVORY DOLL** | Luxury Makeovers
+    - *Tagline*: *Pure Elegance. Master Artistry.*
+23. **PEARL DOLL ATELIER** *(Iridescent bridal glow, vintage Hollywood elegance)*
+    - *Signboard*: **PEARL DOLL** | Bridal Atelier
+    - *Tagline*: *Lustrous Bridal Perfection*
+24. **OPAL DOLL STUDIO** *(Multi-dimensional glow under wedding stage lights)*
+    - *Signboard*: **OPAL DOLL** | Bridal Lounge
+    - *Tagline*: *Shine Under Every Light*
+25. **VELVET DOLL STUDIO** *(Rich, matte-luxe finish that lasts through 24-hour wedding rituals)*
     - *Signboard*: **VELVET DOLL** | Luxury Studio
-    - *Tagline*: *24-Hour Tear & Sweat-Proof Bridal Finish*
-18. **DOLL & VEIL** *(Rhythmic pair matching the Cut & Style formula)*
-    - *Signboard*: **DOLL & VEIL** | Luxury Bridal Lounge
-    - *Tagline*: *Couture Dupatta Draping & Royal Faces*
-19. **AURA DOLL STUDIO** *(Unifying the existing Aura brand with Doll glam)*
-    - *Signboard*: **AURA DOLL** | Makeovers & Salon
-    - *Tagline*: *Radiant Aura. Living Dolls.*
-20. **VSM DOLLHOUSE** *(Master founder acronym + Doll concept)*
+    - *Tagline*: *24-Hour Tear & Sweat-Proof Bridal Artistry*
+26. **DEWY DOLL MAKEOVERS** *(Natural, hydrated, celebrity glow without heavy cakiness)*
+    - *Signboard*: **DEWY DOLL** | Modern Bridal Studio
+    - *Tagline*: *Fresh, Weightless, Radiant*
+
+---
+
+#### 🥐 Sub-Collection 4: Parisian & Milan Haute Couture Dolls
+*Editorial, European high-fashion, French-inspired prestige:*
+27. **MAISON POUPÉE** *(French for "The Doll House" — ultimate Parisian luxury)*
+    - *Signboard*: **MAISON POUPÉE** | Paris • Modinagar
+    - *Tagline*: *Haute Parfumerie & Bridal Makeovers*
+28. **POUPÉE COUTURE** *(Runway-ready, bespoke bridal drapery & styling)*
+    - *Signboard*: **POUPÉE COUTURE** | Luxury Beauty Atelier
+    - *Tagline*: *Couture Bridal Artistry*
+29. **CHIC DOLL ATELIER** *(Effortlessly fashionable, modern Parisian aesthetic)*
+    - *Signboard*: **CHIC DOLL** | Atelier de Beauté
+    - *Tagline*: *French Elegance. Indian Radiance.*
+30. **DOLL PRIVÉ** *(French: "Private Doll" — communicates ultra-VIP exclusivity)*
+    - *Signboard*: **DOLL PRIVÉ** | Private Bridal Suite
+    - *Tagline*: *By Appointment Only*
+31. **VOGUE DOLL STUDIO** *(Runway editorial glam, bold cut-crease eyes)*
+    - *Signboard*: **VOGUE DOLL** | Makeovers & Academy
+    - *Tagline*: *Redefining Bridal Glamour*
+32. **BELLA BAMBOLA** *(Italian for "Beautiful Doll" — Milanese glamour)*
+    - *Signboard*: **BELLA BAMBOLA** | Luxury Studio
+    - *Tagline*: *The Italian Art of Bridal Beauty*
+33. **DOLL DE PARIS** *(Direct European association)*
+    - *Signboard*: **DOLL DE PARIS** | Luxury Makeover Lounge
+    - *Tagline*: *Parisian Artistry in Every Stroke*
+
+---
+
+#### 🏰 Sub-Collection 5: Fairytale, Fantasy & Romance Dolls
+*For brides who want their wedding to feel like an ethereal Disney princess story:*
+34. **DREAM DOLL STUDIO** *(Translating dream wedding visions into reality)*
+    - *Signboard*: **DREAM DOLL** | Bridal Lounge
+    - *Tagline*: *Your Fairytale Wedding Starts Here*
+35. **FAIRYTALE DOLL MAKEOVERS** *(Storybook magic, glitter halos, romantic curls)*
+    - *Signboard*: **FAIRYTALE DOLL** | Luxury Studio
+    - *Tagline*: *Where Fairytales Come to Life*
+36. **ENCHANTED DOLLHOUSE** *(Mystical, captivating, unforgettable transformations)*
+    - *Signboard*: **ENCHANTED DOLLHOUSE** | Makeover Suite
+    - *Tagline*: *Magic in Every Brushstroke*
+37. **LIVING DOLL MAKEOVERS** *(The living manifestation of doll beauty)*
+    - *Signboard*: **LIVING DOLL** | Bridal Studio
+    - *Tagline*: *Step Out Like a Living Fairytale*
+38. **PRINCESS DOLL MAKEOVERS** *(Tiara-ready royal glamour for sangeet & wedding)*
+    - *Signboard*: **PRINCESS DOLL** | Makeover Studio
+    - *Tagline*: *Crowned in Radiance*
+39. **STARLIGHT DOLL STUDIO** *(Twinkling, celestial shimmer and glitz)*
+    - *Signboard*: **STARLIGHT DOLL** | Bridal Lounge
+    - *Tagline*: *The Star of Every Spotlight*
+40. **WONDER DOLL STUDIO** *(Awe-inspiring transformations that shock wedding guests)*
+    - *Signboard*: **WONDER DOLL** | Luxury Makeovers
+    - *Tagline*: *Leave Them in Wonder*
+
+---
+
+#### 🍸 Sub-Collection 6: Modern, Minimalist & Social-First Dolls
+*Fast, punchy, Instagram-native brands with massive youth appeal:*
+41. **THE DOLL BAR** *(Trendy beauty bar: express hair, nails, and bridal)*
+    - *Signboard*: **THE DOLL BAR** | Hair, Nails & Bridal Makeovers
+    - *Tagline*: *Glamour Served Daily*
+42. **DOLL LAB** *(Scientific skincare preparation + precision makeup artistry)*
+    - *Signboard*: **DOLL LAB** | Clinical Aesthetics & Bridal Studio
+    - *Tagline*: *The Science of Flawless Skin*
+43. **DOLLBOX MAKEOVERS** *(Modern unboxing aesthetic, snappy, viral)*
+    - *Signboard*: **DOLLBOX** | Luxury Studio
+    - *Tagline*: *Unbox Your Bridal Glow*
+44. **DOLL MOOD** *(Aesthetic vibe-driven beauty lounge)*
+    - *Signboard*: **DOLL MOOD** | Makeovers & Hair Spa
+    - *Tagline*: *Always in the Mood for Glamour*
+45. **DOLL DISTRICT** *(Destination beauty hub housing hair, skin, nails, and makeup)*
+    - *Signboard*: **DOLL DISTRICT** | The Mega Beauty Studio
+    - *Tagline*: *Modinagar's Premier Beauty Hub*
+46. **DOLL CRAFT STUDIO** *(Artisanal precision and bespoke facial sculpting)*
+    - *Signboard*: **DOLL CRAFT** | Makeup Atelier
+    - *Tagline*: *Handcrafted Perfection*
+47. **DOLL THEORY** *(Philosophical approach to personalized bridal enhancement)*
+    - *Signboard*: **DOLL THEORY** | Luxury Makeovers
+    - *Tagline*: *Beauty, Redefined*
+48. **STUDIO DOLLFACE** *(Sleek, minimalist, high-converting)*
+    - *Signboard*: **STUDIO DOLLFACE** | By Vaishnavi Singh
+    - *Tagline*: *HD Airbrush & Bridal Transformations*
+
+---
+
+#### ⚡ Sub-Collection 7: Rhythmic Luxury Duos (The "Cut & Style" Cadence)
+*Using the proven 3-beat rhythm (`Word & Doll` or `Doll & Word`) that sticks instantly in memory:*
+49. **DIAMOND & DOLL** *(Luxury gemstone brilliance + doll perfection)*
+    - *Signboard*: **DIAMOND & DOLL** | Luxury Bridal Lounge
+    - *Tagline*: *Brilliant Brides. Timeless Artistry.*
+50. **LACE & DOLL** *(Delicate couture fabrics, dupatta draping, vintage charm)*
+    - *Signboard*: **LACE & DOLL** | Bridal Atelier
+    - *Tagline*: *Couture Draping & Master Makeovers*
+51. **PEARL & DOLL** *(Iridescent glow and timeless bridal poise)*
+    - *Signboard*: **PEARL & DOLL** | Luxury Studio
+    - *Tagline*: *Graceful. Luminous. Unforgettable.*
+52. **VELVET & DOLL** *(Tactile opulence, rich textures, deep royal tones)*
+    - *Signboard*: **VELVET & DOLL** | Makeovers & Salon
+    - *Tagline*: *The Luxury Touch You Deserve*
+53. **STROBE & DOLL** *(Modern highlighting technique + sculpted doll faces)*
+    - *Signboard*: **STROBE & DOLL** | 4K Makeup Studio
+    - *Tagline*: *Master Lighting. Flawless Skin.*
+54. **DOLL & VEIL** *(The bridal dupatta veil + the doll face)*
+    - *Signboard*: **DOLL & VEIL** | Bridal Lounge
+    - *Tagline*: *Where the Veil Meets Perfection*
+55. **BLUSH & DOLL** *(Rosy bridal warmth, fresh youthful glow)*
+    - *Signboard*: **BLUSH & DOLL** | Makeovers & Nails
+    - *Tagline*: *Blushing Brides, Always*
+56. **GLOSS & DOLL** *(Lustrous lips, high-shine eyes, glass skin)*
+    - *Signboard*: **GLOSS & DOLL** | Beauty Studio
+    - *Tagline*: *High-Shine Glamour*
+57. **GOLD & DOLL** *(Direct answer to "Midas Makeup Studio")*
+    - *Signboard*: **GOLD & DOLL** | Luxury Bridal Studio
+    - *Tagline*: *The 24-Karat Bridal Makeover*
+
+---
+
+#### 🖋️ Sub-Collection 8: Founder Hybrid & Acronym Models (To Beat MDM & Parul Garg)
+*Brides demand to know who the master artist is. These names marry personal authority with the Doll aesthetic:*
+58. **VAISHNAVI'S DOLLHOUSE** *(Warm, inviting, celebrity-signature brand)*
+    - *Signboard*: **VAISHNAVI'S DOLLHOUSE** | Luxury Bridal Lounge
+    - *Tagline*: *Step Into My World of Glamour*
+59. **VSM DOLLHOUSE** *(Master 3-letter acronym + the viral Doll concept)*
     - *Signboard*: **VSM DOLLHOUSE** | By Vaishnavi Singh
-    - *Tagline*: *Celebrity Bridal Makeovers • Govindpuri, Modinagar*
+    - *Tagline*: *Celebrity Bridal Makeovers & Academy*
+60. **THE DOLL STUDIO BY VAISHNAVI** *(Understated prestige, personal artist accountability)*
+    - *Signboard*: **THE DOLL STUDIO** | By Vaishnavi Singh
+    - *Tagline*: *Signature Bridal Artistry*
+61. **VS DOLL MAKEOVERS** *(Punchy, corporate, easily franchised)*
+    - *Signboard*: **VS DOLL** | Luxury Makeover Studio
+    - *Tagline*: *Signature 4K HD Transformations*
+62. **DOLL ATELIER BY VSM** *(European craftsmanship backed by founder credentials)*
+    - *Signboard*: **DOLL ATELIER** | By Vaishnavi Singh Makeovers
+    - *Tagline*: *Bespoke Bridal Couture*
+63. **AURA DOLL STUDIO** *(Bridging your current Aura brand with the Doll concept)*
+    - *Signboard*: **AURA DOLL** | Luxury Studio
+    - *Tagline*: *Radiant Aura. Living Dolls.*
+
+---
+
+#### 💡 Architectural Rules for a "Doll" Brand (How to Look Like ₹50K, Not ₹500)
+A common danger with the word "Doll" is looking childish, like a toy shop or a cheap salon. Here is how luxury brands pull off "Doll" with multi-crore opulence:
+
+1. **The Color Palette**:
+   - ❌ **Avoid**: Neon hot pink, bubblegum plastic pink, childish rainbow accents.
+   - ✅ **Use**: **Dusty Rose Quartz / Mauve Taupe** paired with **Brushed Champagne Gold** and **Warm Ivory / Alabaster Marble**.
+2. **The Signboard Typography**:
+   - ❌ **Avoid**: Comic Sans, cursive curly balloon scripts.
+   - ✅ **Use**: High-contrast, editorial serif typography (e.g., *Cinzel*, *Playfair Display*, *Bodoni*, or sleek geometric sans like *Montserrat / Syne* in wide letter-spacing).
+   - *Example*:
+     ```
+     ✦  M A I S O N   D O L L  ✦
+     H A U T E   B R I D A L   A T E L I E R
+     By Vaishnavi Singh • Govindpuri, Modinagar
+     ```
+3. **The Interior Instagram Spot**:
+   - Build a **"Living Doll Box"** or a floor-to-ceiling gilded Victorian arched mirror with soft warm ring lighting where every bride takes her reveal Reel.
 
 ---
 
