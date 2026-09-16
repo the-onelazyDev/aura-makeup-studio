@@ -120,8 +120,70 @@ Let’s analyze your direct competition in Modinagar:
    - *Signboard*: **KISHORI** Bridal Lounge
 5. **ROOPAM** *(Flawless form and celestial beauty)*
    - *Signboard*: **ROOPAM** Makeup Studio
-6. **VRINDA** *(Queen of Vrindavan; crisp 2 syllables with sacred poise)*
-   - *Signboard*: **VRINDA** Luxury Studio
+### Architecture E: The "Doll" Aesthetic (Porcelain Skin, Fairytale Glam & Big Lashes)
+*In Indian weddings, the ultimate compliment every bride dreams of hearing is: **"Dulhan bilkul gudiya (doll) jaisi lag rahi hai!"** The "Doll" concept instantly communicates 4K poreless porcelain skin, winged eyeliner, dramatic fluttery eyelashes, sculpted cheekbones, and rosy glass-skin finishes. It is ultra-viral on Instagram Reels and commands massive premium appeal.*
+
+1. **THE DOLLHOUSE** ⭐ *(Inspired by Dubai's celebrity luxury salon)*
+   - *Signboard*: **THE DOLLHOUSE** | Luxury Makeover Studio & Salon
+   - *Tagline*: *Where Every Bride Becomes a Living Doll*
+   - *Positioning*: High-society, luxury pink & champagne-gold interiors, VIP bridal suites.
+2. **DOLLFACE MAKEOVERS** *(Classic, high-fashion Hollywood & London aesthetic)*
+   - *Signboard*: **DOLLFACE** | Bridal Artistry & Hair Couture
+   - *Tagline*: *Flawless Porcelain 4K Finish*
+3. **MAISON DOLL** *(Parisian haute couture touch)*
+   - *Signboard*: **MAISON DOLL** | Luxury Beauty Atelier
+   - *Tagline*: *Couture Bridal Transformations*
+4. **THE DOLL ROOM** *(Exclusive VIP bridal suite format)*
+   - *Signboard*: **THE DOLL ROOM** | Luxury Bridal Lounge
+   - *Tagline*: *Private Bridal Dressing & Makeovers*
+5. **DOLL COUTURE** *(High-fashion designer runway bridal styling)*
+   - *Signboard*: **DOLL COUTURE** | By Vaishnavi Singh
+   - *Tagline*: *Bespoke HD Airbrush Artistry*
+6. **PORCELAIN DOLL STUDIO** *(Speaks directly to Korean glass-skin & poreless base)*
+   - *Signboard*: **PORCELAIN DOLL** | Luxury Makeover Studio
+   - *Tagline*: *The Flawless Glass-Skin Bride*
+7. **THE DOLL STUDIO** *(Crisp, modern, high-recall commercial powerhouse)*
+   - *Signboard*: **THE DOLL STUDIO** | Govindpuri, Modinagar
+   - *Tagline*: *Celebrity Bridal Makeovers*
+8. **DOLL & CO.** *(Chic boutique salon and makeup collective)*
+   - *Signboard*: **DOLL & CO.** | Makeover Lounge & Salon
+   - *Tagline*: *Redefining Bridal Glamour*
+9. **THE DOLL BRIDE** *(Direct, high-conversion, top SEO & Instagram search term)*
+   - *Signboard*: **THE DOLL BRIDE** | Luxury Studio
+   - *Tagline*: *Fairytale Wedding Transformations*
+10. **THE DOLL SOCIETY** *(Exclusive VIP beauty club perception)*
+    - *Signboard*: **THE DOLL SOCIETY** | Beauty Lounge & Bar
+    - *Tagline*: *Modern Glamour & Hair Couture*
+11. **GILDED DOLL** *(Golden luxury touch — directly outshines "Midas")*
+    - *Signboard*: **GILDED DOLL** | Luxury Bridal Suite
+    - *Tagline*: *The 24K Royal Bridal Touch*
+12. **STUDIO DOLLFACE** *(Clean, youthful, high-converting)*
+    - *Signboard*: **STUDIO DOLLFACE**
+    - *Tagline*: *HD Airbrush & Bridal Transformations*
+13. **DOLL ATELIER** *(Parisian master craftsmanship)*
+    - *Signboard*: **DOLL ATELIER** | By Vaishnavi Singh
+    - *Tagline*: *Master Bridal Artistry*
+14. **LIVING DOLL MAKEOVERS** *(Emotional promise of a real-life fairytale)*
+    - *Signboard*: **LIVING DOLL** | Bridal Studio
+    - *Tagline*: *Step Out Like a Fairytale*
+15. **DOLLVEDA MAKEOVERS** *(Fusion of modern doll glamour with Vedic Indian bridal beauty)*
+    - *Signboard*: **DOLLVEDA** | Luxury Studio
+    - *Tagline*: *Auspicious Heritage. Modern Glamour.*
+16. **THE DOLL VANITY** *(Intimate, personal VIP bridal suite)*
+    - *Signboard*: **THE DOLL VANITY**
+    - *Tagline*: *Your Private Bridal Glow Sanctuary*
+17. **VELVET DOLL STUDIO** *(Smooth velvet HD base + soft-glam eyes)*
+    - *Signboard*: **VELVET DOLL** | Luxury Studio
+    - *Tagline*: *24-Hour Tear & Sweat-Proof Bridal Finish*
+18. **DOLL & VEIL** *(Rhythmic pair matching the Cut & Style formula)*
+    - *Signboard*: **DOLL & VEIL** | Luxury Bridal Lounge
+    - *Tagline*: *Couture Dupatta Draping & Royal Faces*
+19. **AURA DOLL STUDIO** *(Unifying the existing Aura brand with Doll glam)*
+    - *Signboard*: **AURA DOLL** | Makeovers & Salon
+    - *Tagline*: *Radiant Aura. Living Dolls.*
+20. **VSM DOLLHOUSE** *(Master founder acronym + Doll concept)*
+    - *Signboard*: **VSM DOLLHOUSE** | By Vaishnavi Singh
+    - *Tagline*: *Celebrity Bridal Makeovers • Govindpuri, Modinagar*
 
 ---
 
