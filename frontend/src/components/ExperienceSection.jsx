@@ -82,7 +82,7 @@ export default function ExperienceSection({ onOpenBooking }) {
             <span>The Aura Difference</span>
           </div>
           <h2 style={{ fontSize: '2.4rem', fontWeight: '700', color: '#111827', marginBottom: '12px' }}>
-            Why Brides & Clients Choose <span className="gold-text">Aura Luxury Studio</span>
+            Why Choose <span className="gold-text">Aura Luxury Studio</span>
           </h2>
           <p style={{ color: '#4B5563', maxWidth: '620px', margin: '0 auto', fontSize: '0.96rem', lineHeight: '1.5' }}>
             Elevating beauty in Govindpuri, Modinagar with international cosmetic standards, hygienic studio suites, and bespoke artistry.
