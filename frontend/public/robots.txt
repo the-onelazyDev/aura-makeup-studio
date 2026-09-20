@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aura-makeup-studio-live.vercel.app/sitemap.xml
+Sitemap: https://thebeautybar-studio.vercel.app/sitemap.xml

@@ -59,8 +59,8 @@ async function dispatchLiveEmailNotification(booking) {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Origin': 'https://aura-makeup-studio-live.vercel.app',
-      'Referer': 'https://aura-makeup-studio-live.vercel.app/',
+      'Origin': 'https://thebeautybar-studio.vercel.app',
+      'Referer': 'https://thebeautybar-studio.vercel.app/',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Content-Length': Buffer.byteLength(payload)
     }
