@@ -2,7 +2,7 @@
   "name": "aura-makeup-studio",
   "version": "1.0.0",
   "private": true,
-  "description": "Aura Luxury Makeup Studio - Monorepo Root",
+  "description": "The Beauty Bar Makeover Studio - Monorepo Root",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

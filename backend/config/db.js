@@ -46,7 +46,7 @@ const seedDatabaseIfEmpty = async () => {
         {
           id: "admin-1",
           name: "Salon Manager (Admin)",
-          email: "admin@auramakeup.com",
+          email: "admin@thebeautybar.com",
           passwordHash: adminPass,
           phone: "+91 98110 00000",
           role: "adminUser"

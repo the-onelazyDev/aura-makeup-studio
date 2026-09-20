@@ -145,7 +145,7 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
 
   const openWhatsAppEnquiry = () => {
     const text = encodeURIComponent(
-      `Hi Aura Studio, I want to confirm my appointment booking for ${formData.name} (Phone: ${formData.phone}) at Govindpuri, Modinagar.`
+      `Hi The Beauty Bar, I want to confirm my appointment booking for ${formData.name} (Phone: ${formData.phone}) at Govindpuri, Modinagar.`
     );
     window.open(`https://wa.me/919999250883?text=${text}`, '_blank');
   };
@@ -170,9 +170,31 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
           justifyContent: 'space-between'
         }}>
           <div>
-            <h2 style={{ fontSize: '1.45rem', fontWeight: '700', color: '#111827', marginBottom: '20px' }}>
-              Aura Luxury Studio, Govindpuri, Modinagar
-            </h2>
+            <div style={{ marginBottom: '16px' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: '#FEF3C7',
+                border: '1px solid #FDE68A',
+                color: '#926C05',
+                fontSize: '0.72rem',
+                fontWeight: '700',
+                padding: '4px 10px',
+                borderRadius: '20px',
+                marginBottom: '8px',
+                letterSpacing: '0.4px'
+              }}>
+                <Sparkles size={13} color="#926C05" />
+                <span>Celebrate The Beauty Of Being You</span>
+              </div>
+              <h2 style={{ fontSize: '1.45rem', fontWeight: '700', color: '#111827', margin: 0, marginBottom: '6px' }}>
+                The Beauty Bar
+              </h2>
+              <div style={{ fontSize: '0.82rem', fontWeight: '700', color: '#9A7412', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                Makeup Studio • Salon • Academy
+              </div>
+            </div>
 
             {/* Address */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '14px', fontSize: '0.9rem', color: '#4B5563', lineHeight: '1.45' }}>
@@ -232,17 +254,17 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
               <span style={{ color: '#6B7280' }}>(520+ Reviews from Customers)</span>
               <a
                 href="#reviews"
-                onClick={(e) => { e.preventDefault(); alert("Review section - 5.0 Rated by Verified Brides"); }}
+                onClick={(e) => { e.preventDefault(); alert("Review section - 5.0 Rated by Verified Brides & Students"); }}
                 style={{ color: '#9A7412', textDecoration: 'underline', fontWeight: '600', fontSize: '0.85rem' }}
               >
                 Leave a review
               </a>
             </div>
 
-            {/* Studio Founder */}
+            {/* Studio Founder & Educator */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', color: '#4B5563' }}>
               <Store size={17} color="#9A7412" style={{ flexShrink: 0 }} />
-              <span>Studio Founder & Celebrity Artist: <strong style={{ color: '#111827' }}>Vaishnavi Singh</strong></span>
+              <span>Founder & Master Educator: <strong style={{ color: '#111827' }}>Vaishnavi Singh</strong></span>
             </div>
           </div>
 

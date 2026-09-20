@@ -30,7 +30,7 @@ app.get("/api/health", (req, res) => {
   res.json({
     code: 200,
     status: true,
-    message: "Aura Makeup Studio API Server is operational.",
+    message: "The Beauty Bar API Server is operational.",
     data: {
       timestamp: new Date().toISOString(),
       environment: process.env.NODE_ENV || "development",
@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
   res.json({
     code: 200,
     status: true,
-    message: "Welcome to Aura Luxury Makeup Studio API",
+    message: "Welcome to The Beauty Bar Studio API",
     database: getIsMongoConnected() ? "MongoDB Atlas" : "In-Memory Store",
     endpoints: {
       auth: "/api/auth",
@@ -68,7 +68,7 @@ app.use((req, res) => {
 
 // Start Server & Connect Database
 app.listen(PORT, async () => {
-  console.log(`✨ Aura Makeup Studio Backend running at http://localhost:${PORT}`);
+  console.log(`✨ The Beauty Bar Backend running at http://localhost:${PORT}`);
   await connectDB();
 });
 

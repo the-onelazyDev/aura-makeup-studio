@@ -34,7 +34,7 @@ export default function App() {
     const initApp = async () => {
       try {
         // Check auth token
-        const token = localStorage.getItem('aura_auth_token');
+        const token = localStorage.getItem('beautybar_auth_token') || localStorage.getItem('aura_auth_token');
         if (token) {
           const profileRes = await api.getProfile();
           if (profileRes.status && profileRes.data?.user) {

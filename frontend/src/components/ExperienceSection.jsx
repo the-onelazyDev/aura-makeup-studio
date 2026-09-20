@@ -4,7 +4,7 @@ import { ShieldCheck, Sparkles, Heart, Award, Star, MessageCircle, Phone, CheckC
 const BRAND_PILLARS = [
   {
     icon: <Sparkles size={24} color="#C59B27" />,
-    title: "100% International Luxury Products",
+    title: "100% Authentic Global Brands",
     description: "Exclusively genuine cosmetics from M·A·C, Huda Beauty, NARS, Dior, Estée Lauder, and Kryolan for skin-safe, poreless finishes."
   },
   {
@@ -19,8 +19,8 @@ const BRAND_PILLARS = [
   },
   {
     icon: <Award size={24} color="#2563EB" />,
-    title: "Certified Master Artistry",
-    description: "Over a decade of transformative bridal excellence, custom face-sculpting, and modern vintage Hollywood hair styling."
+    title: "Certified Academy & Artistry",
+    description: "Over a decade of transformative bridal excellence, custom face-sculpting, and certified professional makeup & hair courses."
   }
 ];
 
@@ -41,7 +41,7 @@ const REVIEWS = [
     name: "Dr. Ritu Verma",
     role: "Regular Salon & Hair Client",
     rating: 5,
-    comment: "The finest luxury studio in Modinagar. The staff is polite, hygienic, and the hair keratin spa gave my hair a lasting mirror shine."
+    comment: "The finest makeover studio in Modinagar. The staff is polite, hygienic, and the hair keratin spa gave my hair a lasting mirror shine."
   },
   {
     id: 3,
@@ -79,13 +79,13 @@ export default function ExperienceSection({ onOpenBooking }) {
             marginBottom: '10px'
           }}>
             <Sparkles size={13} color="#C59B27" />
-            <span>The Aura Difference</span>
+            <span>The Beauty Bar Difference</span>
           </div>
           <h2 style={{ fontSize: '2.4rem', fontWeight: '700', color: '#111827', marginBottom: '12px' }}>
-            Why Choose <span className="gold-text">Aura Luxury Studio</span>
+            Why Choose <span className="gold-text">The Beauty Bar</span>
           </h2>
-          <p style={{ color: '#4B5563', maxWidth: '620px', margin: '0 auto', fontSize: '0.96rem', lineHeight: '1.5' }}>
-            Elevating beauty in Govindpuri, Modinagar with international cosmetic standards, hygienic studio suites, and bespoke artistry.
+          <p style={{ color: '#4B5563', maxWidth: '640px', margin: '0 auto', fontSize: '0.96rem', lineHeight: '1.5' }}>
+            Elevating beauty and professional artistry in Govindpuri, Modinagar with international cosmetic standards, certified academy courses, and bespoke salon rituals.
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export default function ExperienceSection({ onOpenBooking }) {
           textAlign: 'center'
         }}>
           <div style={{ fontSize: '0.78rem', fontWeight: '700', color: '#9A7412', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '14px' }}>
-            ✦ 100% Genuine Luxury Brands Used at Aura Studio ✦
+            ✦ 100% Authentic Global Brands Used at The Beauty Bar ✦
           </div>
           <div style={{
             display: 'flex',
@@ -255,7 +255,7 @@ export default function ExperienceSection({ onOpenBooking }) {
 
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/919999250883?text=Hi%20Aura%20Studio,%20I%20would%20like%20to%20consult%20for%20a%20Bridal/Salon%20Package%20in%20Govindpuri,%20Modinagar."
+              href="https://wa.me/919999250883?text=Hi%20The%20Beauty%20Bar,%20I%20would%20like%20to%20consult%20for%20a%20Bridal/Salon%20Package%20in%20Govindpuri,%20Modinagar."
               target="_blank"
               rel="noopener noreferrer"
               style={{

@@ -83,7 +83,7 @@ const INITIAL_SERVICES = [
     reviewsCount: 340,
     badge: "Nail Couture",
     image: "/images/nail-bar.jpg",
-    description: "Luxury salon nail bar offering shatterproof gel extensions, chrome finishes, french ombre manicure, and hand-painted nail artistry.",
+    description: "Signature salon nail bar offering shatterproof gel extensions, chrome finishes, french ombre manicure, and hand-painted nail artistry.",
     highlights: ["Shatterproof Gel Extensions", "Custom Chrome & Ombre Art", "Cuticle Conditioning Oil", "High-Gloss Long-Lasting Topcoat"]
   },
 
@@ -129,6 +129,36 @@ const INITIAL_SERVICES = [
     image: "/images/hair-colors.jpg",
     description: "Bespoke balayage, ombre highlights, caramel tones, and global ammonia-free organic hair coloring with rich pigment and protective bond builders.",
     highlights: ["100% Ammonia-Free Organic Pigment", "Custom Balayage & Ombre", "Bond Multiplier Protection", "High-Gloss Post-Color Seal"]
+  },
+
+  // ACADEMY COURSES
+  {
+    id: "srv-acd-1",
+    title: "PROFESSIONAL BRIDAL & HD AIRBRUSH MAKEUP DIPLOMA",
+    category: "ACADEMY",
+    subCategory: "CERTIFICATION",
+    price: 35000,
+    duration: "30 Days Hands-On",
+    rating: 5.0,
+    reviewsCount: 195,
+    badge: "Master Certification",
+    image: "/images/basic-bridal.jpg",
+    description: "Comprehensive professional makeup artist training conducted personally by Vaishnavi Singh. Covers skin preparation, color correction, HD 4K base, celebrity airbrushing, eye cut-crease artistry, saree/lehenga draping, and portfolio photoshoots.",
+    highlights: ["Government Recognized Certificate", "Hands-On Daily Live Model Practice", "Airbrush Gun Technique & Machine Kit", "Client Consultation & Portfolio Shoot"]
+  },
+  {
+    id: "srv-acd-2",
+    title: "SELF MAKEUP & PERSONAL GROOMING MASTERCLASS",
+    category: "ACADEMY",
+    subCategory: "WORKSHOP",
+    price: 6500,
+    duration: "5 Days (2h/day)",
+    rating: 4.9,
+    reviewsCount: 240,
+    badge: "Personal Mastery",
+    image: "/images/airbrush-bridal.jpg",
+    description: "Personalized workshop to master your own everyday makeup, corporate chic look, festive party glam, winged liner, contouring, and product vanity audit tailored to your skin tone and features.",
+    highlights: ["Personal Vanity Kit Audit", "Custom Face Contour & Blending", "Day-to-Evening Transformation", "Certificate of Completion"]
   }
 ];
 
@@ -136,11 +166,11 @@ const INITIAL_ARTISTS = [
   {
     id: "art-1",
     name: "Vaishnavi Singh",
-    title: "Founder & Lead Celebrity Makeup Artist",
+    title: "Founder, Master Artist & Academy Educator",
     experience: "10+ Years Excellence",
     rating: 5.0,
     reviews: 850,
-    specialty: "Royal HD Bridal, Airbrush & Sangeet Glamour",
+    specialty: "Royal HD Bridal, Airbrush & Academy Masterclasses",
     avatar: "/images/airbrush-bridal.jpg",
     availableSlots: ["10:00 AM", "01:30 PM", "04:30 PM", "07:00 PM"]
   }

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const MAIN_TABS = ["ALL", "HAIR", "SKIN", "BRIDE & GROOM"];
+const MAIN_TABS = ["ALL", "BRIDE & GROOM", "HAIR", "SKIN", "ACADEMY"];
 
 const TAGS = [
   "Bride and Groom Makeup Near Me",
   "Best Salon Near Me",
+  "Makeup Academy & Courses Near Me",
   "Nail Salon Near Me",
   "Facial & Skincare Near Me",
-  "Manicure & Pedicure Near Me",
   "Salon Near Me"
 ];
 
@@ -26,6 +26,9 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
       if (activeTag.includes("Bride and Groom") || activeTag.includes("Bridal")) {
         return sCat.includes("BRIDE") || sCat.includes("BRIDAL");
       }
+      if (activeTag.includes("Academy") || activeTag.includes("Courses")) {
+        return sCat.includes("ACADEMY") || sTitle.includes("COURSE") || sTitle.includes("MASTERCLASS");
+      }
       if (activeTag.includes("Nail")) {
         return sCat.includes("SKIN") || sSub.includes("NAIL") || sTitle.includes("NAIL");
       }
@@ -41,12 +44,15 @@ export default function ServiceCatalog({ services = [], onSelectService }) {
     if (activeTab === "BRIDE & GROOM") {
       return sCat.includes("BRIDE") || sCat.includes("GROOM") || sCat.includes("BRIDAL");
     }
+    if (activeTab === "ACADEMY") {
+      return sCat.includes("ACADEMY") || sCat.includes("COURSE") || sSub.includes("CERTIFICATION") || sSub.includes("WORKSHOP");
+    }
     return sCat === activeTab || sCat.includes(activeTab);
   });
 
   const handleEnquireWhatsApp = (service) => {
     const text = encodeURIComponent(
-      `Hi Aura Studio, I want to enquire about ${service.title} at Govindpuri, Modinagar.`
+      `Hi The Beauty Bar, I want to enquire about ${service.title} at Govindpuri, Modinagar.`
     );
     window.open(`https://wa.me/919999250883?text=${text}`, '_blank');
   };

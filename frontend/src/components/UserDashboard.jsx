@@ -107,7 +107,7 @@ export default function UserDashboard({ isOpen, onClose, currentUser }) {
             <Calendar size={48} color="#d4af37" style={{ marginBottom: '12px', opacity: 0.8 }} />
             <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>No Appointments Booked Yet</h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
-              Treat yourself to a luxury makeover or HD bridal transformation today.
+              Treat yourself to a signature makeover or HD bridal transformation today.
             </p>
           </div>
         ) : (

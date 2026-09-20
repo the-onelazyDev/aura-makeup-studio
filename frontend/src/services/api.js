@@ -2,7 +2,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:9005/api'
 
 // Helper to get Auth Header
 const getAuthHeaders = () => {
-  const token = localStorage.getItem('aura_auth_token');
+  const token = localStorage.getItem('beautybar_auth_token') || localStorage.getItem('aura_auth_token');
   return {
     'Content-Type': 'application/json',
     ...(token ? { Authorization: `Bearer ${token}` } : {})

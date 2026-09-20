@@ -19,12 +19,18 @@ export default function Footer() {
       }}>
         {/* Brand */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
             <Crown size={28} color="#D4AF37" />
-            <h2 style={{ fontSize: '1.6rem', fontWeight: '700' }} className="gold-text">AURA MAKEUP STUDIO</h2>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: '700' }} className="gold-text">THE BEAUTY BAR</h2>
           </div>
+          <p style={{ fontSize: '0.75rem', color: '#FDE68A', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '6px' }}>
+            Makeup Studio • Salon • Academy
+          </p>
+          <p style={{ fontSize: '0.82rem', color: '#FBBF24', fontWeight: '600', letterSpacing: '0.5px', marginBottom: '12px' }}>
+            Celebrate The Beauty Of Being You
+          </p>
           <p style={{ fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '20px' }}>
-            Premier luxury makeover studio and bridal lounge in Govindpuri, Modinagar, delivering HD Airbrush artistry, royal wedding styling, and signature skin rituals.
+            Premier makeup studio, salon, and beauty academy in Govindpuri, Modinagar, delivering HD Airbrush artistry, royal wedding styling, signature skin rituals, and professional certified beauty courses.
           </p>
           <div style={{ display: 'flex', gap: '12px' }}>
             <a
@@ -102,7 +108,7 @@ export default function Footer() {
             </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Mail size={16} color="#D4AF37" />
-              <span>aura.modinagar@gmail.com</span>
+              <span>thebeautybar.modinagar@gmail.com</span>
             </li>
           </ul>
         </div>
@@ -111,7 +117,7 @@ export default function Footer() {
         <div>
           <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', marginBottom: '16px', fontWeight: '600' }}>Our Guarantee</h4>
           <p style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-            100% Original Global Luxury Cosmetic Brands (Huda Beauty, Charlotte Tilbury, Dior, MAC, NARS, Anastasia Beverly Hills). Certified Clean & Sanitized Setup.
+            100% Original Global Cosmetic Brands (Huda Beauty, Charlotte Tilbury, Dior, MAC, NARS, Anastasia Beverly Hills). Certified Clean & Sanitized Setup.
           </p>
         </div>
       </div>
@@ -123,7 +129,7 @@ export default function Footer() {
         fontSize: '0.8rem',
         color: '#6B7280'
       }}>
-        © {new Date().getFullYear()} AURA Luxury Makeup Studio, Govindpuri, Modinagar. All Rights Reserved.
+        © {new Date().getFullYear()} The Beauty Bar | Makeup Studio • Salon • Academy, Govindpuri, Modinagar. All Rights Reserved.
       </div>
     </footer>
   );

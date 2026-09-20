@@ -1,6 +1,6 @@
-# AURA | Luxury Makeover Studio & Salon Booking Web Application
+# THE BEAUTY BAR | Makeover Studio & Salon Booking Web Application
 
-An end-to-end luxury Makeup Studio & Salon appointment booking platform built with **React (Vite)** and **Node.js (Express)** with **JWT User Authentication**, service & artist selection, and responsive glassmorphism UI inspired by Meenakshi Dutt Makeovers, Geetanjali, and Looks Salon.
+An end-to-end modern Makeup Studio & Salon appointment booking platform built with **React (Vite)** and **Node.js (Express)** with **JWT User Authentication**, service & artist selection, and responsive glassmorphism UI. Tagline: *"Celebrate The Beauty Of Being You"*.
 
 ---
 

@@ -3,6 +3,7 @@ import { Crown, Sparkles, User, Calendar, LogOut, ShieldCheck, Phone } from 'luc
 
 export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpenAdmin, onOpenBooking }) {
   const handleLogout = () => {
+    localStorage.removeItem('beautybar_auth_token');
     localStorage.removeItem('aura_auth_token');
     window.location.reload();
   };
@@ -37,17 +38,17 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
           <Crown size={20} color="#111827" />
         </div>
         <div>
-          <h1 style={{ fontSize: '1.35rem', fontWeight: '700', lineHeight: 1 }} className="gold-text">AURA</h1>
+          <h1 style={{ fontSize: '1.25rem', fontWeight: '700', lineHeight: 1, letterSpacing: '0.5px' }} className="gold-text">THE BEAUTY BAR</h1>
           <span style={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '1.2px', color: '#9A7412', fontWeight: '700', display: 'block' }}>
-            Govindpuri, Modinagar
+            Makeup Studio • Salon • Academy
           </span>
         </div>
       </div>
 
       {/* Desktop Nav Links */}
       <div className="nav-menu-desktop" style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-        <a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Services</a>
-        <a href="#experience" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Why Aura Studio</a>
+        <a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Services & Academy</a>
+        <a href="#experience" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Why The Beauty Bar</a>
         <a href="#about" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Location & Contact</a>
       </div>
 

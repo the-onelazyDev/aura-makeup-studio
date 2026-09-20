@@ -30,6 +30,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
       setLoading(false);
 
       if (res.status && res.data?.token) {
+        localStorage.setItem('beautybar_auth_token', res.data.token);
         localStorage.setItem('aura_auth_token', res.data.token);
         onAuthSuccess(res.data.user);
         onClose();
@@ -70,7 +71,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
             {isAdminMode ? 'Studio Manager Sign In' : (isLogin ? 'Welcome Back' : 'Create VIP Account')}
           </h2>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '4px' }}>
-            {isAdminMode ? 'Restricted portal for salon management & staff' : (isLogin ? 'Access your appointments and exclusive perks' : 'Join Aura Studio for seamless bookings')}
+            {isAdminMode ? 'Restricted portal for salon management & staff' : (isLogin ? 'Access your appointments and exclusive perks' : 'Join The Beauty Bar for seamless bookings')}
           </p>
 
           {isLogin && !isAdminMode && (
@@ -104,7 +105,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
             <button
               type="button"
               onClick={() => {
-                setEmail('admin@auramakeup.com');
+                setEmail('admin@thebeautybar.com');
                 setPassword('AdminPass123!');
               }}
               style={{
@@ -123,7 +124,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
               }}
             >
               <Sparkles size={13} color="#4ade80" />
-              <span>Fill Manager Admin Demo (admin@auramakeup.com)</span>
+              <span>Fill Manager Admin Demo (admin@thebeautybar.com)</span>
             </button>
           )}
         </div>
@@ -229,7 +230,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
               <Mail size={18} color="#a1a1b5" style={{ position: 'absolute', left: '12px', top: '12px' }} />
               <input
                 type="email"
-                placeholder={isAdminMode ? 'admin@auramakeup.com' : 'priya@example.com'}
+                placeholder={isAdminMode ? 'admin@thebeautybar.com' : 'priya@example.com'}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

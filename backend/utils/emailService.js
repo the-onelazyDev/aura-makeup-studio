@@ -38,7 +38,7 @@ async function dispatchLiveEmailNotification(booking) {
 
   const payload = JSON.stringify({
     name: customerName,
-    email: customerEmail !== 'Not provided' ? customerEmail : 'noreply@auramakeup.com',
+    email: customerEmail !== 'Not provided' ? customerEmail : 'noreply@thebeautybar.com',
     _subject: `✨ New VIP Appointment: ${customerName} (${customerPhone}) - ${serviceTitle}`,
     Client_Name: customerName,
     Client_Mobile: customerPhone,
@@ -91,7 +91,7 @@ async function sendBookingNotificationEmail(booking) {
     // 1. If SMTP is configured, dispatch via SMTP
     if (smtpTransporter) {
       const htmlContent = `
-        <h2>Aura Luxury Studio - New Appointment</h2>
+        <h2>The Beauty Bar Studio - New Appointment</h2>
         <p><strong>Name:</strong> ${booking.customerName}</p>
         <p><strong>Phone:</strong> ${booking.customerPhone}</p>
         <p><strong>Email:</strong> ${booking.customerEmail || 'N/A'}</p>
@@ -101,7 +101,7 @@ async function sendBookingNotificationEmail(booking) {
         <p><strong>Notes:</strong> ${booking.notes}</p>
       `;
       await smtpTransporter.sendMail({
-        from: '"Aura Luxury Studio" <noreply@auramakeup.com>',
+        from: '"The Beauty Bar Studio" <noreply@thebeautybar.com>',
         to: NOTIFICATION_EMAIL,
         subject: `✨ New Appointment: ${booking.customerName} - ${booking.serviceTitle}`,
         html: htmlContent

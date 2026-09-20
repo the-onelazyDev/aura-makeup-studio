@@ -6,6 +6,15 @@ const usersStore = [
   {
     id: "admin-1",
     name: "Salon Manager (Admin)",
+    email: "admin@thebeautybar.com",
+    passwordHash: bcrypt.hashSync("AdminPass123!", 10),
+    phone: "+91 98110 00000",
+    role: "adminUser",
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: "admin-legacy",
+    name: "Salon Manager (Legacy)",
     email: "admin@auramakeup.com",
     passwordHash: bcrypt.hashSync("AdminPass123!", 10),
     phone: "+91 98110 00000",

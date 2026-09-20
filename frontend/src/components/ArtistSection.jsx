@@ -16,7 +16,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
         {/* Section Title */}
         <div className="section-title" style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '10px', flexWrap: 'wrap' }}>
-            <span className="badge">Studio Founder & Master Artist</span>
+            <span className="badge">Studio Founder, Master Artist & Academy Educator</span>
             <span className="badge" style={{ background: '#ECFDF5', borderColor: '#A7F3D0', color: '#047857' }}>
               <MapPin size={12} />
               Govindpuri, Modinagar
@@ -26,7 +26,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             Meet <span className="gold-text">Vaishnavi Singh</span>
           </h2>
           <p style={{ color: 'var(--text-muted)', maxWidth: '640px', margin: '0 auto', fontSize: '0.98rem' }}>
-            Founder, visionary owner, and master celebrity makeup artist behind every breathtaking bridal transformation in Govindpuri, Modinagar.
+            Founder, master celebrity makeup artist, and lead academy educator behind breathtaking bridal transformations and professional certifications in Govindpuri, Modinagar.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <img
                 src="/images/airbrush-bridal.jpg"
-                alt="Celebrity Master Artistry - Aura Studio"
+                alt="Celebrity Master Artistry - The Beauty Bar"
                 loading="lazy"
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
@@ -53,7 +53,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <img
                 src="/images/hd-bridal.jpg"
-                alt="Royal HD Bridal Couture - Aura Studio"
+                alt="Royal HD Bridal Couture - The Beauty Bar"
                 loading="lazy"
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
@@ -63,16 +63,16 @@ export default function ArtistSection({ artists, onSelectArtist }) {
 
           {/* Bio & Details */}
           <div>
-            <div className="badge" style={{ marginBottom: '10px' }}>Founder & Owner</div>
+            <div className="badge" style={{ marginBottom: '10px' }}>Founder & Academy Educator</div>
             <h3 style={{ fontSize: '2.0rem', fontWeight: '700', marginBottom: '4px' }} className="gold-text">
               Vaishnavi Singh
             </h3>
             <p style={{ fontSize: '0.95rem', color: '#9A7412', fontWeight: '700', marginBottom: '14px' }}>
-              Founder & Lead Celebrity Makeup Artist • Govindpuri, Modinagar
+              Founder, Master Artist & Academy Educator • Govindpuri, Modinagar
             </p>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
-              Specializing in high-end HD Airbrush bridal transformations, royal reception looks, and modern hair couture. Every appointment is personally crafted to accentuate natural facial beauty with radiant luxury finishes.
+              Specializing in high-end HD Airbrush bridal transformations, royal reception looks, and modern hair couture. Every appointment is personally crafted to accentuate natural facial beauty with radiant, flawless finishes.
             </p>
 
             {/* Badges / Stats Grid */}
@@ -92,7 +92,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
               </div>
               <div className="founder-stat-box" style={{ background: '#F9FAFB', padding: '10px 8px', borderRadius: '12px', textAlign: 'center', border: '1px solid #E5E7EB' }}>
                 <div className="stat-val" style={{ fontWeight: '700', color: '#059669', fontSize: '1.05rem' }}>100%</div>
-                <div className="stat-lbl" style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Luxury Brands</div>
+                <div className="stat-lbl" style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Global Brands</div>
               </div>
             </div>
 
