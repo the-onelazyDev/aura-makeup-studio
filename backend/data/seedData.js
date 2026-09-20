@@ -134,7 +134,7 @@ const INITIAL_SERVICES = [
   // ACADEMY COURSES
   {
     id: "srv-acd-1",
-    title: "PROFESSIONAL BRIDAL & HD AIRBRUSH MAKEUP DIPLOMA",
+    title: "PROFESSIONAL BRIDAL & HD AIRBRUSH MAKEUP CERTIFICATION",
     category: "ACADEMY",
     subCategory: "CERTIFICATION",
     price: 35000,
@@ -166,12 +166,23 @@ const INITIAL_ARTISTS = [
   {
     id: "art-1",
     name: "Vaishnavi Singh",
-    title: "Founder, Master Artist & Academy Educator",
+    title: "Co-Founder, Master Artist & Academy Educator",
     experience: "10+ Years Excellence",
     rating: 5.0,
     reviews: 850,
     specialty: "Royal HD Bridal, Airbrush & Academy Masterclasses",
     avatar: "/images/airbrush-bridal.jpg",
+    availableSlots: ["10:00 AM", "01:30 PM", "04:30 PM", "07:00 PM"]
+  },
+  {
+    id: "art-2",
+    name: "Amit Singh",
+    title: "Co-Founder & Managing Director",
+    experience: "Studio Leadership & Operations",
+    rating: 5.0,
+    reviews: 420,
+    specialty: "Studio Experience, Academy Operations & Consultations",
+    avatar: "/images/hd-bridal.jpg",
     availableSlots: ["10:00 AM", "01:30 PM", "04:30 PM", "07:00 PM"]
   }
 ];

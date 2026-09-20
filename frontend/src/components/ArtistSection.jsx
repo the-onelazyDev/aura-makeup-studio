@@ -16,21 +16,21 @@ export default function ArtistSection({ artists, onSelectArtist }) {
         {/* Section Title */}
         <div className="section-title" style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '10px', flexWrap: 'wrap' }}>
-            <span className="badge">Studio Founder, Master Artist & Academy Educator</span>
+            <span className="badge">Studio Founders & Leadership</span>
             <span className="badge" style={{ background: '#ECFDF5', borderColor: '#A7F3D0', color: '#047857' }}>
               <MapPin size={12} />
               Govindpuri, Modinagar
             </span>
           </div>
           <h2 style={{ fontSize: '2.6rem', fontWeight: '700', marginBottom: '12px' }}>
-            Meet <span className="gold-text">Vaishnavi Singh</span>
+            Meet the Founders: <span className="gold-text">Vaishnavi Singh & Amit Singh</span>
           </h2>
-          <p style={{ color: 'var(--text-muted)', maxWidth: '640px', margin: '0 auto', fontSize: '0.98rem' }}>
-            Founder, master celebrity makeup artist, and lead academy educator behind breathtaking bridal transformations and professional certifications in Govindpuri, Modinagar.
+          <p style={{ color: 'var(--text-muted)', maxWidth: '680px', margin: '0 auto', fontSize: '0.98rem' }}>
+            Visionary founders behind The Beauty Bar — combining master celebrity artistry, academy excellence, and premier studio operations in Govindpuri, Modinagar.
           </p>
         </div>
 
-        {/* Spotlight Showcase of Vaishnavi Singh */}
+        {/* Spotlight Showcase of Founders */}
         <div className="glass-card founder-spotlight-card" style={{
           padding: '36px',
           display: 'grid',
@@ -44,7 +44,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <img
                 src="/images/airbrush-bridal.jpg"
-                alt="Celebrity Master Artistry - The Beauty Bar"
+                alt="Celebrity Master Artistry - The Beauty Bar (Vaishnavi Singh & Amit Singh)"
                 loading="lazy"
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
@@ -53,7 +53,7 @@ export default function ArtistSection({ artists, onSelectArtist }) {
             <div className="founder-photo-box" style={{ borderRadius: '18px', overflow: 'hidden', border: '1px solid var(--border-subtle)', height: '360px' }}>
               <img
                 src="/images/hd-bridal.jpg"
-                alt="Royal HD Bridal Couture - The Beauty Bar"
+                alt="Royal HD Bridal Couture - The Beauty Bar (Vaishnavi Singh & Amit Singh)"
                 loading="lazy"
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
@@ -63,16 +63,19 @@ export default function ArtistSection({ artists, onSelectArtist }) {
 
           {/* Bio & Details */}
           <div>
-            <div className="badge" style={{ marginBottom: '10px' }}>Founder & Academy Educator</div>
-            <h3 style={{ fontSize: '2.0rem', fontWeight: '700', marginBottom: '4px' }} className="gold-text">
-              Vaishnavi Singh
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '10px' }}>
+              <span className="badge">Co-Founders</span>
+              <span className="badge" style={{ background: '#FFFBEB', color: '#926C05', borderColor: '#FDE68A' }}>Leadership & Artistry</span>
+            </div>
+            <h3 style={{ fontSize: '1.9rem', fontWeight: '700', marginBottom: '4px' }} className="gold-text">
+              Vaishnavi Singh & Amit Singh
             </h3>
-            <p style={{ fontSize: '0.95rem', color: '#9A7412', fontWeight: '700', marginBottom: '14px' }}>
-              Founder, Master Artist & Academy Educator • Govindpuri, Modinagar
+            <p style={{ fontSize: '0.92rem', color: '#9A7412', fontWeight: '700', marginBottom: '14px' }}>
+              Founders • Master Artistry, Academy & Studio Operations • Govindpuri, Modinagar
             </p>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
-              Specializing in high-end HD Airbrush bridal transformations, royal reception looks, and modern hair couture. Every appointment is personally crafted to accentuate natural facial beauty with radiant, flawless finishes.
+              Founded by <strong>Vaishnavi Singh</strong> (Celebrity Makeup Artist & Master Educator specializing in HD Airbrush transformations & certified training) and <strong>Amit Singh</strong> (Co-Founder leading business operations, client experience & studio expansion). Together, they bring international beauty and academy standards to Modinagar.
             </p>
 
             {/* Badges / Stats Grid */}
@@ -103,11 +106,11 @@ export default function ArtistSection({ artists, onSelectArtist }) {
                 className="btn-gold founder-primary-btn"
               >
                 <Sparkles size={16} />
-                <span>Book with Vaishnavi Singh</span>
+                <span>Book Appointment / Course</span>
               </button>
               <div className="founder-cta-subgroup">
                 <a
-                  href="https://wa.me/919999250883?text=Hi%20Vaishnavi%20Singh,%20I%20would%20like%20to%20consult%20for%20a%20Bridal%20Makeover%20in%20Govindpuri,%20Modinagar."
+                  href="https://wa.me/919999250883?text=Hi%20Vaishnavi%20Singh%20&%20Amit%20Singh,%20I%20would%20like%20to%20consult%20for%20a%20Service%20or%20Academy%20Course%20at%20The%20Beauty%20Bar."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"

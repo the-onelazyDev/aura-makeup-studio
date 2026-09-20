@@ -261,10 +261,10 @@ export default function HeroSection({ onOpenBooking, services = [] }) {
               </a>
             </div>
 
-            {/* Studio Founder & Educator */}
+            {/* Studio Founders */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', color: '#4B5563' }}>
               <Store size={17} color="#9A7412" style={{ flexShrink: 0 }} />
-              <span>Founder & Master Educator: <strong style={{ color: '#111827' }}>Vaishnavi Singh</strong></span>
+              <span>Founders: <strong style={{ color: '#111827' }}>Vaishnavi Singh & Amit Singh</strong></span>
             </div>
           </div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ServiceCatalog from './components/ServiceCatalog';
+import ArtistSection from './components/ArtistSection';
 import ExperienceSection from './components/ExperienceSection';
 import BookingModal from './components/BookingModal';
 import AuthModal from './components/AuthModal';
@@ -146,7 +147,16 @@ export default function App() {
         onSelectService={handleOpenBookingForService}
       />
 
-      {/* Luxury Studio Experience & Assurance */}
+      {/* Founders & Leadership Showcase */}
+      <ArtistSection
+        artists={artists}
+        onSelectArtist={(artist) => {
+          setSelectedArtist(artist);
+          setIsBookingOpen(true);
+        }}
+      />
+
+      {/* Studio Experience & Assurance */}
       <ExperienceSection
         onOpenBooking={() => setIsBookingOpen(true)}
       />
