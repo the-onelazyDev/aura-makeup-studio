@@ -48,7 +48,6 @@ export default function Navbar({ currentUser, onOpenAuth, onOpenDashboard, onOpe
       {/* Desktop Nav Links */}
       <div className="nav-menu-desktop" style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
         <a href="#services" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Services & Academy</a>
-        <a href="#artists" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Founders</a>
         <a href="#experience" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Why The Beauty Bar</a>
         <a href="#about" style={{ color: '#374151', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Location & Contact</a>
       </div>
